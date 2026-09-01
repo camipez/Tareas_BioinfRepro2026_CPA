@@ -25,7 +25,4 @@ Alinea las lecturas crudas (.fq) contra un genoma de referencia, produciendo un 
 - Loop 1: alinea cada muestra con gsnap, convierte .sam a .bam, borra el .sam.
 - Loop 2: corre pstacks en cada muestra, asignandole un ID numerico que sube de 1 en 1.
 - Loop 3: solo concatena texto para armar la lista de flags -s ruta que se le pasara a cstacks.
-- Loop 4: corre stacks en cada muestra contra el catalogo ya construido.
-
-
-
+- Loop 4: corre sstacks en cada muestra contra el catalogo ya construido.
