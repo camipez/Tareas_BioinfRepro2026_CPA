@@ -485,42 +485,41 @@ trazabilidad del orden en que deben ejecutarse los pasos.
 
 ---
 
+
 ## Discusión
 
-El conjunto de actividades desplaza el foco desde el manejo de comandos aislados hacia la
-organización del trabajo como un todo. La estructura de directorios propuesta en el material de la
-sesión —datos, metadatos, `bin` y resultados, acompañados de un README— cumple la misma función que
-un cuaderno de laboratorio ordenado: cualquier persona, incluida la autora meses después, debería
-poder identificar qué contiene cada carpeta y en qué orden se ejecutan los análisis sin necesidad de
-preguntar. La modularización de la Actividad 6 es la traducción de ese principio al código, ya que
-sustituye un script monolítico por piezas identificables por su nombre y su número de orden.
+Antes de este curso, organizar un proyecto para mí se reducía a guardar todo en una sola carpeta,
+muchas veces con nombres como "final" o "final_corregido". Con estos ejercicios entendí que eso no es
+organización, sino acumulación y mala práctica, ya que no queda registro de qué cambió ni por qué.
 
-El control de versiones aporta la dimensión temporal de esa organización. A diferencia de los
-archivos con nombres acumulativos del tipo "final_v2_corregido", cada *commit* registra qué cambió,
-cuándo y con qué justificación. Esto se hizo evidente en la Actividad 5: al existir dos versiones
-divergentes del mismo archivo, `git` detuvo la operación y exigió resolver el conflicto en lugar de
-descartar silenciosamente uno de los dos trabajos. Ese comportamiento, que en el momento se percibe
-como un obstáculo, es precisamente la garantía de que no se pierde información.
+La estructura que propone el material de la sesión "datos, metadatos, scripts en `bin` y
+resultados, todo con un README" funciona como una bitácora de laboratorio para el trabajo
+computacional, ya que cualquier persona, incluso yo misma en unos meses más, puede entender qué se hizo y en
+qué orden sin preguntar. La Actividad 6, donde dividí un script largo en subscripts más pequeños y un
+script maestro, fue donde más sentí ese cambio, pasar de un bloque difícil de revisar a piezas
+identificables por su nombre y su orden.
 
-Estos hábitos responden a un problema documentado: en una encuesta de *Nature*, el 52 % de los
-investigadores consideró que existe una crisis significativa de reproducibilidad, y más de la mitad
-declaró no haber podido reproducir sus propios experimentos (Baker, 2016). Herramientas como
-Markdown, `git` y GitHub no resuelven por sí solas ese problema, pero eliminan una de sus causas
-evitables: la pérdida del registro de cómo se obtuvo un resultado. La dificultad principal durante el
-desarrollo no estuvo en la lógica de los comandos, sino en detalles de sintaxis y de rutas —espacios
-en los nombres de archivo, rutas relativas escritas desde el directorio equivocado, ausencia de
-líneas en blanco en Markdown—, lo que sugiere que la reproducibilidad depende tanto de la comprensión
-conceptual como del cuidado en las convenciones de nombres y de organización.
+Con `git` me pasó algo parecido. Al principio viví como un problema el conflicto de fusión que me
+apareció en la Actividad 5, pero después entendí que era lo contrario  ya que tuve que decidir
+qué versión guardar, obligándome a revisar y elegir manualmente, protegiendo mi trabajo de perderse
+sin que me diera cuenta.
+
+Esto conecta con algo que leí en el curso, una encuesta de *Nature* mostró que el 52 % de los
+investigadores cree que existe una crisis de reproducibilidad, y más de la mitad ha tenido problemas
+para reproducir sus propios experimentos (Baker, 2016). En mi experiencia con estos ejercicios tiene
+sentido, casi todos mis errores no fueron de lógica, sino detalles pequeños, un espacio en un nombre
+de archivo, una ruta mal escrita, una línea en blanco que faltaba. Eso me hace pensar que la
+reproducibilidad depende tanto de entender los conceptos como de tener el hábito de trabajar de forma
+ordenada y documentada.
 
 ---
 
 ## Conclusión general
 
 El desarrollo de las seis actividades de la Sesión 2 permitió organizar y documentar un proyecto
-bioinformático de principio a fin trabajando exclusivamente desde la terminal: se escribió
+bioinformático de principio a fin trabajando exclusivamente desde la terminal, se escribió
 documentación en Markdown reproduciendo un texto de referencia, se creó y administró un repositorio
-propio en GitHub mediante `git` y GitHub CLI, se clonó y modificó un repositorio remoto registrando
-los cambios con *commits*, se gestionó la colaboración a través de la API de GitHub, se interpretó un
+propio en GitHub mediante `git` y GitHub CLI, se clonó y modificó un repositorio remoto registran los cambios con *commits*, se gestionó la colaboración a través de la API de GitHub, se interpretó un
 *pipeline* de Stacks identificando sus pasos y estructuras de control, y se reescribió ese *pipeline*
 en forma modular con un script maestro. Todo el trabajo quedó publicado en el repositorio
 `Tareas_BioinfRepro2026_CPA`, cuyo historial de *commits* constituye el registro reproducible del
