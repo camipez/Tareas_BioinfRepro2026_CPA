@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Tareas_BioinfRepro2026_CPA
 
 Coursework repository for **Bioinformatics and Reproducible Research for Genomic Analysis**

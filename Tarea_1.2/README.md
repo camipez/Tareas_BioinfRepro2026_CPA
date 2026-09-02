@@ -379,9 +379,9 @@ GitHub.*
 La lectura del script confirma que un *pipeline* no es más que una secuencia ordenada de programas
 donde la salida de uno alimenta al siguiente, y que sus loops permiten aplicar el mismo tratamiento
 a todas las muestras sin repetir código. Desde el punto de vista de la documentación, el ejercicio
-dejó una lección adicional: en Markdown la separación entre bloques mediante líneas en blanco no es
+dejó una lección adicional, en Markdown la separación entre bloques mediante líneas en blanco no es
 un detalle estético, sino la condición para que el contenido sea legible. El conflicto de fusión, por
-su parte, mostró que `git` no sobrescribe cambios divergentes de forma silenciosa, sino que exige una
+su parte, mostró que `git` no realiza cambios de forma silenciosa, sino que exige una
 decisión explícita del usuario.
 
 ---
