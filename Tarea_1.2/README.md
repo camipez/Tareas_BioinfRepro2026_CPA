@@ -155,7 +155,7 @@ de `git remote -v` confirma que la copia local quedó vinculada al remoto `origi
 
 GitHub CLI permite realizar desde la terminal operaciones que habitualmente se hacen por la interfaz
 web, incluida la creación del repositorio y su vinculación automática con la copia local. Trabajar
-de esta forma evita pasos manuales no documentados: cada acción queda escrita como un comando que
+de esta forma evita pasos manuales no documentados, cada acción queda escrita como un comando que
 puede repetirse o compartirse, lo que es coherente con el principio de reproducibilidad que ordena
 todo el curso.
 
@@ -349,13 +349,13 @@ La Figura 12 muestra la creación del archivo de respuestas y su publicación en
 **Figura 12.** *Creación del archivo `ejercicio5_respuestas.md`, publicación en GitHub y verificación
 de su contenido con `head`.*
 
-Sin embargo, la Figura 13 evidencia un problema de presentación: al no dejar líneas en blanco entre
+Sin embargo, la Figura 13 evidencia un problema de presentación al no dejar líneas en blanco entre
 bloques, Markdown interpretó las preguntas 2 a 5 como un solo párrafo continuo, quedando el texto
 ilegible.
 
 ![](figuras/figura13.png)
 
-**Figura 13.** *Visualización defectuosa en GitHub: la falta de líneas en blanco fusiona las
+**Figura 13.** *Visualización defectuosa en GitHub donde la falta de líneas en blanco fusiona las
 respuestas 2 a 5 en un único párrafo.*
 
 La Figura 14 documenta la corrección del archivo, que además requirió resolver un conflicto de
