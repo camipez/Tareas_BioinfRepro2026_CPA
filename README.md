@@ -26,3 +26,4 @@ a `bin/` directory holding them.
 | Directory | Content |
 |---|---|
 | [`Tarea_1.2/`](Tarea_1.2/) | Unit 1, Session 2 — Organisation of a bioinformatics project: Markdown, `git`/GitHub from the command line, and modularisation of a Stacks pipeline. |
+| [`Tarea_1.3/`](Tarea_1.3/) | Unit 1, Session 3 — Introduction to R. |
