@@ -369,7 +369,7 @@ DMRcate busca regiones completas del genoma donde la metilación cambia, en vez 
 
 Lo elegí porque en mi proyecto una sola sonda que da distinta puede ser ruido, pero si toda una región cambia junta eso es una señal mucho más confiable para relacionar la exposición a pesticidas con cambios en el ADN. DMRcate deja pasar de mirar sonda por sonda a mirar regiones completas, que es más fácil de conectar con un gen concreto.
 
-Descripción completa del pipeline en la página de la Wiki, [Sesion 1.3](https://github.com/camipez/Tareas_BioinfRepro2026_CPA/wiki/Sesion-1.3).
+Descripción en la página de la Wiki, [Sesion 1.3](https://github.com/camipez/Tareas_BioinfRepro2026_CPA/wiki/Sesion-1.3).
 ---
 
 ## Discusión
