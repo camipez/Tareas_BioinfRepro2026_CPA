@@ -42,9 +42,7 @@ Practicar en R lo que vimos en la Sesión 3, usando la consola y RStudio, para a
 ## Desarrollo
 
 ### Ejercicio 1
-
-
-*Crea una variable con el logaritmo base 10 de 50 y súmalo a otra variable cuyo valor sea igual a 5.*
+>*Crea una variable con el logaritmo base 10 de 50 y súmalo a otra variable cuyo valor sea igual a 5.*
 
 #### Metodología
 
@@ -68,9 +66,7 @@ log10 calcula directamente el logaritmo en base 10, sin tener que indicarle la b
 ---
 
 ### Ejercicio 2
-
-
-*Suma el número 2 a todos los números entre 1 y 150.*
+>*Suma el número 2 a todos los números entre 1 y 150.*
 
 #### Metodología
 
@@ -95,9 +91,7 @@ En R se le puede sumar un número a un vector completo de una sola vez, sin tene
 ---
 
 ### Ejercicio 3
-
-
-*¿Cuántos números son mayores a 20 en el vector -13432:234?*
+>*¿Cuántos números son mayores a 20 en el vector -13432:234?*
 
 #### Metodología
 
@@ -119,9 +113,7 @@ Cuando se compara un vector completo con un número, R devuelve una lista de ver
 ---
 
 ### Ejercicio 4
-
-
-*Carga en R el archivo PracUni1Ses3/maices/meta/maizteocintle_SNP50k_meta_extended.txt y ponlo en un objeto de R llamado meta_maiz.*
+>*Carga en R el archivo PracUni1Ses3/maices/meta/maizteocintle_SNP50k_meta_extended.txt y ponlo en un objeto de R llamado meta_maiz.*
 
 #### Metodología
 
@@ -148,13 +140,11 @@ read.delim abre un archivo de texto separado por tabulaciones y lo deja listo co
 ---
 
 ### Ejercicio 5
+>*a) Escribe un for loop para que divida 35 entre 1:10 e imprima el resultado en la consola.*
 
+>*b) Modifica el loop anterior para que haga las divisiones solo para los números nones, con un comando, no escribiendo c(1,3,...) a mano.*
 
-*a) Escribe un for loop para que divida 35 entre 1:10 e imprima el resultado en la consola.*
-
-*b) Modifica el loop anterior para que haga las divisiones solo para los números nones, con un comando, no escribiendo c(1,3,...) a mano.*
-
-*c) Modifica el loop anterior para que los resultados de correr todo el loop se guarden en una data.frame de dos columnas, la primera con el texto resultado para x, donde x es cada elemento del loop, y la segunda con el resultado correspondiente a cada elemento del loop.*
+>*c) Modifica el loop anterior para que los resultados de correr todo el loop se guarden en una data.frame de dos columnas, la primera con el texto resultado para x, donde x es cada elemento del loop, y la segunda con el resultado correspondiente a cada elemento del loop.*
 
 #### Metodología
 
@@ -201,9 +191,7 @@ La palabra next corta esa vuelta del ciclo y pasa directo a la siguiente, así q
 ---
 
 ### Ejercicio 6
-
-
-*Abre en RStudio el script PracUni1Ses3/mantel/bin/1.IBR_testing.r y determina qué hacen los dos for loops del script, qué paquetes se necesitan para correrlo y qué archivos se necesitan para correrlo.*
+>*Abre en RStudio el script PracUni1Ses3/mantel/bin/1.IBR_testing.r y determina qué hacen los dos for loops del script, qué paquetes se necesitan para correrlo y qué archivos se necesitan para correrlo.*
 
 #### Metodología
 
@@ -233,11 +221,8 @@ source corre un script completo, como si se hubiera escrito a mano en la consola
 ---
 
 ### Ejercicio 7
-
-
-
-*Escribe una función llamada calc.tetha que permita calcular tetha dados Ne y u como argumentos.*
-*Include the comment: Red banannas*
+>*Escribe una función llamada calc.tetha que permita calcular tetha dados Ne y u como argumentos.*
+>*Include the comment: Red banannas*
 
 
 #### Metodología
@@ -263,12 +248,9 @@ Escribir una función propia evita tener que escribir la misma cuenta cada vez q
 ---
 
 ### Ejercicio 8
+>*Al script del ejercicio de las pruebas de Mantel, agrega el código necesario para realizar un Partial Mantel test entre la matriz Fst y las matrices del presente y el LGM, >parcializando la matriz flat.*
 
-
-
-*Al script del ejercicio de las pruebas de Mantel, agrega el código necesario para realizar un Partial Mantel test entre la matriz Fst y las matrices del presente y el LGM, parcializando la matriz flat.*
-
-*Include the comment: Elefante blanco*
+>*Include the comment: Elefante blanco*
 
 #### Metodología
 
@@ -299,9 +281,7 @@ Este test compara dos matrices de distancia pero descontando el efecto de una te
 ---
 
 ### Ejercicio 9
-
-
-*Escribe un script que debe estar guardado en PracUni1Ses3/maices/bin y llamarse ExplorandoMaiz.R, que cargue en R el archivo maizteocintle_SNP50k_meta_extended.txt y responda, qué tipo de objeto se crea al cargar la base, cómo se ven las primeras 6 líneas del archivo, cuántas muestras hay, de cuántos estados se tienen muestras, cuántas muestras fueron colectadas antes de 1980, cuántas muestras hay de cada raza, a qué altitud promedio fueron colectadas las muestras, a qué altitud máxima y mínima fueron colectadas, crear una tabla nueva solo con las muestras de la raza Olotillo, crear una tabla nueva solo con las muestras de las razas Reventador, Jala y Ancho, y escribir esa última tabla a un archivo llamado submat.cvs en la carpeta meta.*
+>*Escribe un script que debe estar guardado en PracUni1Ses3/maices/bin y llamarse ExplorandoMaiz.R, que cargue en R el archivo maizteocintle_SNP50k_meta_extended.txt y >responda, qué tipo de objeto se crea al cargar la base, cómo se ven las primeras 6 líneas del archivo, cuántas muestras hay, de cuántos estados se tienen muestras, cuántas >muestras fueron colectadas antes de 1980, cuántas muestras hay de cada raza, a qué altitud promedio fueron colectadas las muestras, a qué altitud máxima y mínima fueron >colectadas, crear una tabla nueva solo con las muestras de la raza Olotillo, crear una tabla nueva solo con las muestras de las razas Reventador, Jala y Ancho, y escribir >esa última tabla a un archivo llamado submat.cvs en la carpeta meta.*
 
 #### Metodología
 
@@ -372,10 +352,7 @@ Antes de meterse a analizar cualquier base de datos conviene mirar primero cuán
 ---
 
 ### Ejercicio 10
-
-
-
-*Explorar los paquetes de R disponibles en CRAN y Bioconductor relacionados con el propio tipo de datos o análisis, elegir dos paquetes, indicar el nombre del paquete, la URL, una descripción con palabras propias de qué hace el paquete y la razón por la que se eligió para el proyecto propio, documentándolo en el informe con un vínculo a una página de la Wiki.*
+>*Explorar los paquetes de R disponibles en CRAN y Bioconductor relacionados con el propio tipo de datos o análisis, elegir dos paquetes, indicar el nombre del paquete, la >URL, una descripción con palabras propias de qué hace el paquete y la razón por la que se eligió para el proyecto propio, documentándolo en el informe con un vínculo a una >página de la Wiki.*
 
 #### Paquete 1, missMethyl
 
@@ -417,14 +394,13 @@ Esta sesión sirvió para pasar de usar R como una calculadora a empezar a progr
 
 Estos son ejercicios cortos que aparecen dentro del material de apoyo de la Sesión 3, Tipos_objetos_baseR.Rmd, no forman parte de la lista numerada de Ejercicio 1 a 10, así que quedan aparte, al final.
 
-
-1. *Crea un vector que contenga los números del 1 al 200 y los números del 300 al 450.*
-2. *Utiliza una sola línea de R para averiguar si el logaritmo base 10 de 20 es menor que la raíz cuadrada de 4.*
-3. *Crea un vector de caracteres con tres nombres de especies.*
-4. *Lee la ayuda de as.factor para determinar cómo crear un factor ordenado.*
-5. *Da un ejemplo de cómo convertir un vector integer a uno numérico.*
-6. *Muestra el valor del elemento de la segunda fila, tercera columna.*
-7. *Muestra las 2 primeras filas de la data.frame del ejercicio anterior.*
+>1. *Crea un vector que contenga los números del 1 al 200 y los números del 300 al 450.*
+>2. *Utiliza una sola línea de R para averiguar si el logaritmo base 10 de 20 es menor que la raíz cuadrada de 4.*
+>3. *Crea un vector de caracteres con tres nombres de especies.*
+>4. *Lee la ayuda de as.factor para determinar cómo crear un factor ordenado.*
+>5. *Da un ejemplo de cómo convertir un vector integer a uno numérico.*
+>6. *Muestra el valor del elemento de la segunda fila, tercera columna.*
+>7. *Muestra las 2 primeras filas de la data.frame del ejercicio anterior.*
 
 #### Metodología
 
