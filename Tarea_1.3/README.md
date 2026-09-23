@@ -167,7 +167,6 @@ for (i in 1:10) {
   if (i %% 2 == 0) next
   resultados <- rbind(resultados, data.frame(texto = paste("resultado para", i), valor = 35 / i))
 }
-resultados
 ```
 
 #### Resultados
