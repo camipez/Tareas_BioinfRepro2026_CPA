@@ -141,9 +141,7 @@ read.delim abre un archivo de texto separado por tabulaciones y lo deja listo co
 
 ### Ejercicio 5
 >*a) Escribe un for loop para que divida 35 entre 1:10 e imprima el resultado en la consola.*
-
 >*b) Modifica el loop anterior para que haga las divisiones solo para los números nones, con un comando, no escribiendo c(1,3,...) a mano.*
-
 >*c) Modifica el loop anterior para que los resultados de correr todo el loop se guarden en una data.frame de dos columnas, la primera con el texto resultado para x, donde x es cada elemento del loop, y la segunda con el resultado correspondiente a cada elemento del loop.*
 
 #### Metodología
