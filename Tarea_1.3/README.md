@@ -1,12 +1,12 @@
 # Tarea 1.3 — Introducción a R
 
-**Curso** Bioinformática e investigación reproducible para análisis genómicos
-**Unidad 1** Introducción a la programación — Sesión 3
-**Estudiante** Camila Astorga
-**Profesor** Ricardo Verdugo
-**Institución** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile
-**Fecha** 23-09-26
-**Repositorio** <https://github.com/camipez/Tareas_BioinfRepro2026_CPA>
+**Curso:** Bioinformática e investigación reproducible para análisis genómicos
+**Unidad 1:** Introducción a la programación — Sesión 3
+**Estudiante:** Camila Astorga
+**Profesor:** Ricardo Verdugo
+**Institución:** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile
+**Fecha:** 23-09-26
+**Repositorio:** <https://github.com/camipez/Tareas_BioinfRepro2026_CPA>
 
 ---
 
