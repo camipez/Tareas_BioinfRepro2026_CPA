@@ -448,4 +448,4 @@ Estas prácticas cortas sirvieron para ver de cerca los distintos tipos de objet
 ## Referencias
 
 1. u-genoma. (s.f.). *BioinfinvRepro — Unidad 1, Sesión 3, Introducción a R* [Repositorio de GitHub]. Recuperado el 15 de Septiembre del 2026, de <https://github.com/u-genoma/BioinfinvRepro/blob/master/Unidad1/Sesion3/Sesion3_Intro_a_R.md>
-2. u-genoma. (s.f.). *BioinfinvRepro — Unidad 1, Sesión 3, Tipos de objetos en R base* [Repositorio de GitHub]. Recuperado el 15 de Sepriembre del 2026, de <https://github.com/u-genoma/BioinfinvRepro/blob/master/Unidad1/Sesion3/Tipos_objetos_baseR.Rmd>
+2. u-genoma. (s.f.). *BioinfinvRepro — Unidad 1, Sesión 3, Tipos de objetos en R base* [Repositorio de GitHub]. Recuperado el 15 de Septiembre del 2026, de <https://github.com/u-genoma/BioinfinvRepro/blob/master/Unidad1/Sesion3/Tipos_objetos_baseR.Rmd>
