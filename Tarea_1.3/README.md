@@ -207,11 +207,11 @@ El script hace un análisis de aislamiento por resistencia con datos de Fst calc
 
 **Figura 8.** *El código fuente del script 1.IBR_testing.r abierto en RStudio, mostrando los paquetes y archivos que carga al principio.*
 
-Qué hacen los loops. El primer for carga las matrices de distancia de cada escenario de paisaje y saca su promedio. El segundo for recorre esos mismos escenarios y le corre a cada uno un test de Mantel, guardando cada resultado en el objeto IBRresults.
+- ¿Qué hacen los loops? El primer for carga las matrices de distancia de cada escenario de paisaje y saca su promedio. El segundo for recorre esos mismos escenarios y le corre a cada uno un test de Mantel, guardando cada resultado en el objeto IBRresults.
 
-Qué paquetes se necesitan. El script carga tres paquetes, ade4, ggplot2 y sp.
+- ¿Qué paquetes se necesitan? El script carga tres paquetes, ade4, ggplot2 y sp.
 
-Qué archivos se necesitan. Además del script mismo, 1.IBR_testing.r, adentro se cargan otros dos scripts propios con source, read.fst_summary_fix.R y read.effdist.R, y un archivo de datos con las coordenadas de los puntos muestreados, surveyed_mountains.tsv, aparte de las matrices de distancia genética y de resistencia del paisaje que el script va cargando más adelante.
+- ¿Qué archivos se necesitan? Además del script mismo, 1.IBR_testing.r, adentro se cargan otros dos scripts propios con source, read.fst_summary_fix.R y read.effdist.R, y un archivo de datos con las coordenadas de los puntos muestreados, surveyed_mountains.tsv, aparte de las matrices de distancia genética y de resistencia del paisaje que el script va cargando más adelante.
 
 #### Conclusión
 
@@ -248,7 +248,7 @@ Escribir una función propia evita tener que escribir la misma cuenta cada vez q
 
 ### Ejercicio 8
 >*Al script del ejercicio de las pruebas de Mantel, agrega el código necesario para realizar un Partial Mantel test entre la matriz Fst y las matrices del presente y el LGM, >parcializando la matriz flat.*
-
+>
 >*Include the comment: Elefante blanco*
 
 #### Metodología
@@ -280,7 +280,7 @@ Este test compara dos matrices de distancia pero descontando el efecto de una te
 ---
 
 ### Ejercicio 9
->*Escribe un script que debe estar guardado en PracUni1Ses3/maices/bin y llamarse ExplorandoMaiz.R, que cargue en R el archivo maizteocintle_SNP50k_meta_extended.txt y >responda, qué tipo de objeto se crea al cargar la base, cómo se ven las primeras 6 líneas del archivo, cuántas muestras hay, de cuántos estados se tienen muestras, cuántas >muestras fueron colectadas antes de 1980, cuántas muestras hay de cada raza, a qué altitud promedio fueron colectadas las muestras, a qué altitud máxima y mínima fueron >colectadas, crear una tabla nueva solo con las muestras de la raza Olotillo, crear una tabla nueva solo con las muestras de las razas Reventador, Jala y Ancho, y escribir >esa última tabla a un archivo llamado submat.cvs en la carpeta meta.*
+>*Escribe un script que debe estar guardado en PracUni1Ses3/maices/bin y llamarse ExplorandoMaiz.R, que cargue en R el archivo maizteocintle_SNP50k_meta_extended.txt y responda, qué tipo de objeto se crea al cargar la base, cómo se ven las primeras 6 líneas del archivo, cuántas muestras hay, de cuántos estados se tienen muestras, cuántas muestras fueron colectadas antes de 1980, cuántas muestras hay de cada raza, a qué altitud promedio fueron colectadas las muestras, a qué altitud máxima y mínima fueron colectadas, crear una tabla nueva solo con las muestras de la raza Olotillo, crear una tabla nueva solo con las muestras de las razas Reventador, Jala y Ancho, y escribir esa última tabla a un archivo llamado submat.cvs en la carpeta meta.*
 
 #### Metodología
 
