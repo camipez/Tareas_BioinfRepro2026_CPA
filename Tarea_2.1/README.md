@@ -243,16 +243,16 @@ Se abrieron los archivos `S11_R1_fastqc.html` y `S11_R2_fastqc.html` y se revis�
 
 | Módulo | R1 | R2 |
 |---|---|---|
-| Per base sequence quality | ✔ Pass |  Warning |
-| Per tile sequence quality | ✔ Pass | ✔ Pass |
-| Per sequence quality scores | ✔ Pass | ✔ Pass |
-| Per base sequence content | ✔ Pass | ✘ Fail |
-| Per sequence GC content | ✘ Fail | ✘ Fail |
-| Per base N content | ✔ Pass | ✔ Pass |
-| Sequence Length Distribution | ✔ Pass | ✔ Pass |
-| Sequence Duplication Levels | ✘ Fail | ✘ Fail |
+| Per base sequence quality |  Pass |  Warning |
+| Per tile sequence quality |  Pass |  Pass |
+| Per sequence quality scores |  Pass |  Pass |
+| Per base sequence content |  Pass |  Fail |
+| Per sequence GC content |  Fail |  Fail |
+| Per base N content |  Pass |  Pass |
+| Sequence Length Distribution |  Pass |  Pass |
+| Sequence Duplication Levels |  Fail |  Fail |
 | Overrepresented sequences |  Warning |  Warning |
-| Adapter Content | ✔ Pass | ✘ Fail |
+| Adapter Content |  Pass |  Fail |
 
 #### Conclusión
 
