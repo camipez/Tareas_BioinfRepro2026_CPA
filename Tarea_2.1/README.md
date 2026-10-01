@@ -358,7 +358,7 @@ El podado eliminó 4.517 lecturas de las 33.757 originales (quedaron 29.240 en a
 
 #### Conclusión
 
-Comparando R1 y R2, ambas lecturas son de buena calidad en general, con R2 levemente peor que R1 en las crudas, sobre todo hacia el final de la lectura, que es el patrón esperado en secuenciación pareada Illumina. El podado redujo el número de lecturas (de 33.757 a 29.240) y su largo pasó a ser variable, pero a cambio subió la calidad promedio, sobre todo en R2. Esto muestra el compromiso típico de cualquier paso de limpieza de datos NGS: se sacrifica algo de cantidad de datos para ganar calidad.
+Comparando R1 y R2, ambas lecturas son de buena calidad en general, con R2 levemente peor que R1 en las crudas, sobre todo hacia el final de la lectura, que es el patrón esperado en secuenciación pareada Illumina. El podado redujo el número de lecturas (de 33.757 a 29.240) y su largo pasó a ser variable, pero a cambio subió la calidad promedio, sobre todo en R2. Esto muestra el compromiso típico de cualquier paso de limpieza de datos NGS, se sacrifica algo de cantidad de datos para ganar calidad.
 
 
 
