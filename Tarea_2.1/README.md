@@ -1,7 +1,7 @@
 # Tarea 2.1 — Control de calidad de lecturas NGS
 
 **Curso** Bioinformática e investigación reproducible para análisis genómicos
-**Unidad 2** Control de calidad de datos NGS — Sesión 1
+**Unidad 2** Control de calidad de datos NGS — Sesión 4
 **Estudiante** Camila Astorga
 **Profesor** Ricardo Verdugo
 **Institución** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile
@@ -44,7 +44,7 @@ Realizar el control de calidad de las lecturas de secuenciación NGS de la muest
 
 ### Conexión al servidor y configuración inicial
 
-Antes de partir con los ejercicios, me conecté al servidor del curso por `ssh -Y`, creé mi carpeta personal de trabajo (`mkdir castorga`) y probé que FastQC funcionara corriéndolo sobre una muestra (S3) que todavía no era la mía definitiva, antes de confirmar que mi muestra asignada era la S11.
+Antes de partir con los ejercicios, me conecté al servidor del curso por `ssh -Y`, creé mi carpeta personal de trabajo (`mkdir castorga`) y probé que FastQC funcionara corriéndolo sobre una muestra (S3) que todavía no era la mía definitiva, antes de correr la muestra que elegí, la S11.
 
 ![Conexión inicial al servidor y prueba de FastQC](figuras/Figura_1.png)
 
@@ -116,7 +116,7 @@ python3 -c "s='CCCCCFFFFF'; print([ord(c)-33 for c in s])"
 
 **Figura 4.** *Traducción de los primeros 10 caracteres de calidad de la lectura 3 (`CCCCCFFFFF`) a valores Q, restando 33 al código ASCII de cada carácter (codificación Phred+33 / Sanger).*
 
-Los valores Q obtenidos para las primeras 10 bases son: `34, 34, 34, 34, 34, 37, 37, 37, 37, 37`. Todos corresponden a una probabilidad de error muy baja (Q34 ≈ 1 en 2.500 bases mal llamadas, Q37 ≈ 1 en 5.000), es decir, bases de muy buena calidad.
+Los valores Q obtenidos para las primeras 10 bases son: `34, 34, 34, 34, 34, 37, 37, 37, 37, 37`. Todos corresponden a una probabilidad de error muy baja (Q34 ≈ 1 en 2.500 bases , Q37 ≈ 1 en 5.000), es decir, bases de muy buena calidad, como vimos en clase  10^(-34/10)=0.0003981072.
 
 #### 1.4 Regiones blanco del panel
 
@@ -132,7 +132,7 @@ cat ../181004_curso_calidad_datos_NGS/regiones_blanco.bed
 
 **Figura 5.** *Vista parcial del archivo `regiones_blanco.bed`, con columnas cromosoma, inicio, fin, nombre de la región (que incluye coordenadas, gen y tipo de región), score y hebra.*
 
-El archivo `regiones_blanco.bed` sigue el formato BED estándar (columnas separadas por tabulación): cromosoma, posición de inicio, posición de fin, nombre/anotación de la región, score y hebra. La columna 4 (nombre) es un texto compuesto que incluye la posición, el o los genes involucrados y el tipo de región (por ejemplo `chr2:198264773:198265665:SF3B1+SF3B1+SF3B1:UserDefined` o `chr17:7576534:7577160:TP53+TP53+TP53:UserDefined`).
+El archivo `regiones_blanco.bed` sigue el formato BED estándar (columnas separadas por tabulación), cromosoma, posición de inicio, posición de fin, nombre/anotación de la región, score y hebra. La columna 4 (nombre) es un texto compuesto que incluye la posición, el o los genes involucrados y el tipo de región.
 
 #### 1.5 Lista de genes distintos y conteo
 
@@ -166,13 +166,13 @@ cut -f4 ../181004_curso_calidad_datos_NGS/regiones_blanco.bed | cut -d: -f4 | so
 
 **Figura 7.1** *Lista de valores distintos de la parte "gen" de la columna 4, y su conteo: 52.*
 
-Este segundo intento da **52** valores distintos, entre ellos ABL1, BRAF, BRCA1, BRCA2, CALR, CBL, CEBPA, CRLF2, EZH2, FLT3, IKZF1, IL7, JAK2, JAK3, KIT, KRAS, MLL, MPL, P2RY8, PAX5, PDGFRA, PDGFRB, PTEN, RB1, SF3B1, TP53 y WT1. Aun así, esto tampoco es 100% el número real de genes distintos: cuando una región cubre el mismo gen más de una vez, el archivo lo anota repetido y unido con `+` (por ejemplo `BRCA1`, `BRCA1+BRCA1` y `BRCA1+BRCA1+BRCA1` aparecen como tres valores distintos para `sort -u`, aunque las tres son el mismo gen). Contando a mano los símbolos únicos que aparecen en la lista (sin importar cuántas veces se repiten con `+`), el número real de genes distintos es 27. Para que el comando diera exactamente ese número haría falta un paso más de procesamiento (separar también por `+`), que no llegué a ejecutar.
+Este segundo intento da **52** valores distintos, entre ellos ABL1, BRAF, BRCA1, BRCA2, CALR, CBL, CEBPA, CRLF2, EZH2, FLT3, IKZF1, IL7, JAK2, JAK3, KIT, KRAS, MLL, MPL, P2RY8, PAX5, PDGFRA, PDGFRB, PTEN, RB1, SF3B1, TP53 y WT1. Aun así, esto tampoco es 100% el número real de genes distintos, cuando una región cubre el mismo gen más de una vez, el archivo lo anota repetido y unido con `+` (por ejemplo `BRCA1`, `BRCA1+BRCA1` y `BRCA1+BRCA1+BRCA1` aparecen como tres valores distintos para `sort -u`, aunque las tres son el mismo gen). Contando a mano los símbolos únicos que aparecen en la lista (sin importar cuántas veces se repiten con `+`), el número real de genes distintos es 27. 
 
 ---
 
 ### Ejercicio 2 — Informe de calidad con FastQC
 
-> Genere un informe de calidad con FastQC para una muestra (cada estudiante una muestra distinta), para R1 y R2.
+> Genere un informe de calidad con FastQC para una muestra, para R1 y R2.
 
 #### Metodología
 
@@ -208,7 +208,7 @@ scp bioinfo1@genoma.med.uchile.cl:castorga/S11_R2_fastqc* .
 
 ![Descarga vía scp de los reportes de R1](figuras/Figura_9.png)
 
-**Figura 9.** *Descarga exitosa de `S11_R1_fastqc.html` y `S11_R1_fastqc.zip` vía `scp`, ejecutado desde una terminal local (no conectada por SSH al servidor).*
+**Figura 9.** *Descarga exitosa de `S11_R1_fastqc.html` y `S11_R1_fastqc.zip` vía `scp`, ejecutado desde una terminal local.*
 
 Los dos archivos HTML (R1 y R2) quedaron descargados en mi computador y son los que se analizan en los ejercicios siguientes.
 
@@ -243,7 +243,7 @@ Se abrieron los archivos `S11_R1_fastqc.html` y `S11_R2_fastqc.html` y se revis�
 
 | Módulo | R1 | R2 |
 |---|---|---|
-| Per base sequence quality | ✔ Pass | ⚠ Warning |
+| Per base sequence quality | ✔ Pass |  Warning |
 | Per tile sequence quality | ✔ Pass | ✔ Pass |
 | Per sequence quality scores | ✔ Pass | ✔ Pass |
 | Per base sequence content | ✔ Pass | ✘ Fail |
@@ -251,7 +251,7 @@ Se abrieron los archivos `S11_R1_fastqc.html` y `S11_R2_fastqc.html` y se revis�
 | Per base N content | ✔ Pass | ✔ Pass |
 | Sequence Length Distribution | ✔ Pass | ✔ Pass |
 | Sequence Duplication Levels | ✘ Fail | ✘ Fail |
-| Overrepresented sequences | ⚠ Warning | ⚠ Warning |
+| Overrepresented sequences |  Warning |  Warning |
 | Adapter Content | ✔ Pass | ✘ Fail |
 
 #### Conclusión
@@ -266,11 +266,11 @@ R1 y R2 tienen el mismo número de lecturas (33.757) y la misma longitud (251 pb
 
 #### Resultados
 
-| Valor | Calculado manualmente (Ejercicio 1) | Reportado por FastQC |
+| Valor | Calculado manualmente  | Reportado por FastQC |
 |---|---|---|
 | Número de lecturas (R1) | 33.757 (`wc -l`/4) | 33.757 (Total Sequences) |
 | Largo de lectura | 251 pb (contando la secuencia de la lectura 3) | 251 (Sequence length) |
-| Codificación de calidad | Phred+33 (asumida para traducir la lectura 3) | Sanger / Illumina 1.9 (equivalente a Phred+33) |
+| Codificación de calidad | (Q34 ≈ 1 en 2.500 bases , Q37 ≈ 1 en 5.000) | Equivalente |
 
 #### Conclusión
 
@@ -282,7 +282,7 @@ Los tres valores calculados a mano coinciden exactamente con lo que reporta Fast
 
 > Seleccione las 4 figuras más importantes a su criterio para analizar la calidad de la corrida, cópielas a un archivo Markdown en su repositorio y agregue su interpretación de cada figura. Recuerde hacer la comparación de R1 y R2 para las secuencias crudas y las secuencias podadas.
 
-Elegí el módulo **Per base sequence quality** y el módulo **Per sequence quality scores**, para R1 y para R2, por ser los dos indicadores que primero se revisan para juzgar si una corrida sirve o no: el primero muestra cómo cae la calidad a lo largo del largo de la lectura, y el segundo resume la calidad promedio de todas las lecturas en un solo gráfico. Se repitieron para las secuencias crudas y para las podadas, tal como pide el enunciado.
+Elegí el módulo **Per base sequence quality** y el módulo **Per sequence quality scores**, para R1 y para R2, por ser los dos indicadores que primero se revisan para juzgar si una corrida sirve o no, el primero muestra cómo cae la calidad a lo largo del largo de la lectura, y el segundo resume la calidad promedio de todas las lecturas en un solo gráfico. Se repitieron para las secuencias crudas y para las podadas, tal como pide el enunciado.
 
 ##### Metodología (secuencias podadas)
 
@@ -319,7 +319,7 @@ La gran mayoría de las lecturas de R1 se concentran en un score promedio de 37-
 
 **Figura 12.** *Per base sequence quality de S11 R2 (datos crudos).*
 
-R2 también parte y se mantiene mayormente en zona verde, pero la caída de calidad hacia el final de la lectura es más marcada que en R1 (consistente con el "Warning" que FastQC le asigna a este módulo para R2 y no para R1, ver Ejercicio 4).
+R2 también parte y se mantiene mayormente en zona verde, pero la caída de calidad hacia el final de la lectura es más marcada que en R1 (consistente con el "Warning" que FastQC le asigna a este módulo para R2 y no para R1).
 
 ![Per sequence quality scores — S11 R2 crudo](figuras/Figura_13.png)
 
@@ -354,36 +354,28 @@ R2 también concentra sus lecturas en scores altos (37-38), de forma muy similar
 | %GC | 45 | 45 | 45 | 44 |
 | Per base sequence quality | Pass | Pass | Warning | Pass |
 
-El podado eliminó 4.517 lecturas de las 33.757 originales (quedaron 29.240 en ambos R1 y R2), y pasó de un largo fijo de 251 pb a un largo variable (36–251 en R1, 35–251 en R2): esto es justamente lo que hace un programa de trimming, cortar las partes de mala calidad de cada lectura en vez de descartarla completa, dejando lecturas más cortas. En el gráfico de per-base quality, la caída de calidad que se veía al final de la lectura cruda es bastante menos marcada después de podar, y R2 pasa de "Warning" a "Pass" en ese módulo, lo que confirma que el paso de podado sí mejoró la calidad general de las lecturas.
+El podado eliminó 4.517 lecturas de las 33.757 originales (quedaron 29.240 en ambos R1 y R2), y pasó de un largo fijo de 251 pb a un largo variable (36–251 en R1, 35–251 en R2), esto es justamente lo que hace un programa de trimming, cortar las partes de mala calidad de cada lectura en vez de descartarla completa, dejando lecturas más cortas. En el gráfico de per-base quality, la caída de calidad que se veía al final de la lectura cruda es bastante menos marcada después de podar, y R2 pasa de "Warning" a "Pass" en ese módulo, lo que confirma que el paso de podado sí mejoró la calidad general de las lecturas.
 
 #### Conclusión
 
 Comparando R1 y R2, ambas lecturas son de buena calidad en general, con R2 levemente peor que R1 en las crudas, sobre todo hacia el final de la lectura, que es el patrón esperado en secuenciación pareada Illumina. El podado redujo el número de lecturas (de 33.757 a 29.240) y su largo pasó a ser variable, pero a cambio subió la calidad promedio, sobre todo en R2. Esto muestra el compromiso típico de cualquier paso de limpieza de datos NGS: se sacrifica algo de cantidad de datos para ganar calidad.
 
----
 
-### Ejercicio 7 — Identificación del reporte
-
-> Incluya la identificación necesaria al inicio del reporte, incluyendo su nombre del curso, Tarea 1 de la Unidad 3, su nombre, y fecha.
-
-Esta identificación está al inicio de este documento (curso, unidad/sesión, estudiante, profesor y fecha). Nota: el enunciado original del tutorial dice literalmente "Tarea 1 de la Unidad 3", pero esta actividad corresponde a la Unidad 2, Sesión 1 del repositorio del curso — lo dejo señalado tal cual aparece en el enunciado, sin cambiarlo, ya que así está escrito en el tutorial original.
 
 ---
 
 ## Discusión
 
-Esta tarea era básicamente mi primera vez haciendo control de calidad de datos NGS de principio a fin, y lo que más me quedó claro es que el control de calidad no es un trámite antes de "lo importante": es la única forma de saber si los datos que vas a usar después sirven o no. Antes de este ejercicio yo me imaginaba que un archivo fastq era simplemente "la secuencia", y recién al ubicar la lectura 3 línea por línea entendí que cada read trae su propia información de calidad pegada, base por base, y que esa información es la que después usa cualquier programa de alineamiento o llamado de variantes para decidir en qué confiar y en qué no.
+Esta tarea era básicamente mi primera vez haciendo control de calidad de datos NGS de principio a fin, y lo que más me quedó claro es que el control de calidad es la única forma de saber si los datos que vas a usar después sirven o no. Antes de este ejercicio yo me imaginaba que un archivo fastq era simplemente "la secuencia", y recién al ubicar la lectura 3 línea por línea entendí que cada read trae su propia información de calidad pegada, base por base, y que esa información es la que después usa cualquier programa de alineamiento o llamado de variantes para decidir en qué confiar y en qué no.
 
-La comparación entre R1 y R2 me pareció el resultado más interesante de todos. Antes de ver los módulos de FastQC, no tenía ninguna razón para esperar que las dos lecturas de un mismo fragmento fueran distintas en calidad, pero R2 salió consistentemente peor que R1 en casi todos los indicadores (calidad por base, contenido por base, contenido de adaptadores). Investigando un poco entendí que esto es conocido y tiene que ver con cómo secuencia Illumina: R2 se lee después, cuando el fragmento ya lleva más tiempo expuesto en la celda de flujo y la señal se degrada más. Me sirvió para entender que "R1 y R2" no son dos copias iguales de la misma información, sino que hay una asimetría real entre ellas que hay que tener en cuenta al analizar datos pareados.
+La comparación entre R1 y R2 me pareció el resultado más interesante de todos. Antes de ver los módulos de FastQC, no tenía ninguna razón para esperar que las dos lecturas de un mismo fragmento fueran distintas en calidad, pero R2 salió consistentemente peor que R1 en casi todos los indicadores (calidad por base, contenido por base, contenido de adaptadores). Investigando un poco entendí que esto es conocido y tiene que ver con cómo secuencia Illumina, R2 se lee después, cuando el fragmento ya lleva más tiempo expuesto en la celda de flujo y la señal se degrada más. Me sirvió para entender que "R1 y R2" no son dos copias iguales de la misma información, algo que hay que tener en cuenta al analizar datos pareados.
 
-Lo mismo con la comparación entre datos crudos y podados: antes de correr FastQC sobre las secuencias filtradas, para mí "podar" las lecturas era solo un paso más del protocolo, sin pensar mucho en qué estaba sacrificando. Ver que se perdieron 4.517 lecturas (de 33.757 a 29.240) y que el largo pasó de ser fijo a variable, a cambio de que R2 pasara de "Warning" a "Pass" en calidad por base, me hizo ver ese paso como una decisión con un costo real: se gana calidad, pero se pierde una parte de los datos. No es gratis, y entender ese balance me parece importante antes de decidir qué tan agresivo conviene podar en un análisis real.
+Lo mismo con la comparación entre datos crudos y podados, antes de correr FastQC sobre las secuencias filtradas, para mí "podar" las lecturas era solo un paso más del protocolo, sin pensar mucho en qué estaba sacrificando. Ver que se perdieron 4.517 lecturas (de 33.757 a 29.240) y que el largo pasó de ser fijo a variable, a cambio de que R2 pasara de "Warning" a "Pass" en calidad por base, me hizo ver ese paso como una decisión con un costo real: se gana calidad, pero se pierde una parte de los datos. No es gratis, y entender ese balance me parece importante antes de decidir qué tan agresivo conviene podar en un análisis real.
 
-También quiero ser honesta sobre un par de cosas que no me cerraron del todo. La traducción del código Phred la hice asumiendo la codificación Phred+33, porque es el estándar actual de Illumina y coincidió con lo que FastQC reportó como "Sanger/Illumina 1.9", pero el tutorial del curso no explica en ningún lado cómo hacer esa traducción, solo dice "usando la codificación entregada en clase" — revisé el repositorio completo y no encontré ese dato escrito en ninguna parte, así que me quedé con el supuesto de que es Phred+33 por ser el estándar, sin poder confirmarlo 100% contra un apunte de clase. Y con la lista de genes del panel me pasó algo parecido: el archivo `regiones_blanco.bed` no tiene una columna "gen" limpia, así que lo que iba contando cambiaba según qué tan a fondo procesara el texto de la columna 4 (369 regiones distintas, luego 52 valores al separar por ":", y recién contando a mano llegué a 27 genes realmente distintos). Prefiero dejar esas dos cosas marcadas así, tal como me fueron saliendo, en vez de pulirlas para que parezcan más ordenadas de lo que en realidad fueron.
+También quiero ser honesta,la lista de genes del panel me generó un poco de confusión, ya que el archivo `regiones_blanco.bed` no tiene una columna "gen" limpia, así que lo que iba contando cambiaba según qué tan a fondo procesara el texto de la columna 4 (369 regiones distintas, luego 52 valores al separar por ":", y recién contando a mano llegué a 27 genes realmente distintos). Prefiero dejar esas dos cosas marcadas así, tal como me fueron saliendo, en vez de pulirlas para que parezcan más ordenadas de lo que en realidad fueron.
 
-En general, creo que el ejercicio cumplió su objetivo: aprender a leer un informe de FastQC con sentido crítico, no solo mirar si algo quedó en verde o en rojo, sino entender por qué, y poder respaldar con comandos propios los mismos números que entrega el programa.
+En general, creo que el ejercicio cumplió su objetivo, aprender a leer un informe de FastQC con sentido crítico, no solo mirar si algo quedó en verde o en rojo, sino entender por qué, y poder respaldar con comandos propios los mismos números que entrega el programa.
 
 ## Conclusión general
 
-Esta tarea me llevó por todo el camino que recorre un archivo de secuenciación antes de poder confiar en él: partí mirando el fastq crudo de la muestra S11 a mano, con comandos Unix, contando sus 33.757 lecturas y revisando lectura por lectura qué información trae cada una (su ID, su secuencia, y su calidad codificada en Phred); después usé el archivo de regiones blanco del panel para entender qué genes se estaban secuenciando; y recién ahí pasé a generar el informe de FastQC para R1 y R2, bajarlo a mi computador, analizarlo, y comparar sus resultados con lo que había calculado a mano.
-
-De ese recorrido, lo que más rescato es que los números cuadraron: el conteo manual de lecturas, el largo de lectura y la codificación de calidad que calculé a mano coincidieron exactamente con lo que reportó FastQC, lo que me da confianza en que entendí bien la estructura del archivo fastq y no solo seguí comandos sin saber qué hacían. A nivel de resultados, la muestra S11 quedó con datos de buena calidad tanto en R1 como en R2, con R2 algo más ruidosa que R1 (patrón esperado en secuenciación Illumina pareada, no un problema de esta corrida), y podar las secuencias mejoró la calidad —sobre todo en R2, que pasó de "Warning" a "Pass" en calidad por base— aunque a costa de perder 4.517 lecturas y de que el largo dejara de ser fijo. No fue un ejercicio sin tropiezos: tuve que aprender a mano que `scp` se corre desde la terminal local y no desde la sesión SSH, y me quedaron un par de cosas sin poder cerrar del todo (la codificación Phred no está documentada en el repo del curso, y la columna de genes del archivo bed no se presta para un conteo 100% limpio), que preferí dejar señaladas en vez de maquillarlas. Con todo eso, los datos de S11 me parecen aptos para seguir a la siguiente etapa del análisis.
+Esta tarea cubrió todo el proceso de control de calidad de la muestra S11, desde explorar el fastq crudo a mano con comandos Unix (contar lecturas, identificar la lectura 3, traducir su calidad Phred, revisar el panel de genes), hasta generar el informe de FastQC para R1 y R2 y comparar sus resultados con lo calculado manualmente. Los números coincidieron exactamente entre ambos método.La muestra quedó con datos de buena calidad en general, con R2 algo más ruidosa que R1 (patrón típico de Illumina) y una mejora clara tras podar las secuencias, aunque a costa de perder 4.517 lecturas. En el camino tuve algunos errores,(como el error con scp y un par de cosas que no pude confirmar del todo como el conteo exacto de genes, que dejé señaladas mis conclusiones. 
