@@ -132,7 +132,7 @@ cat ../181004_curso_calidad_datos_NGS/regiones_blanco.bed
 
 **Figura 5.** *Vista parcial del archivo `regiones_blanco.bed`, con columnas cromosoma, inicio, fin, nombre de la región (que incluye coordenadas, gen y tipo de región), score y hebra.*
 
-El archivo `regiones_blanco.bed` sigue el formato BED estándar (columnas separadas por tabulación), cromosoma, posición de inicio, posición de fin, nombre/anotación de la región, score y hebra. La columna 4 (nombre) es un texto compuesto que incluye la posición, el o los genes involucrados y el tipo de región.
+El archivo `regiones_blanco.bed` sigue el formato BED estándar (columnas separadas por tabulación), cromosoma, posición de inicio, posición de fin, nombre/anotación de la región, score y hebra. La columna 4 es un texto compuesto que incluye la posición, el o los genes involucrados y el tipo de región.
 
 #### 1.5 Lista de genes distintos y conteo
 
