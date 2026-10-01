@@ -166,7 +166,7 @@ cut -f4 ../181004_curso_calidad_datos_NGS/regiones_blanco.bed | cut -d: -f4 | so
 
 **Figura 7.1** *Lista de valores distintos de la parte "gen" de la columna 4, y su conteo: 52.*
 
-Este segundo intento da **52** valores distintos, entre ellos ABL1, BRAF, BRCA1, BRCA2, CALR, CBL, CEBPA, CRLF2, EZH2, FLT3, IKZF1, IL7, JAK2, JAK3, KIT, KRAS, MLL, MPL, P2RY8, PAX5, PDGFRA, PDGFRB, PTEN, RB1, SF3B1, TP53 y WT1. Aun así, esto tampoco es 100% el número real de genes distintos, cuando una región cubre el mismo gen más de una vez, el archivo lo anota repetido y unido con `+` (por ejemplo `BRCA1`, `BRCA1+BRCA1` y `BRCA1+BRCA1+BRCA1` aparecen como tres valores distintos para `sort -u`, aunque las tres son el mismo gen). Contando a mano los símbolos únicos que aparecen en la lista (sin importar cuántas veces se repiten con `+`), el número real de genes distintos es 27. 
+Este segundo intento da **52** valores distintos, entre ellos ABL1, BRAF, BRCA1, BRCA2, CALR, CBL, CEBPA, CRLF2, EZH2, FLT3, etc. Aun así, esto tampoco es 100% el número real de genes distintos, cuando una región cubre el mismo gen más de una vez, el archivo lo anota repetido y unido con `+` (por ejemplo `BRCA1`, `BRCA1+BRCA1` y `BRCA1+BRCA1+BRCA1` aparecen como tres valores distintos para `sort -u`, aunque las tres son el mismo gen). Contando a mano los símbolos únicos que aparecen en la lista (sin importar cuántas veces se repiten con `+`), el número real de genes distintos es 27. 
 
 ---
 
@@ -256,7 +256,7 @@ Se abrieron los archivos `S11_R1_fastqc.html` y `S11_R2_fastqc.html` y se revis�
 
 #### Conclusión
 
-R1 y R2 tienen el mismo número de lecturas (33.757) y la misma longitud (251 pb), como corresponde a lecturas pareadas. R2 tiene más módulos en amarillo/rojo que R1 (calidad por base marcada en amarillo, y contenido por base y contenido de adaptadores marcados en rojo), lo que es un patrón esperado en secuenciación Illumina: la segunda lectura (R2) suele tener algo más de ruido que la primera (R1). El "Fail" en GC content y en niveles de duplicación en ambas lecturas es consistente con tratarse de un panel dirigido (regiones blanco específicas), donde se espera mayor duplicación y una distribución de GC distinta a la de un genoma completo, no necesariamente un problema de calidad de la corrida en sí.
+R1 y R2 tienen el mismo número de lecturas (33.757) y la misma longitud (251 pb), como corresponde a lecturas pareadas. R2 tiene más módulos en amarillo/rojo que R1 (calidad por base marcada en amarillo, y contenido por base y contenido de adaptadores marcados en rojo), lo que es un patrón esperado en secuenciación Illumina, la segunda lectura (R2) suele tener algo más de ruido que la primera (R1). El "Fail" en GC content y en niveles de duplicación en ambas lecturas es consistente con tratarse de un panel dirigido (regiones blanco específicas), donde se espera mayor duplicación y una distribución de GC distinta a la de un genoma completo, no necesariamente un problema de calidad de la corrida en sí.
 
 ---
 
