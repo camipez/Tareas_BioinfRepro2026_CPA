@@ -1,12 +1,12 @@
-# Tarea 2.2 — Datos de genotipos (VCF y Plink)
+# Tarea 2.1 — Datos de genotipos (VCF y Plink)
 
-**Curso:** Bioinformática e investigación reproducible para análisis genómicos  
-**Unidad 2:** Genética de poblaciones con software especializado — Sesión 2  
-**Estudiante:** Camila Astorga  
-**Profesor:** Ricardo Verdugo  
-**Institución:** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile  
-**Fecha:** 09-10-26  
-**Repositorio:** <https://github.com/camipez/Tareas_BioinfRepro2026_CPA>
+**Curso** Bioinformática e investigación reproducible para análisis genómicos
+**Unidad 2** Control de calidad de datos NGS — Sesión 4
+**Estudiante** Camila Astorga
+**Profesor** Ricardo Verdugo
+**Institución** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile
+**Fecha** 30-09-26
+**Repositorio** <https://github.com/camipez/Tareas_Bioinfrepro2026_CPA> 
 
 ---
 
