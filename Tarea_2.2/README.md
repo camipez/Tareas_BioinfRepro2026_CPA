@@ -33,7 +33,7 @@ Practicar el manejo de archivos de genotipos en formato VCF y Plink usando VCFto
 | Ruta | Contenido |
 |---|---|
 | [`Prac_Uni5/`](Prac_Uni5/) | Scripts (`plot_maf.R`, `update.sh`, `actualizar_id.sh`, `discordancia_sexo.sh` y `contingencia.sh`). |
-| [`figuras/`](figuras/) | Capturas citadas en este informe. |
+| [`Figuras/`](figuras/) | Capturas citadas en este informe. |
 
 Los archivos grandes, como el VCF filtrado, los archivos `.ped` y los `.bed`, no se subieron al repositorio por su tamaño y quedaron en el servidor.
 
