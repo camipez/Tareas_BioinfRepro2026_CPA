@@ -1,12 +1,12 @@
-# Tarea 2.1 — Datos de genotipos (VCF y Plink)
+# Tarea 2.2 — Datos de genotipos (VCF y Plink)
 
-**Curso** Bioinformática e investigación reproducible para análisis genómicos
-**Unidad 2** Control de calidad de datos NGS — Sesión 4
-**Estudiante** Camila Astorga
-**Profesor** Ricardo Verdugo
-**Institución** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile
-**Fecha** 09-10-26
-**Repositorio** <https://github.com/camipez/Tareas_Bioinfrepro2026_CPA> 
+**Curso:** Bioinformática e investigación reproducible para análisis genómicos  
+**Unidad 2:** Genética de poblaciones con software especializado — Sesión 2  
+**Estudiante:** Camila Astorga  
+**Profesor:** Ricardo Verdugo  
+**Institución:** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile  
+**Fecha:** 09-10-26  
+**Repositorio:** <https://github.com/camipez/Tareas_BioinfRepro2026_CPA>
 
 ---
 
@@ -19,7 +19,6 @@ Practicar el manejo de archivos de genotipos en formato VCF y Plink usando VCFto
 ### Objetivos específicos
 
 - Explorar un archivo VCF grande con VCFtools sin copiarlo, contando individuos, variantes, datos perdidos y cobertura.
-- Sacar una ventana de 2 Mb del genoma y guardarla en un VCF con el nombre que pide el ejercicio.
 - Calcular frecuencias alélicas, el espectro de la frecuencia del alelo menor (MAF), la heterocigosidad por individuo y la diversidad nucleotídica por sitio.
 - Filtrar variantes según su número de alelos y según su MAF.
 - Convertir un VCF a formato Plink y un archivo Plink binario a formato texto.
@@ -33,7 +32,8 @@ Practicar el manejo de archivos de genotipos en formato VCF y Plink usando VCFto
 
 | Ruta | Contenido |
 |---|---|
-| [`Figuras/`](figuras/) | Capturas citadas en este informe. |
+| [`Prac_Uni5/`](Prac_Uni5/) | Scripts (`plot_maf.R`, `update.sh`, `actualizar_id.sh`, `discordancia_sexo.sh` y `contingencia.sh`). |
+| [`figuras/`](figuras/) | Capturas citadas en este informe. |
 
 Los archivos grandes, como el VCF filtrado, los archivos `.ped` y los `.bed`, no se subieron al repositorio por su tamaño y quedaron en el servidor.
 
@@ -77,7 +77,7 @@ La variable `VCF` guarda la ruta del archivo para no tener que escribirla en cad
 vcftools --vcf $VCF --out conteo
 ```
 
-Como no se le pide ninguna operación, vcftools solo lee el archivo y entrega un resumen del número de individuos y de sitios. La opción `--out` define el prefijo del archivo `.log`, donde queda guardado el mismo resumen. vcftools muestra además varias advertencias sobre el encabezado del VCF, que no impiden que el programa termine.
+Como no se le pide ninguna operación, vcftools lee el archivo y entrega un resumen del número de individuos y de sitios. La opción `--out` define el prefijo del archivo `.log`, donde queda guardado el mismo resumen. 
 
 #### Resultados
 
@@ -115,7 +115,7 @@ Con `--max-missing 1` se queda uno solo con los sitios que están genotipados en
 ---
 
 ### Ejercicio 3 (VCF)
->*Genera un archivo en tu carpeta de trabajo que contenga solo SNPs en una ventana de 2Mb en cualquier cromosoma. Nombra el archivo CLG_Chr\<X\>_\<Start\>-\<End\>Mb.vcf donde \<X\> es número del cromosoma, \<Start\> es el inicio de la ventana genómica y \<End\> es el final en megabases.*
+>*Genera un archivo en tu carpeta de trabajo que contenga solo SNPs en una ventana de 2Mb en cualquier cromosoma. Nombra el archivo CLG_Chr\<X\>_\<Start\>-\<End\>Mb.vcf donde  es número del cromosoma, es el inicio de la ventana genómica y es el final en megabases.*
 
 #### Metodología
 
@@ -135,7 +135,7 @@ Las opciones `--chr`, `--from-bp` y `--to-bp` delimitan la ventana de 10 a 12 Mb
 
 #### Conclusión
 
-Con `--chr`, `--from-bp` y `--to-bp` se puede sacar un pedazo del genoma sin tener que copiar el archivo completo de 2.5 G. Trabajar con una ventana de 2 Mb deja un archivo de solo 1.6 M, mucho más fácil de manejar para hacer pruebas.
+Con `--chr`, `--from-bp` y `--to-bp` se puede sacar un pedazo del genoma sin tener que copiar el archivo completo de 2.5 G. Trabajar con una ventana de 2 Mb deja un archivo de solo 1.6 M.
 
 ---
 
@@ -179,11 +179,11 @@ La opción `--depth` calcula la profundidad media de cada individuo y la guarda 
 
 ![Resultado Ejercicio 5 VCF](figuras/Figura_6.png)
 
-**Figura 6.** *La terminal mostrando la cobertura de los individuos, con un promedio de 2,59x, un mínimo de 1,57x y un máximo de 3,99x.*
+**Figura 6.** *La terminal mostrando la cobertura de los individuos, con un promedio de 2,59, un mínimo de 1,57 y un máximo de 3,99.*
 
 #### Conclusión
 
-`--depth` entrega la cobertura de cada individuo y awk la resume en un solo número. Mirar además el mínimo y el máximo es importante, porque un individuo con muy poca cobertura tiene genotipos menos confiables aunque el promedio se vea bien. La cobertura promedio fue de 2,59x, con valores entre 1,57x y 3,99x, una cobertura baja, así que los genotipos de este conjunto deben interpretarse con cuidado.
+`--depth` entrega la cobertura de cada individuo y awk la resume en un solo número. Mirar además el mínimo y el máximo es importante, porque un individuo con muy poca cobertura tiene genotipos menos confiables aunque el promedio se vea bien. La cobertura promedio fue de 2,59, con valores entre 1,57 y 3,99, una cobertura baja, así que los genotipos de este conjunto deben interpretarse con cuidado.
 
 ---
 
@@ -278,13 +278,13 @@ El script recibe como argumentos el archivo de frecuencias y el nombre del PDF d
 
 **Figura 9.** *La terminal mostrando la ejecución del script de R y el archivo histograma_MAF.pdf generado, de 5.0 K.*
 
-![Resultado Ejercicio 8 VCF, histograma](figuras/Figura_10.png)
+![Resultado Ejercicio 8 VCF, histograma](figuras/mapa.png)
 
 **Figura 10.** *Histograma del espectro de MAF de las 4.447.324 variantes bialélicas.*
 
 #### Conclusión
 
-El MAF solo se puede calcular en sitios con dos alelos, por eso el histograma se hizo con el archivo bialélico. Un histograma deja ver de un vistazo cuántas variantes son raras y cuántas son comunes, algo que no se alcanza a ver en una tabla de millones de filas. En la Figura 10 hay una barra muy alta en MAF cercano a 0, de unas 350.000 variantes, y después el número de variantes por intervalo se mantiene bastante parejo, entre unas 30.000 y 150.000, hasta MAF 0.5. Los picos y los vacíos entre barras se deben probablemente a que con solo 18 individuos las frecuencias posibles son pocas y discretas.
+El MAF solo se puede calcular en sitios con dos alelos o más, por eso el histograma se hizo con el archivo bialélico. Un histograma deja ver de un vistazo cuántas variantes son raras y cuántas son comunes, algo que no se alcanza a ver en una tabla de millones de filas. En la Figura 10 hay una barra muy alta en MAF cercano a 0, de unas 350.000 variantes, y después el número de variantes por intervalo se mantiene bastante parejo, entre unas 30.000 y 150.000, hasta MAF 0.5. Los picos y los vacíos entre barras se deben probablemente a que con solo 18 individuos las frecuencias posibles son pocas y discretas.
 
 ---
 
@@ -301,7 +301,7 @@ El comando separa el alelo de su frecuencia en las columnas 5 y 6, se queda con 
 
 #### Resultados
 
-![Resultado Ejercicio 9 VCF](figuras/Figura_11.png)
+![Resultado Ejercicio 9 VCF](figuras/Figura_10.png)
 
 **Figura 11.** *La terminal mostrando que 667.462 sitios tienen una frecuencia del alelo menor menor a 0.05, es decir un 15,01 % de las 4.447.324 variantes bialélicas.*
 
@@ -328,13 +328,13 @@ awk '{s+=$2; n++; if (min==""||$2<min) min=$2; if ($2>max) max=$2} END {print "p
 
 #### Resultados
 
-![Resultado Ejercicio 10 VCF](figuras/Figura_12.png)
+![Resultado Ejercicio 10 VCF](figuras/Figura_11.png)
 
 **Figura 12.** *La terminal mostrando las primeras filas de la heterocigosidad por individuo y un promedio de 0,164, con valores entre 0,070 y 0,236.*
 
 #### Conclusión
 
-La salida de `--het` no entrega directamente la heterocigosidad, pero se obtiene con una cuenta simple a partir de los homocigotos observados. Mirar el rango entre individuos sirve para detectar casos atípicos, que podrían deberse a contaminación, parentesco o problemas de calidad. La heterocigosidad observada promedio fue de 0,164, con valores entre 0,070 y 0,236. Entre los individuos que se ven en la salida, Ari_006, Ari_021 y Ari_023 tienen coeficientes F de 0,55 a 0,60, más altos que los 0,32 a 0,43 de los demás, y Ari_006 y Ari_021 son además los de menor heterocigosidad, 0,13. El mínimo de 0,070 pertenece a un individuo que no aparece entre esas filas.
+La salida de `--het` no entrega directamente la heterocigosidad, pero se obtiene calculándola a partir de los homocigotos observados. Mirar el rango entre individuos sirve para detectar casos atípicos, que podrían deberse a contaminación, parentesco o problemas de calidad. La heterocigosidad observada promedio fue de 0,164, con valores entre 0,070 y 0,236. Entre los individuos que se ven en la salida, Ari_006, Ari_021 y Ari_023 tienen coeficientes F de 0,55 a 0,60, más altos que los 0,32 a 0,43 de los demás, y Ari_006 y Ari_021 son además los de menor heterocigosidad, 0,13. El mínimo de 0,070 pertenece a un individuo que no aparece entre esas filas.
 
 ---
 
@@ -353,7 +353,7 @@ awk 'NR>1 {s+=$3; n++} END {print s/n}' diversidad_nucleotidica.sites.pi
 
 #### Resultados
 
-![Resultado Ejercicio 11 VCF](figuras/Figura_13.png)
+![Resultado Ejercicio 11 VCF](figuras/Figura_12.png)
 
 **Figura 13.** *La terminal mostrando las primeras filas del archivo de diversidad por sitio y un promedio de 0,314.*
 
@@ -377,7 +377,7 @@ ls -lh CLG_maf05.recode.vcf
 
 #### Resultados
 
-![Resultado Ejercicio 12 VCF](figuras/Figura_14.png)
+![Resultado Ejercicio 12 VCF](figuras/Figura_13.png)
 
 **Figura 14.** *La terminal mostrando que quedan 3.781.909 sitios de 4.450.360 después del filtro por frecuencia del alelo menor.*
 
@@ -406,9 +406,6 @@ ls -lh GATK_ChGdb_plink*
 
 **Figura 15.** *La terminal mostrando la conversión del VCF a formato texto de Plink y los archivos .map, de 102 M, y .ped, de 306 M.*
 
-![Resultado Ejercicio 13 VCF, formato binario](figuras/Figura_16.png)
-
-**Figura 16.** *La terminal mostrando la conversión a formato binario, con 4.447.324 variantes y 18 personas, y los archivos .bed, de 22 M, .bim, de 119 M, y .fam, de 482 bytes.*
 
 #### Conclusión
 
@@ -431,7 +428,7 @@ Los archivos se copiaron desde la carpeta compartida a la carpeta de trabajo. El
 
 #### Resultados
 
-![Resultado Ejercicio 1 Plink](figuras/Figura_17.png)
+![Resultado Ejercicio 1 Plink](figuras/Figura_16.png)
 
 **Figura 17.** *La terminal mostrando la copia de los archivos y su listado, chilean_all48_hg19.bed, .bim, .fam y chilean_all48_hg19_popinfo.csv, con sus tamaños.*
 
@@ -464,7 +461,7 @@ ls -lh chilean_all48_hg19*
 
 #### Resultados
 
-![Resultado Ejercicio 2a Plink](figuras/Figura_18.png)
+![Resultado Ejercicio 2a Plink](figuras/Figura_17.png)
 
 **Figura 18.** *La terminal mostrando la conversión de bed a ped, con 813.366 variantes y 48 personas (27 hombres y 21 mujeres), y los archivos chilean_all48_hg19.ped, de 149 M, y chilean_all48_hg19.map, de 19 M.*
 
@@ -487,7 +484,7 @@ plink --bfile chilean_all48_hg19 --recode --maf 0.05 --mind 0.1 --out chilean_al
 
 #### Resultados
 
-![Resultado Ejercicio 2b Plink](figuras/Figura_19.png)
+![Resultado Ejercicio 2b Plink](figuras/Figura_18.png)
 
 **Figura 19.** *La terminal mostrando que se removieron 347.070 SNPs por frecuencia del alelo menor y 2 individuos por datos perdidos, quedando 466.296 SNPs y 46 individuos.*
 
@@ -511,7 +508,7 @@ Aquí se usó `--file` y no `--bfile` porque la entrada es el archivo en formato
 
 #### Resultados
 
-![Resultado Ejercicio 2c Plink](figuras/Figura_20.png)
+![Resultado Ejercicio 2c Plink](figuras/Figura_19.png)
 
 **Figura 20.** *La terminal mostrando las primeras filas del archivo .hwe, calculado con 466.296 variantes y 46 personas.*
 
@@ -548,7 +545,7 @@ El primer comando muestra las primeras filas del archivo. Los tres awk cuentan c
 
 #### Resultados
 
-![Resultado Ejercicio 2d Plink](figuras/Figura_21.png)
+![Resultado Ejercicio 2d Plink](figuras/Figura_20.png)
 
 **Figura 21.** *La terminal mostrando las primeras filas del archivo .fam y el conteo de individuos por sexo, 27 hombres y 21 mujeres, por fenotipo, los 48 controles, y por padre y madre, los 48 con 0 0.*
 
@@ -583,21 +580,60 @@ El archivo tiene las columnas `IndID`, `Sex`, `Source`, `Region`, `Population`, 
 `--update-ids` necesita un archivo de cuatro columnas, con el ID de familia antiguo, el ID del individuo antiguo, el ID de familia nuevo y el ID del individuo nuevo. Ese archivo se armó con un primer script, `update.sh`.
 
 ```bash
+
 #!/bin/bash
-# columnas de popinfo, según el head del archivo
+
+# Columnas del archivo popinfo
 ID_COL=1
 ANC_COL=6
 
+# Crear el archivo con los IDs y sus ancestrías
 awk -v idc=$ID_COL -v anc=$ANC_COL '
 BEGIN { printf "" > "sin_match_ids.txt" }
-NR==FNR { if (FNR>1) { split($0, f, ","); a=f[anc]; gsub(/[\r"]/,"",a); gsub(/ /,"_",a); id=f[idc]; gsub(/[\r"_-]/,"",id); ancestria[toupper(id)]=a } next }
-{ clave=toupper($2); if (!(clave in ancestria)) { falta++; print $2 > "sin_match_ids.txt"; next }
-  print $1, $2, ancestria[clave], $2 }
-END { print "individuos sin ancestría", falta+0 > "/dev/stderr" }
+
+# Leer popinfo y guardar la ancestría de cada individuo
+NR==FNR {
+    if (FNR>1) {
+        split($0, f, ",")
+        a=f[anc]
+        gsub(/[\r"]/,"",a)
+        gsub(/ /,"_",a)
+        id=f[idc]
+        gsub(/[\r"_-]/,"",id)
+        ancestria[toupper(id)]=a
+    }
+    next
+}
+
+# Buscar los individuos del archivo fam en popinfo
+{
+    clave=toupper($2)
+    gsub(/[-_]/,"",clave)
+
+    # Guardar los IDs que no se encontraron
+    if (!(clave in ancestria)) {
+        falta++
+        print $2 > "sin_match_ids.txt"
+        next
+    }
+
+    # Crear las cuatro columnas para PLINK
+    # FID antiguo, IID antiguo, FID nuevo, IID nuevo
+    print $1, $2, ancestria[clave], $2
+}
+
+# Mostrar cuántos individuos no se encontraron
+END {
+    print "Individuos sin ancestría:", falta+0 > "/dev/stderr"
+}
 ' chilean_all48_hg19_popinfo.csv chilean_all48_hg19.fam > update_ids.txt
 
+# Revisar las primeras filas del archivo creado
 head update_ids.txt
-awk 'END {print "filas en update_ids.txt", NR}' update_ids.txt
+
+# Contar las filas del archivo creado
+awk 'END {print "Filas en update_ids.txt:", NR}' update_ids.txt
+
 ```
 
 El script lee `popinfo` cortando cada línea por las comas, arma una tabla que va del ID de la muestra a su ancestría, y después recorre el `.fam` imprimiendo las cuatro columnas, con la ancestría como ID de familia nuevo. Los espacios de los nombres de ancestría se cambian por guiones bajos, porque Plink no acepta espacios en los identificadores, y los guiones de los IDs se quitan para que coincidan con los del `.fam`. Las muestras que no se encuentran en `popinfo` se anotan en `sin_match_ids.txt` y se cuentan, y el resultado correcto es 0 muestras sin ancestría y 48 filas en `update_ids.txt`. Un segundo script, `actualizar_id.sh`, corre plink con ese archivo.
@@ -618,7 +654,7 @@ bash actualizar_id.sh
 
 #### Resultados
 
-![Resultado Ejercicio 4 Plink, archivo de actualización](figuras/Figura_22.png)
+![Resultado Ejercicio 4 Plink, archivo de actualización](figuras/Figura_21.png)
 
 **Figura 22.** *La terminal mostrando las primeras filas de update_ids.txt, con 48 filas en total y 0 individuos sin ancestría.*
 
@@ -638,30 +674,87 @@ bash actualizar_id.sh
 #### Metodología
 
 ```bash
+
 #!/bin/bash
-# columnas de popinfo, según el head del archivo
+
+# Columnas de ID y sexo en popinfo
 ID_COL=1
 SEX_COL=2
 
+# Comparar el sexo entre popinfo y fam
 awk -v idc=$ID_COL -v sxc=$SEX_COL '
-BEGIN { printf "" > "sexo_discordante_fam_popinfo.txt" }
-NR==FNR { if (FNR>1) { split($0, f, ","); v=f[sxc]; gsub(/[\r"]/,"",v); v=toupper(v); id=f[idc]; gsub(/[\r"_-]/,"",id);
-            if (v=="M"||v=="MALE"||v=="1") s[toupper(id)]=1; else if (v=="F"||v=="FEMALE"||v=="2") s[toupper(id)]=2; else s[toupper(id)]=0 } next }
-{ n++; clave=toupper($2); if (!(clave in s)) { sinpop++; next }
-  comp++; if ($5 != s[clave]) { d++; print $2, "fam="$5, "popinfo="s[clave] > "sexo_discordante_fam_popinfo.txt" } }
-END { print "individuos en fam", n; print "sin match en popinfo", sinpop+0; print "comparados", comp+0; print "discordantes", d+0; if (comp>0) print "proporcion", d/comp }
-' chilean_all48_hg19_popinfo.csv chilean_all48_hg19.fam
-```
 
-```bash
-bash discordancia_sexo.sh
+# Crear el archivo para guardar las diferencias
+BEGIN {
+    printf "" > "sexo_discordante_fam_popinfo.txt"
+}
+
+# Leer los IDs y el sexo de popinfo
+NR==FNR {
+    if (FNR>1) {
+        split($0, f, ",")
+
+        id=f[idc]
+        v=f[sxc]
+
+        # Limpiar los IDs y el sexo
+        gsub(/[\r"_-]/,"",id)
+        gsub(/[\r"]/,"",v)
+        v=toupper(v)
+
+        # Codificar el sexo como en PLINK
+        if (v=="M" || v=="MALE" || v=="1")
+            s[toupper(id)]=1
+        else if (v=="F" || v=="FEMALE" || v=="2")
+            s[toupper(id)]=2
+        else
+            s[toupper(id)]=0
+    }
+    next
+}
+
+# Comparar el sexo del fam con el de popinfo
+{
+    n++
+    clave=toupper($2)
+    gsub(/[-_]/,"",clave)
+
+    # Contar individuos que no están en popinfo
+    if (!(clave in s)) {
+        sinpop++
+        next
+    }
+
+    # Contar los individuos comparados
+    comp++
+
+    # Guardar los individuos con sexo diferente
+    if ($5 != s[clave]) {
+        d++
+        print $2, "fam="$5, "popinfo="s[clave] > "sexo_discordante_fam_popinfo.txt"
+    }
+}
+
+# Mostrar los resultados
+END {
+    print "Individuos en fam:", n
+    print "Sin coincidencia en popinfo:", sinpop+0
+    print "Comparados:", comp+0
+    print "Discordantes:", d+0
+
+    # Calcular la proporción de discordancias
+    if (comp>0)
+        print "Proporción:", d/comp
+}
+' chilean_all48_hg19_popinfo.csv chilean_all48_hg19.fam
+
 ```
 
 El script, `discordancia_sexo.sh`, quita los guiones de los IDs de `popinfo`, que ahí aparecen como `ARI-006` y en el `.fam` como `ARI006`, y traduce el sexo a la misma codificación del `.fam`, que es 1 para hombre, 2 para mujer y 0 para desconocido. Después compara cada individuo del `.fam` con su fila de `popinfo`, cuenta los que no coinciden y guarda sus IDs en un archivo aparte. La proporción se calcula sobre los individuos que se encontraron en ambos archivos.
 
 #### Resultados
 
-![Resultado Ejercicio 5 Plink](figuras/Figura_24.png)
+![Resultado Ejercicio 5 Plink](figuras/Figura_22.png)
 
 **Figura 24.** *La terminal mostrando que se compararon 48 individuos, sin ninguno sin match en popinfo, y que hay 0 discordantes, con una proporción de discordancia de 0.*
 
@@ -710,27 +803,93 @@ Estimar el sexo con los genotipos del cromosoma X permite revisar si el sexo reg
 #### Metodología
 
 ```bash
+
 #!/bin/bash
-# columnas de popinfo, según el head del archivo
+
+# Columnas del archivo popinfo
 ID_COL=1
 SEX_COL=2
 SRC_COL=3
 ANC_COL=6
-FUENTE=CLG_Axiom48
 
-awk -v idc=$ID_COL -v sxc=$SEX_COL -v src=$SRC_COL -v anc=$ANC_COL -v fuente=$FUENTE '
-FILENAME==ARGV[1] { en_fam[toupper($2)]=1; next }
-FNR>1 { split($0, f, ","); o=f[src]; gsub(/[\r"]/,"",o); if (o != fuente) next
-        id=f[idc]; gsub(/[\r"_-]/,"",id); if (!(toupper(id) in en_fam)) next
-        s=f[sxc]; a=f[anc]; gsub(/[\r"]/,"",s); gsub(/[\r"]/,"",a); gsub(/ /,"_",a); c[s,a]++; S[s]=1; A[a]=1; n++ }
+# Fuente que queremos analizar
+FUENTE="CLG_Axiom48"
+
+# Crear una tabla de sexo y ancestría
+awk -v idc=$ID_COL -v sxc=$SEX_COL -v src=$SRC_COL -v anc=$ANC_COL -v fuente="$FUENTE" '
+
+# Leer los individuos del archivo fam
+NR==FNR {
+    id=toupper($2)
+    gsub(/[-_]/,"",id)
+    en_fam[id]=1
+    next
+}
+
+# Leer la información del archivo popinfo
+FNR>1 {
+    split($0, f, ",")
+
+    # Seleccionar los individuos de la fuente indicada
+    o=f[src]
+    gsub(/[\r"]/,"",o)
+    if (o != fuente) next
+
+    # Comprobar que el individuo está en fam
+    id=f[idc]
+    gsub(/[\r"_-]/,"",id)
+    if (!(toupper(id) in en_fam)) next
+
+    # Obtener el sexo y la ancestría
+    s=f[sxc]
+    a=f[anc]
+    gsub(/[\r"]/,"",s)
+    gsub(/[\r"]/,"",a)
+    gsub(/ /,"_",a)
+
+    # Contar individuos por sexo y ancestría
+    c[s,a]++
+    S[s]=1
+    A[a]=1
+    n++
+}
+
+# Mostrar la tabla con los totales
 END {
-  printf "Sexo"; for (a in A) printf "\t%s", a; printf "\tTotal\n";
-  for (s in S) { printf "%s", s; t=0; for (a in A) { printf "\t%d", c[s,a]; t+=c[s,a] } printf "\t%d\n", t }
-  printf "Total"; g=0; for (a in A) { x=0; for (s in S) x+=c[s,a]; printf "\t%d", x; g+=x } printf "\t%d\n", g
-  print "individuos contados", n > "/dev/stderr"
-}' chilean_all48_hg19.fam chilean_all48_hg19_popinfo.csv > contingencia_sexo_ancestria.txt
+    printf "Sexo"
+    for (a in A) printf "\t%s", a
+    printf "\tTotal\n"
 
+    # Mostrar los resultados de cada sexo
+    for (s in S) {
+        printf "%s", s
+        t=0
+        for (a in A) {
+            printf "\t%d", c[s,a]
+            t+=c[s,a]
+        }
+        printf "\t%d\n", t
+    }
+
+    # Calcular el total de cada ancestría
+    printf "Total"
+    g=0
+    for (a in A) {
+        x=0
+        for (s in S) x+=c[s,a]
+        printf "\t%d", x
+        g+=x
+    }
+    printf "\t%d\n", g
+
+    # Mostrar el número de individuos incluidos
+    print "Individuos contados:", n+0 > "/dev/stderr"
+}
+' chilean_all48_hg19.fam chilean_all48_hg19_popinfo.csv > contingencia_sexo_ancestria.txt
+
+# Revisar la tabla generada
 head contingencia_sexo_ancestria.txt
+
 ```
 
 ```bash
@@ -741,7 +900,7 @@ El archivo `popinfo` tiene 61 personas, 13 con `Source` igual a `ChileGenomico` 
 
 #### Resultados
 
-![Resultado Ejercicio 7 Plink](figuras/Figura_26.png)
+![Resultado Ejercicio 7 Plink](figuras/Figura_24.png)
 
 **Figura 26.** *La terminal mostrando la tabla de contingencia de individuos por sexo y ancestría, con 48 individuos contados.*
 
@@ -759,22 +918,19 @@ La muestra de 48 personas tiene 21 mujeres y 27 hombres repartidos en tres categ
 
 ## Discusión
 
-Los primeros ejercicios con el VCF mostraron que, aunque el archivo es enorme, con vcftools se puede responder bastante sin abrirlo ni copiarlo. Con 4.450.360 sitios, casi todo se resuelve con una opción de vcftools o con un awk sobre un archivo de resultados más chico. El archivo tiene solo 18 individuos y una cobertura baja, de 2,59x en promedio, y eso se nota en que apenas 382.626 de los 4.450.360 sitios están genotipados en todos ellos. Lo que más me sirvió fue ver que conviene ir guardando cada resultado en su propio archivo, como el de frecuencias, porque los ejercicios siguientes parten de ahí y así no hay que volver a leer el VCF completo cada vez. Al convertir el VCF a Plink, además, la tasa de genotipado del conjunto fue de 0,81, es decir que cerca de un 19 % de los genotipos están perdidos, un dato que conviene tener presente antes de filtrar por datos perdidos.
+Los primeros ejercicios con el VCF mostraron que, aunque el archivo es muy grande, con vcftools se puede manejar sin tener que abrirlo ni copiarlo. Con 4.450.360 sitios, casi todo se resuelve con una opción de vcftools o con un awk sobre un archivo de resultados más chico. Lo que más me sirvió fue ver que conviene ir guardando cada resultado en su propio archivo, como el de frecuencias, porque los ejercicios siguientes parten de ahí y así no hay que volver a leer el VCF completo cada vez. Al convertir el VCF a Plink, además, la tasa de genotipado del conjunto fue de 0,81, es decir que cerca de un 19 % de los genotipos están perdidos, un dato que conviene tener presente antes de filtrar por datos perdidos.
 
 Pasar por el archivo de frecuencias y filtrar los sitios bialélicos dejó claro por qué el MAF necesita exactamente dos alelos. Casi todos los sitios cumplían esa condición, 4.447.324 de 4.450.360, así que el filtro no cambió mucho el conjunto, pero igual era necesario para que el histograma y el conteo de variantes raras tuvieran sentido. El histograma mostró una barra muy alta en MAF cercano a 0 y después una distribución bastante pareja, algo distinto a la curva con muchas variantes raras que se espera en poblaciones grandes, que probablemente se relaciona con tener solo 18 individuos. El histograma ayudó a ver todo eso junto, porque en una tabla de millones de filas no se alcanza a ver cuántas variantes son raras y cuántas comunes.
 
-En la parte de Plink pasó algo parecido, pero con las muestras en vez de los sitios. Los filtros sacaron a 2 de los 48 individuos y a 347.070 de las 813.366 variantes por tener una frecuencia del alelo menor baja. Los filtros de MAF y de datos perdidos, el reporte de Hardy-Weinberg y la revisión del archivo `.fam` mostraron que un conjunto de datos puede estar completo en genotipos y aun así tener poca información sobre las personas, como el fenotipo o el parentesco. Por eso fue útil traer la ancestría desde `popinfo` y comparar el sexo de tres formas, la del `.fam`, la de `popinfo` y la estimada con el cromosoma X, porque cada una puede tener errores distintos y solo al cruzarlas se pueden detectar. En este caso el `.fam` y `popinfo` registran el mismo sexo para las 48 personas, pero Plink marcó a 2, ARI022, que figura como mujer pero tiene un cromosoma X de hombre, y CDSJ176, cuyo sexo no se pudo asignar. Al final, la tabla de sexo por ancestría mostró 27 hombres y 21 mujeres repartidos en tres ancestrías, sin un desbalance fuerte.
+En la parte de Plink pasó algo parecido, pero con las muestras en vez de los sitios. Los filtros sacaron a 2 de los 48 individuos y a 347.070 de las 813.366 variantes por tener una frecuencia del alelo menor baja. Los filtros de MAF y de datos perdidos, el reporte de Hardy-Weinberg y la revisión del archivo `.fam` mostraron que un conjunto de datos puede estar completo en genotipos y aun así tener poca información sobre las personas, como el fenotipo o el parentesco. Por eso fue útil traer la ancestría desde `popinfo` y comparar el sexo de tres formas, la del `.fam`, la de `popinfo` y la estimada con el cromosoma X, porque cada una puede tener errores distintos y solo al cruzarlas se pueden detectar. En este caso el `.fam` y `popinfo` registran el mismo sexo para las 48 personas, pero Plink marcó a 2, ARI022, que figura como mujer pero tiene un cromosoma X de hombre, y CDSJ176, cuyo sexo no se pudo asignar. Al final, la tabla de sexo por ancestría mostró 27 hombres y 21 mujeres repartidos en tres ancestrías.
 
 También hubo cosas más prácticas que aprender. Trabajar en un servidor por ssh significa que las variables y los módulos se pierden al desconectarse, que un comando puede fallar solo porque la carpeta en la que se está parado no es la correcta, y que R no estaba disponible hasta cargarlo con `module load R`. Además, los valores p del reporte de Hardy-Weinberg no se pueden leer uno por uno, porque con miles de SNPs algunos van a salir significativos por azar y hace falta una corrección por pruebas múltiples.
 
 ## Conclusión general
 
-Esta sesión sirvió para aprender a manejar los dos formatos de genotipos más usados, VCF con vcftools y Plink con plink, y para ver que cada uno es más cómodo para cosas distintas. El VCF, que trae mucha información por variante, permitió contar individuos y sitios, medir cobertura, calcular frecuencias alélicas, heterocigosidad y diversidad, y filtrar por número de alelos y por MAF. Plink, en cambio, resultó más práctico para el control de calidad de las muestras, la prueba de Hardy-Weinberg y el manejo de los metadatos, como el sexo y la ancestría. Poder convertir de un formato al otro permite aprovechar lo mejor de cada programa antes de pasar a los análisis posteriores, y revisar la calidad de los datos y de sus metadatos antes de analizarlos evita sacar conclusiones equivocadas más adelante.
+Esta sesión me permitió aprender a trabajar con dos formatos de datos genéticos, VCF utilizando VCFtools y PLINK. Pude ver que cada uno tiene distintas funciones y que ambos son útiles dependiendo del análisis que se quiera realizar. Con VCFtools aprendí a obtener información sobre los individuos y las variantes, calcular frecuencias alélicas, heterocigosidad y diversidad, además de aplicar algunos filtros. Por otro lado, con PLINK pude revisar la calidad de los datos, realizar la prueba de Hardy-Weinberg y trabajar con información de las muestras, como el sexo y la ancestría.
+
+De todos los talleres que hemos realizado, este ha sido el que más me ha costado, ya que había muchas cosas que no sabía hacer y varios comandos que no conocía. En algunos ejercicios me costó entender qué tenía que hacer, cómo utilizar los comandos y cómo interpretar los resultados. También tuve dificultades al trabajar en el servidor y manejar los archivos. Sin embargo, a medida que fui avanzando, pude comprender mejor para qué servía cada herramienta y la importancia de revisar los datos antes de analizarlos. Aunque todavía me falta bastante práctica para poder realizar estos procedimientos de forma mas expedita, considero que este taller me ayudó a aprender cosas nuevas y a entender mejor cómo se trabaja con datos genéticos en bioinformática.
 
 ---
 
-## Referencias
-
-1. u-genoma. (s.f.). *BioinfinvRepro — Unidad 2, Sesión 2, Datos de genotipos* [Repositorio de GitHub]. Recuperado el 9 de Octubre del 2026, de <https://github.com/u-genoma/BioinfinvRepro>
-2. VCFtools. (s.f.). *VCFtools manual* [Documentación]. Recuperado el 9 de Octubre del 2026, de <https://vcftools.github.io/man_latest.html>
-3. PLINK 1.9. (s.f.). *Formatos de archivo* [Documentación]. Recuperado el 9 de Octubre del 2026, de <https://www.cog-genomics.org/plink/1.9/formats>
