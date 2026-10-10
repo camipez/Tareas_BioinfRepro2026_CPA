@@ -5,7 +5,7 @@
 **Estudiante** Camila Astorga
 **Profesor** Ricardo Verdugo
 **Institución** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile
-**Fecha** 30-09-26
+**Fecha** 09-10-26
 **Repositorio** <https://github.com/camipez/Tareas_Bioinfrepro2026_CPA> 
 
 ---
