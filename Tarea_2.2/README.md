@@ -33,7 +33,7 @@ Practicar el manejo de archivos de genotipos en formato VCF y Plink usando VCFto
 | Ruta | Contenido |
 |---|---|
 | [`Prac_Uni5/`](Prac_Uni5/) | Scripts (`plot_maf.R`, `update.sh`, `actualizar_id.sh`, `discordancia_sexo.sh` y `contingencia.sh`). |
-| [`Figuras/`](figuras/) | Capturas citadas en este informe. |
+| [`Figuras/`](Figuras/) | Capturas citadas en este informe. |
 
 Los archivos grandes, como el VCF filtrado, los archivos `.ped` y los `.bed`, no se subieron al repositorio por su tamaño y quedaron en el servidor.
 
@@ -62,7 +62,7 @@ La variable `VCF` guarda la ruta del archivo para no tener que escribirla en cad
 
 #### Resultados
 
-![Resultado Preparación del entorno](figuras/Figura_1.jpg)
+![Resultado Preparación del entorno](Figuras/Figura_1.jpg)
 
 **Figura 1.** *La terminal mostrando la conexión por ssh al servidor, la carga del módulo vcftools y la pantalla de ayuda del programa.*
 
@@ -81,7 +81,7 @@ Como no se le pide ninguna operación, vcftools lee el archivo y entrega un resu
 
 #### Resultados
 
-![Resultado Ejercicio 1 VCF](figuras/Figura_2.png)
+![Resultado Ejercicio 1 VCF](Figuras/Figura_2.png)
 
 **Figura 2.** *La terminal mostrando los archivos VCF de la carpeta compartida y el resultado de vcftools, con 18 individuos y 4.450.360 sitios.*
 
@@ -104,7 +104,7 @@ La opción `--max-missing` fija la proporción mínima de individuos con genotip
 
 #### Resultados
 
-![Resultado Ejercicio 2 VCF](figuras/Figura_3.png)
+![Resultado Ejercicio 2 VCF](Figuras/Figura_3.png)
 
 **Figura 3.** *La terminal mostrando que quedan 382.626 sitios sin datos perdidos de un total de 4.450.360.*
 
@@ -129,7 +129,7 @@ Las opciones `--chr`, `--from-bp` y `--to-bp` delimitan la ventana de 10 a 12 Mb
 
 #### Resultados
 
-![Resultado Ejercicio 3 VCF](figuras/Figura_4.png)
+![Resultado Ejercicio 3 VCF](Figuras/Figura_4.png)
 
 **Figura 4.** *La terminal mostrando el comando que genera la ventana de 10 a 12 Mb del cromosoma 1 y el archivo CLG_Chr1_10-12Mb.vcf ya creado, con un tamaño de 1.6 M.*
 
@@ -152,7 +152,7 @@ En un VCF cada línea que no es encabezado es una variante. El patrón `!/^#/` d
 
 #### Resultados
 
-![Resultado Ejercicio 4 VCF](figuras/Figura_5.png)
+![Resultado Ejercicio 4 VCF](Figuras/Figura_5.png)
 
 **Figura 5.** *La terminal mostrando que la ventana de 2 Mb tiene 2.693 variantes.*
 
@@ -177,7 +177,7 @@ La opción `--depth` calcula la profundidad media de cada individuo y la guarda 
 
 #### Resultados
 
-![Resultado Ejercicio 5 VCF](figuras/Figura_6.png)
+![Resultado Ejercicio 5 VCF](Figuras/Figura_6.png)
 
 **Figura 6.** *La terminal mostrando la cobertura de los individuos, con un promedio de 2,59, un mínimo de 1,57 y un máximo de 3,99.*
 
@@ -201,7 +201,7 @@ head frecuencias_alelicas.frq
 
 #### Resultados
 
-![Resultado Ejercicio 6 VCF](figuras/Figura_7.png)
+![Resultado Ejercicio 6 VCF](Figuras/Figura_7.png)
 
 **Figura 7.** *La terminal mostrando el cálculo de frecuencias alélicas y las primeras filas del archivo frecuencias_alelicas.frq, con una fila por sitio y el alelo con su frecuencia en las últimas columnas.*
 
@@ -226,7 +226,7 @@ El primer awk conserva el encabezado y las filas cuya tercera columna, `N_ALLELE
 
 #### Resultados
 
-![Resultado Ejercicio 7 VCF](figuras/Figura_8.png)
+![Resultado Ejercicio 7 VCF](Figuras/Figura_8.png)
 
 **Figura 8.** *La terminal mostrando 4.450.360 sitios en el archivo original y 4.447.324 sitios bialélicos después del filtro.*
 
@@ -274,11 +274,11 @@ El script recibe como argumentos el archivo de frecuencias y el nombre del PDF d
 
 #### Resultados
 
-![Resultado Ejercicio 8 VCF, consola](figuras/Figura_9.png)
+![Resultado Ejercicio 8 VCF, consola](Figuras/Figura_9.png)
 
 **Figura 9.** *La terminal mostrando la ejecución del script de R y el archivo histograma_MAF.pdf generado, de 5.0 K.*
 
-![Resultado Ejercicio 8 VCF, histograma](figuras/mapa.png)
+![Resultado Ejercicio 8 VCF, histograma](Figuras/mapa.png)
 
 **Figura 10.** *Histograma del espectro de MAF de las 4.447.324 variantes bialélicas.*
 
@@ -301,7 +301,7 @@ El comando separa el alelo de su frecuencia en las columnas 5 y 6, se queda con 
 
 #### Resultados
 
-![Resultado Ejercicio 9 VCF](figuras/Figura_10.png)
+![Resultado Ejercicio 9 VCF](Figuras/Figura_10.png)
 
 **Figura 11.** *La terminal mostrando que 667.462 sitios tienen una frecuencia del alelo menor menor a 0.05, es decir un 15,01 % de las 4.447.324 variantes bialélicas.*
 
@@ -328,7 +328,7 @@ awk '{s+=$2; n++; if (min==""||$2<min) min=$2; if ($2>max) max=$2} END {print "p
 
 #### Resultados
 
-![Resultado Ejercicio 10 VCF](figuras/Figura_11.png)
+![Resultado Ejercicio 10 VCF](Figuras/Figura_11.png)
 
 **Figura 12.** *La terminal mostrando las primeras filas de la heterocigosidad por individuo y un promedio de 0,164, con valores entre 0,070 y 0,236.*
 
@@ -353,7 +353,7 @@ awk 'NR>1 {s+=$3; n++} END {print s/n}' diversidad_nucleotidica.sites.pi
 
 #### Resultados
 
-![Resultado Ejercicio 11 VCF](figuras/Figura_12.png)
+![Resultado Ejercicio 11 VCF](Figuras/Figura_12.png)
 
 **Figura 13.** *La terminal mostrando las primeras filas del archivo de diversidad por sitio y un promedio de 0,314.*
 
@@ -377,7 +377,7 @@ ls -lh CLG_maf05.recode.vcf
 
 #### Resultados
 
-![Resultado Ejercicio 12 VCF](figuras/Figura_13.png)
+![Resultado Ejercicio 12 VCF](Figuras/Figura_13.png)
 
 **Figura 14.** *La terminal mostrando que quedan 3.781.909 sitios de 4.450.360 después del filtro por frecuencia del alelo menor.*
 
@@ -402,7 +402,7 @@ ls -lh GATK_ChGdb_plink*
 
 #### Resultados
 
-![Resultado Ejercicio 13 VCF, formato texto](figuras/Figura_15.png)
+![Resultado Ejercicio 13 VCF, formato texto](Figuras/Figura_15.png)
 
 **Figura 15.** *La terminal mostrando la conversión del VCF a formato texto de Plink y los archivos .map, de 102 M, y .ped, de 306 M.*
 
@@ -428,7 +428,7 @@ Los archivos se copiaron desde la carpeta compartida a la carpeta de trabajo. El
 
 #### Resultados
 
-![Resultado Ejercicio 1 Plink](figuras/Figura_16.png)
+![Resultado Ejercicio 1 Plink](Figuras/Figura_16.png)
 
 **Figura 17.** *La terminal mostrando la copia de los archivos y su listado, chilean_all48_hg19.bed, .bim, .fam y chilean_all48_hg19_popinfo.csv, con sus tamaños.*
 
@@ -461,7 +461,7 @@ ls -lh chilean_all48_hg19*
 
 #### Resultados
 
-![Resultado Ejercicio 2a Plink](figuras/Figura_17.png)
+![Resultado Ejercicio 2a Plink](Figuras/Figura_17.png)
 
 **Figura 18.** *La terminal mostrando la conversión de bed a ped, con 813.366 variantes y 48 personas (27 hombres y 21 mujeres), y los archivos chilean_all48_hg19.ped, de 149 M, y chilean_all48_hg19.map, de 19 M.*
 
@@ -484,7 +484,7 @@ plink --bfile chilean_all48_hg19 --recode --maf 0.05 --mind 0.1 --out chilean_al
 
 #### Resultados
 
-![Resultado Ejercicio 2b Plink](figuras/Figura_18.png)
+![Resultado Ejercicio 2b Plink](Figuras/Figura_18.png)
 
 **Figura 19.** *La terminal mostrando que se removieron 347.070 SNPs por frecuencia del alelo menor y 2 individuos por datos perdidos, quedando 466.296 SNPs y 46 individuos.*
 
@@ -508,7 +508,7 @@ Aquí se usó `--file` y no `--bfile` porque la entrada es el archivo en formato
 
 #### Resultados
 
-![Resultado Ejercicio 2c Plink](figuras/Figura_19.png)
+![Resultado Ejercicio 2c Plink](Figuras/Figura_19.png)
 
 **Figura 20.** *La terminal mostrando las primeras filas del archivo .hwe, calculado con 466.296 variantes y 46 personas.*
 
@@ -545,7 +545,7 @@ El primer comando muestra las primeras filas del archivo. Los tres awk cuentan c
 
 #### Resultados
 
-![Resultado Ejercicio 2d Plink](figuras/Figura_20.png)
+![Resultado Ejercicio 2d Plink](Figuras/Figura_20.png)
 
 **Figura 21.** *La terminal mostrando las primeras filas del archivo .fam y el conteo de individuos por sexo, 27 hombres y 21 mujeres, por fenotipo, los 48 controles, y por padre y madre, los 48 con 0 0.*
 
@@ -654,11 +654,11 @@ bash actualizar_id.sh
 
 #### Resultados
 
-![Resultado Ejercicio 4 Plink, archivo de actualización](figuras/Figura_21.png)
+![Resultado Ejercicio 4 Plink, archivo de actualización](Figuras/Figura_21.png)
 
 **Figura 22.** *La terminal mostrando las primeras filas de update_ids.txt, con 48 filas en total y 0 individuos sin ancestría.*
 
-![Resultado Ejercicio 4 Plink, nuevo fam](figuras/Figura_23.png)
+![Resultado Ejercicio 4 Plink, nuevo fam](Figuras/Figura_23.png)
 
 **Figura 23.** *La terminal mostrando que Plink actualizó a 48 personas y las primeras filas del archivo chilean_all48_hg19_ancestry.fam, con la ancestría en la primera columna.*
 
@@ -754,7 +754,7 @@ El script, `discordancia_sexo.sh`, quita los guiones de los IDs de `popinfo`, qu
 
 #### Resultados
 
-![Resultado Ejercicio 5 Plink](figuras/Figura_22.png)
+![Resultado Ejercicio 5 Plink](Figuras/Figura_22.png)
 
 **Figura 24.** *La terminal mostrando que se compararon 48 individuos, sin ninguno sin match en popinfo, y que hay 0 discordantes, con una proporción de discordancia de 0.*
 
@@ -782,7 +782,7 @@ head sexo_discordante_plink.txt
 
 #### Resultados
 
-![Resultado Ejercicio 6 Plink](figuras/Figura_25.png)
+![Resultado Ejercicio 6 Plink](Figuras/Figura_25.png)
 
 **Figura 25.** *La terminal mostrando las primeras filas del archivo .sexcheck y los individuos con discordancia entre el sexo reportado y el estimado, ARI022 y CDSJ176.*
 
@@ -900,7 +900,7 @@ El archivo `popinfo` tiene 61 personas, 13 con `Source` igual a `ChileGenomico` 
 
 #### Resultados
 
-![Resultado Ejercicio 7 Plink](figuras/Figura_24.png)
+![Resultado Ejercicio 7 Plink](Figuras/Figura_24.png)
 
 **Figura 26.** *La terminal mostrando la tabla de contingencia de individuos por sexo y ancestría, con 48 individuos contados.*
 
