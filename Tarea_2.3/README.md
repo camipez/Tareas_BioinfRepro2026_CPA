@@ -29,9 +29,7 @@ Aplicar un flujo de control de calidad con Plink y R a datos de genotipificació
 | Ruta | Contenido |
 |---|---|
 | [`Sesion2/code/`](Sesion2/code/) | Copias de los scripts de R utilizados durante el trabajo. |
-| [`Sesion2/resultados/`](Sesion2/resultados/) | Registros de PLINK y ADMIXTURE, lista de SNPs y resultados de control de calidad. |
-| [`Sesion2/figuras/`](Sesion2/figuras/) | Gráficos conservados en PDF y PNG. |
-| [`graficos_servidor/`](graficos_servidor/) | Gráficos descargados del servidor. |
+| [`Sesion2/resultados/`](Sesion2/resultados/) | Registros de PLINK y ADMIXTURE, lista de SNPs, resultados de control de calidad y gráficos. |
 | [`figuras/`](figuras/) | Capturas y gráficos citados en este informe. |
 
 
