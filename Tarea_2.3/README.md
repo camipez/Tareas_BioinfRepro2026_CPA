@@ -86,7 +86,7 @@ head plink.lmiss
 awk 'NR>1 && $6>0.02' plink.imiss | wc -l
 ```
 
-`--missing` calcula la tasa de datos perdidos y genera los archivos `plink.imiss`, por individuo, y `plink.lmiss`, por SNP. El script de R dibuja los histogramas de ambas tasas. `--geno` elimina los SNPs con más datos perdidos que el umbral y `--mind` elimina a los individuos, y se aplicó primero el umbral laxo de 0.2 y después el estricto de 0.02, como sale en el repo. Para contar los individuos con tasa mayor a 0.02 se usó la columna 6 de `plink.imiss`, que es `F_MISS`, sin contar el encabezado, y `wc -l` cuenta las líneas que cumplen.
+`--missing` calcula la tasa de datos perdidos y genera los archivos `plink.imiss`, por individuo, y `plink.lmiss`, por SNP. El script de R grafica los histogramas de ambas tasas. `--geno` elimina los SNPs con más datos perdidos que el umbral y `--mind` elimina a los individuos, y se aplicó primero el umbral laxo de 0.2 y después el estricto de 0.02, como sale en el repo. Para contar los individuos con tasa mayor a 0.02 se usó la columna 6 de `plink.imiss`, que es `F_MISS`, sin contar el encabezado, y `wc -l` cuenta las líneas que cumplen.
 
 #### Resultados
 
@@ -234,7 +234,7 @@ plink --bfile chilean_all48_hg19_8 --hwe 1e-6 --hwe-all --make-bed --out chilean
 grep "removed" chilean_all48_hg19_9.log
 ```
 
-`--hardy` calcula la prueba exacta de Hardy-Weinberg para cada SNP y la guarda en `plink.hwe`. El `awk` deja en `plinkzoomhwe.hwe` los SNPs con valor p menor a 0.000001, porque uno de los scripts de R los necesita para dibujar los SNPs con mayor desviación. El último comando elimina los SNPs con valor p menor a 1e-6. Plink avisa que `--hwe-all` está en desuso y recomienda `--hwe include-nonctrl`, pero el comando del tutorial funciona igual.
+`--hardy` calcula la prueba exacta de Hardy-Weinberg para cada SNP y la guarda en `plink.hwe`. El `awk` deja en `plinkzoomhwe.hwe` los SNPs con valor p menor a 0.000001, porque uno de los scripts de R los necesita para graficar los SNPs con mayor desviación. El último comando elimina los SNPs con valor p menor a 1e-6. Plink avisa que `--hwe-all` está en desuso y recomienda `--hwe include-nonctrl`, pero el comando del tutorial funciona igual.
 
 #### Resultados
 
