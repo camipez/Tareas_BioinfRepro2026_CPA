@@ -327,7 +327,7 @@ wc -l chilean_all48_hg19_10.fam
 
 ![Resultado Ejercicio 5, gráfico de parentesco](figuras/relatedness.png)
 
-**Figura 26.** *Gráfico de Z0 contra Z1. Los puntos visibles corresponden a UN; las etiquetas de la leyenda no constituyen una confirmación de parentesco biológico.*
+**Figura 26.** *Gráfico de Z0 contra Z1.*
 
 ![Resultado Ejercicio 5, individuos en los pares](figuras/Figura_19.png)
 
