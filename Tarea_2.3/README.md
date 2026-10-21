@@ -1,12 +1,7 @@
-# Tarea 2.3 — Estructura poblacional
+# Tarea 2.3 — Análisis genético de poblaciones
 
-**Curso:** Bioinformática e investigación reproducible para análisis genómicos  
-**Unidad 2:** Genética de poblaciones con software especializado — Sesión 2  
-**Estudiante:** Camila Astorga  
-**Profesor:** Ricardo Verdugo  
-**Institución:** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile  
-**Fecha de actualización:** 20-10-2026  
-**Repositorio:** <https://github.com/camipez/Tareas_BioinfRepro2026_CPA>
+**Curso:** Bioinformática e investigación reproducible para análisis genómicos  **Unidad 2:** Genética de poblaciones con software especializado **Estudiante:** Camila Astorga  **Profesor:** Ricardo Verdugo  **Institución:** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile  
+**Fecha:** 20-10-2026  **Repositorio:** <https://github.com/camipez/Tareas_BioinfRepro2026_CPA>
 
 ---
 
@@ -24,7 +19,7 @@ Aplicar un flujo de control de calidad con Plink y R a datos de genotipificació
 - Eliminar los SNPs cuyas frecuencias genotípicas se desvían del equilibrio de Hardy-Weinberg.
 - Identificar parentescos desconocidos usando SNPs con bajo desequilibrio de ligamiento, y eliminar a los individuos que los generan.
 - Unir los datos de ChileGenomico con los de 1000G, homologando variantes, coordenadas, alelos de referencia y hebras.
-- Calcular un MDS con los datos unidos y graficar distintos componentes, para ver cómo se agrupan las muestras chilenas respecto de las poblaciones de 1000G.
+- Calcular un MDS con los datos unidos y graficar distintos componentes, para ver cómo se agrupan las muestras respecto de las poblaciones de 1000G.
 - Estimar la ancestría de las muestras chilenas con ADMIXTURE para distintos valores de K, y evaluarlos con el error de validación cruzada.
 
 ---
@@ -93,7 +88,7 @@ head plink.lmiss
 awk 'NR>1 && $6>0.02' plink.imiss | wc -l
 ```
 
-`--missing` calcula la tasa de datos perdidos y genera los archivos `plink.imiss`, por individuo, y `plink.lmiss`, por SNP. El script de R dibuja los histogramas de ambas tasas. `--geno` elimina los SNPs con más datos perdidos que el umbral y `--mind` elimina a los individuos, y se aplicó primero el umbral laxo de 0.2 y después el estricto de 0.02, como sale en el repo. Para contar los individuos con tasa mayor a 0.02 se usó la columna 6 de `plink.imiss`, que es `F_MISS`, sin contar el encabezado, y `wc -l` cuenta las líneas que cumplen.
+`--missing` calcula la tasa de datos perdidos y genera los archivos `plink.imiss`, por individuo, y `plink.lmiss`, por SNP. El script de R grafica los histogramas de ambas tasas. `--geno` elimina los SNPs con más datos perdidos que el umbral y `--mind` elimina a los individuos, y se aplicó primero el umbral laxo de 0.2 y después el estricto de 0.02, como sale en el repo. Para contar los individuos con tasa mayor a 0.02 se usó la columna 6 de `plink.imiss`, que es `F_MISS`, sin contar el encabezado, y `wc -l` cuenta las líneas que cumplen.
 
 #### Resultados
 
@@ -147,7 +142,7 @@ plink --bfile chilean_all48_hg19_5 --remove sex_discrepancy.txt --make-bed --out
 wc -l sex_discrepancy.txt
 ```
 
-`--check-sex` compara el sexo registrado con la clasificación basada en el coeficiente F del cromosoma X. En este procedimiento se usan los umbrales F<0.2 para la que se clasifique como  femenina y F>0.8 para la masculina; las discrepancias y los valores intermedios se señalan como PROBLEM. El script de R dibuja los valores de `F`. El `grep` y el `awk` dejan en `sex_discrepancy.txt` solo el ID de familia y el ID de individuo de los marcados, y `--remove` los elimina del conjunto.
+`--check-sex` compara el sexo registrado con la clasificación basada en el coeficiente F del cromosoma X. En este procedimiento se usan los umbrales F<0.2 para la que se clasifique como  femenina y F>0.8 para la masculina; las discrepancias y los valores intermedios se señalan como PROBLEM. El script de R grafica los valores de `F`. El `grep` y el `awk` dejan en `sex_discrepancy.txt` solo el ID de familia y el ID de individuo de los marcados, y `--remove` los elimina del conjunto.
 
 #### Resultados
 
@@ -200,7 +195,7 @@ plink --bfile chilean_all48_hg19_7 --maf 0.011 --make-bed --out chilean_all48_hg
 wc -l chilean_all48_hg19_6.bim chilean_all48_hg19_7.bim
 ```
 
-El `awk` guarda en `snp_1_22.txt` los IDs de los SNPs de los cromosomas 1 a 22 y `--extract` los conserva. `--freq` calcula la frecuencia de cada alelo y el script de R dibuja la distribución de la frecuencia del alelo menor (MAF). Con 45 individuos, la menor frecuencia posible para un polimorfismo es 1 dividido por 2 por 45, es decir, aproximadamente 0.01111; por eso `--maf 0.011` elimina los SNPs sin variación. Para contar los SNPs fuera de los autosomas se comparó el número de líneas de los archivos `.bim` antes y después de extraerlos.
+El `awk` guarda en `snp_1_22.txt` los IDs de los SNPs de los cromosomas 1 a 22 y `--extract` los conserva. `--freq` calcula la frecuencia de cada alelo y el script de R grafica la distribución de la frecuencia del alelo menor (MAF). Con 45 individuos, la menor frecuencia posible para un polimorfismo es 1 dividido por 2 por 45, es decir, aproximadamente 0.01111; por eso `--maf 0.011` elimina los SNPs sin variación. Para contar los SNPs fuera de los autosomas se comparó el número de líneas de los archivos `.bim` antes y después de extraerlos.
 
 #### Resultados
 
@@ -241,7 +236,7 @@ plink --bfile chilean_all48_hg19_8 --hwe 1e-6 --hwe-all --make-bed --out chilean
 grep "removed" chilean_all48_hg19_9.log
 ```
 
-`--hardy` calcula la prueba exacta de Hardy-Weinberg para cada SNP y la guarda en `plink.hwe`. El `awk` deja en `plinkzoomhwe.hwe` los SNPs con valor p menor a 0.000001, porque uno de los scripts de R los necesita para dibujar los SNPs con mayor desviación. El último comando elimina los SNPs con valor p menor a 1e-6. Plink avisa que `--hwe-all` está en desuso y recomienda `--hwe include-nonctrl`, pero el comando del tutorial funciona igual.
+`--hardy` calcula la prueba exacta de Hardy-Weinberg para cada SNP y la guarda en `plink.hwe`. El `awk` deja en `plinkzoomhwe.hwe` los SNPs con valor p menor a 0.000001, porque uno de los scripts de R los necesita para graficar los SNPs con mayor desviación. El último comando elimina los SNPs con valor p menor a 1e-6. Plink avisa que `--hwe-all` está en desuso y recomienda `--hwe include-nonctrl`, pero el comando del tutorial funciona igual.
 
 #### Resultados
 
@@ -537,7 +532,7 @@ for k in $(seq 4 6)
 wc -l MDS_merge_r2_lt_0.2.bim
 ```
 
-Para dibujar los resultados se ordenaron las poblaciones en R, en el orden en que se quieren mostrar, y se ejecutó el script del tutorial. Los errores de validación cruzada se extrajeron de los archivos `.log` con `grep`.
+Para graficar los resultados se ordenaron las poblaciones en R, en el orden en que se quieren mostrar, y se ejecutó el script del tutorial. Los errores de validación cruzada se extrajeron de los archivos `.log` con `grep`.
 
 ```bash
 R --no-save
