@@ -39,7 +39,7 @@ Aplicar un flujo de control de calidad con Plink y R a datos de genotipificació
 
 ### Preparación del entorno
 
-Los datos de ChileGenomico, los scripts del tutorial y los datos de 1000G están en el servidor genoma.med.uchile.cl, así que el trabajo se hizo por ssh. Las variables de ambiente acortan las rutas a los datos y a los scripts, y los módulos cargan Plink 1.9 y R.
+Los datos de ChileGenomico, los scripts del tutorial y los datos de 1000G están en el servidor genoma.med.uchile.cl, así que el trabajo se hizo por ssh. 
 
 ```bash
 ssh -Y bioinfo1@genoma.med.uchile.cl
@@ -86,7 +86,7 @@ head plink.lmiss
 awk 'NR>1 && $6>0.02' plink.imiss | wc -l
 ```
 
-`--missing` calcula la tasa de datos perdidos y genera los archivos `plink.imiss`, por individuo, y `plink.lmiss`, por SNP. El script de R grafica los histogramas de ambas tasas. `--geno` elimina los SNPs con más datos perdidos que el umbral y `--mind` elimina a los individuos, y se aplicó primero el umbral laxo de 0.2 y después el estricto de 0.02, como sale en el repo. Para contar los individuos con tasa mayor a 0.02 se usó la columna 6 de `plink.imiss`, que es `F_MISS`, sin contar el encabezado, y `wc -l` cuenta las líneas que cumplen.
+`--missing` calcula la tasa de datos perdidos y genera los archivos `plink.imiss`, por individuo, y `plink.lmiss`, por SNP. El script de R dibuja los histogramas de ambas tasas. `--geno` elimina los SNPs con más datos perdidos que el umbral y `--mind` elimina a los individuos, y se aplicó primero el umbral laxo de 0.2 y después el estricto de 0.02, como sale en el repo. Para contar los individuos con tasa mayor a 0.02 se usó la columna 6 de `plink.imiss`, que es `F_MISS`, sin contar el encabezado, y `wc -l` cuenta las líneas que cumplen.
 
 #### Resultados
 
@@ -122,7 +122,7 @@ awk 'NR>1 && $6>0.02' plink.imiss | wc -l
 
 Los archivos con las tasas de datos perdidos se llaman `plink.imiss`, que tiene la tasa por individuo, y `plink.lmiss`, que tiene la tasa por SNP. Con el umbral de 0.2 se eliminaron 4.680 variantes de las 813.366 iniciales y ningún individuo, y solo 2 individuos tenían una tasa mayor a 0.02. Uno de ellos es CDSJ176, con 0.1401, muy por encima del resto, donde no pasan de 0.006. Por eso el filtro de individuos de 0.02 no eliminó a nadie, ya que al sacar antes los SNPs con más de 2 % de datos perdidos la tasa de esos dos individuos bajó del umbral.
 
-En un SNP autosómico evaluado en los 48 individuos, un solo genotipo perdido da una tasa de 0.0208, así que el umbral de 0.02 para SNPs equivale a exigir que no falte ningún genotipo. Eso eliminó 234.062 variantes más, un 29 % de las que quedaban, pero dejó 574.624 SNPs, que son suficientes para un análisis de estructura. Para los individuos, 0.02 separa con claridad a los pocos con muchos datos perdidos del resto. Se sugiere entonces 0.02 para individuos y para SNPs, aunque con 0.05 para SNPs se conservarían los que tienen uno o dos genotipos perdidos, que equivalen a tasas de 0.0208 y 0.0417. Los histogramas de las Figuras 3 y 4 representan estas mismas distribuciones, así que el análisis está correcto.
+ Para los individuos, 0.02 separa con claridad a los pocos con muchos datos perdidos del resto. Se sugiere entonces 0.02 para individuos y para SNPs, aunque con 0.05 para SNPs se conservarían los que tienen uno o dos genotipos perdidos, que equivalen a tasas de 0.0208 y 0.0417. Los histogramas de las Figuras 3 y 4 representan estas mismas distribuciones, así que el análisis está correcto.
 
 ---
 
@@ -140,7 +140,7 @@ plink --bfile chilean_all48_hg19_5 --remove sex_discrepancy.txt --make-bed --out
 wc -l sex_discrepancy.txt
 ```
 
-`--check-sex` compara el sexo registrado con la clasificación basada en el coeficiente F del cromosoma X. En este procedimiento se usan los umbrales F<0.2 para que se clasifique como  femenino y F>0.8 para masculino; las discrepancias y los valores intermedios se señalan como PROBLEM. El script de R grafica los valores de `F`. El `grep` y el `awk` dejan en `sex_discrepancy.txt` solo el ID de familia y el ID de individuo de los marcados, y `--remove` los elimina del conjunto.
+`--check-sex` compara el sexo registrado con la clasificación basada en el coeficiente F del cromosoma X. En este procedimiento se usan los umbrales F<0.2 para que se clasifique como  femeninoo y F>0.8 para masculino; las discrepancias y los valores intermedios se señalan como PROBLEM. El script de R muestra los valores de `F`. El `grep` y el `awk` dejan en `sex_discrepancy.txt` solo el ID de familia y el ID de individuo de los marcados, y `--remove` los elimina del conjunto.
 
 #### Resultados
 
@@ -193,7 +193,7 @@ plink --bfile chilean_all48_hg19_7 --maf 0.011 --make-bed --out chilean_all48_hg
 wc -l chilean_all48_hg19_6.bim chilean_all48_hg19_7.bim
 ```
 
-El `awk` guarda en `snp_1_22.txt` los IDs de los SNPs de los cromosomas 1 a 22 y `--extract` los conserva. `--freq` calcula la frecuencia de cada alelo y el script de R grafica la distribución de la frecuencia del alelo menor (MAF). Con 45 individuos, la menor frecuencia posible para un polimorfismo es 1 dividido por 2 por 45, es decir, aproximadamente 0.01111; por eso `--maf 0.011` elimina los SNPs sin variación. Para contar los SNPs fuera de los autosomas se comparó el número de líneas de los archivos `.bim` antes y después de extraerlos.
+El `awk` guarda en `snp_1_22.txt` los IDs de los SNPs de los cromosomas 1 a 22 y `--extract` los conserva. `--freq` calcula la frecuencia de cada alelo y el script de R muestra la distribución de la frecuencia del alelo menor (MAF).
 
 #### Resultados
 
@@ -234,7 +234,7 @@ plink --bfile chilean_all48_hg19_8 --hwe 1e-6 --hwe-all --make-bed --out chilean
 grep "removed" chilean_all48_hg19_9.log
 ```
 
-`--hardy` calcula la prueba exacta de Hardy-Weinberg para cada SNP y la guarda en `plink.hwe`. El `awk` deja en `plinkzoomhwe.hwe` los SNPs con valor p menor a 0.000001, porque uno de los scripts de R los necesita para graficar los SNPs con mayor desviación. El último comando elimina los SNPs con valor p menor a 1e-6. Plink avisa que `--hwe-all` está en desuso y recomienda `--hwe include-nonctrl`, pero el comando del tutorial funciona igual.
+`--hardy` calcula la prueba exacta de Hardy-Weinberg para cada SNP y la guarda en `plink.hwe`. El `awk` deja en `plinkzoomhwe.hwe` los SNPs con valor p menor a 0.000001, porque uno de los scripts de R los necesita para dibujar los SNPs con mayor desviación. El último comando elimina los SNPs con valor p menor a 1e-6. Plink avisa que `--hwe-all` está en desuso y recomienda `--hwe include-nonctrl`, pero el comando del tutorial funciona igual.
 
 #### Resultados
 
@@ -256,9 +256,9 @@ grep "removed" chilean_all48_hg19_9.log
 
 #### Conclusión
 
-El archivo con los resultados se llama `plink.hwe`. El umbral de 1e-6 eliminó 1.281 de los 459.378 SNPs, cerca del 0,28 %. Para este ejercicio me parece una elección razonable porque retiene la mayor parte de las variantes y descarta las que muestran desviaciones más marcadas.
+El archivo con los resultados se llama `plink.hwe`. El umbral de 1e-6 eliminó 1.281 de los 459.Para este ejercicio me parece una elección razonable porque retiene la mayor parte de las variantes y descarta las que muestran desviaciones más marcadas.
 
-Eso no significa que cada SNP excluido tenga un error de genotipificación. La estructura poblacional también puede producir desviaciones y, con 45 individuos, no rechazar HWE tampoco demuestra que un SNP esté en equilibrio. Los histogramas permiten describir la distribución, pero no bastan para determinar la causa de cada desviación. Además, `plink.hwe` puede contener varias filas por SNP para distintos grupos de análisis; las frecuencias del histograma no deben confundirse directamente con el número de variantes únicas. El conteo de SNPs eliminados se obtuvo del registro del filtro.
+Eso no significa que cada SNP excluido tenga un error de genotipificación. La estructura poblacional también puede producir desviaciones y, con 45 individuos, no rechazar HWE tampoco demuestra que un SNP esté en equilibrio. Los histogramas permiten describir la distribución, pero no bastan para determinar la causa de cada desviación.
 
 ---
 
@@ -343,7 +343,7 @@ wc -l chilean_all48_hg19_10.fam
 
 Se encontraron 103.214 SNPs en aparente equilibrio de ligamiento, es decir los 450.182 SNPs que quedaron fuera de las inversiones menos los 346.968 eliminados por ligamiento. Plink usó 103.220 variantes al extraerlos, seis más que los IDs de la lista, una diferencia compatible con IDs repetidos, aunque no se puede confirmar su causa sin revisar el `.bim` utilizado. Se eliminaron 7.915 SNPs por estar en regiones de inversiones conocidas.
 
-Hay 48 pares con `PI_HAT` de 0.2 o más, y ARI001 aparece en 43 de ellos, 11 veces como primer individuo y 32 como segundo, con valores de 0.23 a 0.29 en las filas visibles, con muchas personas distintas. Ese patrón motivó su exclusión siguiendo el tutorial, aunque el coeficiente por sí solo no permite establecer la causa. Al excluirlo quedan 5 pares, 4 de los cuales incluyen a ARI021 o a ARI018, por lo que se eliminaron también ellos. Con eso quedaron 42 individuos, tres menos que los 45 anteriores. El mayor coeficiente de parentesco aceptado fue 0.2005, del par ARI008 y ARI019, que se dejó porque está muy cerca del límite, y porque los coeficientes pueden estar sobreestimados en individuos mestizos.
+Hay 48 pares con `PI_HAT` de 0.2 o más, y ARI001 aparece en 43 de ellos, 11 veces como primer individuo y 32 como segundo, con valores de 0.23 a 0.29 en las filas visibles, con muchas personas distintas. Ese patrón motivó su exclusión siguiendo el tutorial, aunque el coeficiente por sí solo no permite establecer la causa. Al excluirlo quedan 5 pares, 4 de los cuales incluyen a ARI021 o a ARI018, por lo que se eliminaron también. Con eso quedaron 42 individuos, tres menos que los 45 anteriores. El mayor coeficiente de parentesco aceptado fue 0.2005, del par ARI008 y ARI019, que se dejó porque está muy cerca del límite, y porque los coeficientes pueden estar sobreestimados en individuos mestizos.
 
 ---
 
@@ -510,6 +510,8 @@ En C2–C3, AYM y MAP forman una distribución continua con parte de AMR. En C3�
 
 En las Figuras 40 y 41, los círculos representan las poblaciones de referencia EUR, ASN, AMR y AFR; las cruces corresponden a AYM y MAP. Los colores y símbolos permiten seguir cada grupo entre las distintas combinaciones de componentes y se ven dispersos de forma mas homogenea.
 
+La cercanía entre los individuos en el MDS indica similitud genética en los componentes representados, compatible con ancestría compartida. 
+
 ---
 
 ### Ejercicio 8 — ADMIXTURE 
@@ -530,7 +532,7 @@ for k in $(seq 4 6)
 wc -l MDS_merge_r2_lt_0.2.bim
 ```
 
-Para graficar los resultados se ordenaron las poblaciones en R, en el orden en que se quieren mostrar, y se ejecutó el script del tutorial. Los errores de validación cruzada se extrajeron de los archivos `.log` con `grep`.
+Para mostrar los resultados se ordenaron las poblaciones en R, en el orden en que se quieren mostrar, y se ejecutó el script del tutorial. Los errores de validación cruzada se extrajeron de los archivos `.log` con `grep`.
 
 ```bash
 R --no-save
@@ -620,7 +622,7 @@ En total se perdieron 355.269 SNPs y 6 individuos. La mayor parte de los SNPs se
 
 Los individuos se perdieron por dos causas distintas, las discrepancias de sexo y los parentescos. En ambos casos el criterio es útil, pero tiene límites. La comprobación de sexo señala discrepancias y valores ambiguos, pero no identifica todos los errores de identidad. Las estimaciones de parentesco, además, pueden verse afectadas por la estructura poblacional, como advierte el tutorial. En esta base, un solo individuo, ARI001, generó casi todos los pares de parentesco aparente, un patrón que motivó su exclusión.
 
-En la unión con 1000G, solo 314.412 de las 5.808.310 variantes de 1000G estaban también en el conjunto chileno, por lo que el análisis se restringió a las variantes compartidas. Ese porcentaje describe el solapamiento entre paneles, no la fracción física del genoma analizada. Después de homologar las coordenadas y los alelos no se detectaron discordancias en las comparaciones realizadas, y con los SNPs de bajo desequilibrio de ligamiento quedaron 70.534 SNPs para ADMIXTURE.
+En la unión con 1000G, solo 314.412 de las 5.808.310 variantes de 1000G estaban también en el conjunto chileno, por lo que el análisis se restringió a las variantes compartidas.
 
 
 
@@ -628,9 +630,11 @@ En la unión con 1000G, solo 314.412 de las 5.808.310 variantes de 1000G estaban
 
 El control de calidad redujo el conjunto chileno a **458.097 SNPs y 42 individuos**. Después de excluir duplicados y seleccionar las variantes compartidas con 1000G, la unión quedó con **314.412 SNPs y 671 individuos**. Para los análisis de estructura se utilizaron **70.534 SNPs de bajo LD**.
 
-Los gráficos MDS muestran diferencias entre las poblaciones de referencia y una superposición parcial de AYM y MAP. ADMIXTURE complementa esa observación: K=4 ofrece el menor error de validación cruzada de los cuatro valores evaluados y distingue un componente abundante en las muestras americanas. Estos resultados describen la estructura de las muestras analizadas, sin establecer categorías de ancestría absolutas.
+Los gráficos MDS muestran diferencias entre las poblaciones de referencia y una superposición parcial de AYM y MAP. ADMIXTURE complementa esa observación, K=4 ofrece el menor error de validación cruzada de los cuatro valores evaluados y distingue un componente abundante en las muestras americanas. Estos resultados describen la estructura de las muestras analizadas, sin establecer categorías de ancestría absolutas.
 
 En conjunto, el análisis permitió relacionar las decisiones del control de calidad con los resultados de estructura poblacional. La superposición entre algunas muestras y las diferencias entre valores de K muestran que la interpretación depende tanto de los datos disponibles como del modelo utilizado.
 
 
 ---
+
+
