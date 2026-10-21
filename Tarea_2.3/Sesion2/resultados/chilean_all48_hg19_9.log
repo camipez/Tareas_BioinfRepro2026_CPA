@@ -1,0 +1,28 @@
+PLINK v1.90b6.22 64-bit (16 Apr 2021)
+Options in effect:
+  --bfile chilean_all48_hg19_8
+  --hwe 1e-6
+  --hwe-all
+  --make-bed
+  --out chilean_all48_hg19_9
+
+Hostname: genoma
+Working directory: /home/bioinfo1/castorga/Unidad2/Sesion2
+Start time: Tue Oct 13 22:22:21 2026
+
+Note: --hwe-all flag deprecated.  Use "--hwe include-nonctrl".
+Random number seed: 1791940941
+31640 MB RAM detected; reserving 15820 MB for main workspace.
+459378 variants loaded from .bim file.
+45 people (26 males, 19 females) loaded from .fam.
+45 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 45 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+--hwe: 1281 variants removed due to Hardy-Weinberg exact test.
+458097 variants and 45 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 45 are controls.
+--make-bed to chilean_all48_hg19_9.bed + chilean_all48_hg19_9.bim +
+chilean_all48_hg19_9.fam ... done.
+
+End time: Tue Oct 13 22:22:22 2026

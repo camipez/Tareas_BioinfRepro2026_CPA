@@ -1,0 +1,37 @@
+PLINK v1.90b7.2 64-bit (11 Dec 2023)
+Options in effect:
+  --allow-no-sex
+  --bfile 1kG_MDS8
+  --bmerge chilean_all48_hg19_15.bed chilean_all48_hg19_15.bim chilean_all48_hg19_15.fam
+  --make-bed
+  --out MDS_merge
+
+Hostname: genoma
+Working directory: /home/bioinfo1/castorga/Unidad2/Sesion2
+Start time: Wed Oct 14 00:48:14 2026
+
+Random number seed: 1791949694
+31640 MB RAM detected; reserving 15820 MB for main workspace.
+629 people loaded from 1kG_MDS8.fam.
+42 people to be merged from chilean_all48_hg19_15.fam.
+Of these, 42 are new, while 0 are present in the base dataset.
+314412 markers loaded from 1kG_MDS8.bim.
+314412 markers to be merged from chilean_all48_hg19_15.bim.
+Of these, 0 are new, while 314412 are present in the base dataset.
+Performing single-pass merge (671 people, 314412 variants).
+Merged fileset written to MDS_merge-merge.bed + MDS_merge-merge.bim +
+MDS_merge-merge.fam .
+314412 variants loaded from .bim file.
+671 people (24 males, 18 females, 629 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to MDS_merge.nosex .
+42 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 671 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.999429.
+314412 variants and 671 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 42 are controls.  (629 phenotypes
+are missing.)
+--make-bed to MDS_merge.bed + MDS_merge.bim + MDS_merge.fam ... done.
+
+End time: Wed Oct 14 00:48:16 2026

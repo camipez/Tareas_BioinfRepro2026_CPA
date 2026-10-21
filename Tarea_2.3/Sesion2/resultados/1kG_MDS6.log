@@ -1,0 +1,28 @@
+PLINK v1.90b7.2 64-bit (11 Dec 2023)
+Options in effect:
+  --bfile /home/bioinfo1/1000G/1kG_MDS5
+  --extract common_snps.txt
+  --make-bed
+  --out 1kG_MDS6
+  --recode
+
+Hostname: genoma
+Working directory: /home/bioinfo1/castorga/Unidad2/Sesion2
+Start time: Wed Oct 14 00:45:46 2026
+
+Random number seed: 1791949546
+31640 MB RAM detected; reserving 15820 MB for main workspace.
+5808310 variants loaded from .bim file.
+629 people (0 males, 0 females, 629 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to 1kG_MDS6.nosex .
+--extract: 314412 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 629 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.999391.
+314412 variants and 629 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to 1kG_MDS6.bed + 1kG_MDS6.bim + 1kG_MDS6.fam ... done.
+--recode ped to 1kG_MDS6.ped + 1kG_MDS6.map ... done.
+
+End time: Wed Oct 14 00:46:03 2026

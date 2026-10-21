@@ -1,0 +1,28 @@
+PLINK v1.90b6.22 64-bit (16 Apr 2021)
+Options in effect:
+  --bfile chilean_all48_hg19_5
+  --make-bed
+  --out chilean_all48_hg19_6
+  --remove sex_discrepancy.txt
+
+Hostname: genoma
+Working directory: /home/bioinfo1/castorga/Unidad2/Sesion2
+Start time: Tue Oct 13 22:05:29 2026
+
+Random number seed: 1791939929
+31640 MB RAM detected; reserving 15820 MB for main workspace.
+574624 variants loaded from .bim file.
+48 people (27 males, 21 females) loaded from .fam.
+48 phenotype values loaded from .fam.
+--remove: 45 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 45 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 7602 het. haploid genotypes present (see chilean_all48_hg19_6.hh );
+many commands treat these as missing.
+574624 variants and 45 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 45 are controls.
+--make-bed to chilean_all48_hg19_6.bed + chilean_all48_hg19_6.bim +
+chilean_all48_hg19_6.fam ... done.
+
+End time: Tue Oct 13 22:05:29 2026

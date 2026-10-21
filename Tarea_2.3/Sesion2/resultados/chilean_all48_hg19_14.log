@@ -1,0 +1,29 @@
+PLINK v1.90b7.2 64-bit (11 Dec 2023)
+Options in effect:
+  --a1-allele 1kG_ref-list.txt
+  --bfile chilean_all48_hg19_13
+  --flip flip_list.txt
+  --make-bed
+  --out chilean_all48_hg19_14
+
+Hostname: genoma
+Working directory: /home/bioinfo1/castorga/Unidad2/Sesion2
+Start time: Wed Oct 14 00:47:35 2026
+
+Random number seed: 1791949655
+31640 MB RAM detected; reserving 15820 MB for main workspace.
+314412 variants loaded from .bim file.
+42 people (24 males, 18 females) loaded from .fam.
+42 phenotype values loaded from .fam.
+--flip: 0 SNPs flipped.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 42 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is exactly 1.
+--a1-allele: 314412 assignments made.
+314412 variants and 42 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 42 are controls.
+--make-bed to chilean_all48_hg19_14.bed + chilean_all48_hg19_14.bim +
+chilean_all48_hg19_14.fam ... done.
+
+End time: Wed Oct 14 00:47:35 2026

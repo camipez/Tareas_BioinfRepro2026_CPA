@@ -1,7 +1,8 @@
 # Tarea 2.2 — Genética de poblaciones con software especializado
 
 **Curso** Bioinformática e investigación reproducible para análisis genómicos
-**Unidad 2** Control de calidad de datos NGS — Sesión 5
+<<<<<<< Updated upstream
+**Unidad 2** Control de calidad de datos NGS 
 **Estudiante** Camila Astorga
 **Profesor** Ricardo Verdugo
 **Institución** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile
@@ -42,7 +43,7 @@ Los archivos grandes, como el VCF filtrado, los archivos `.ped` y los `.bed`, no
 
 ### Preparación del entorno
 
-Los datos están en el servidor genoma.med.uchile.cl, así que el trabajo se hizo por ssh. Todos los archivos de resultados y los scripts quedaron en la carpeta `Unidad2/Prac_Uni5`, dentro de la cuenta de usuario del servidor, y por eso ningún comando usa rutas con `../`.
+Los datos están en el servidor genoma.med.uchile.cl, así que el trabajo se hizo por ssh. Todos los archivos de resultados y los scripts quedaron en la carpeta `Unidad2/Prac_Uni5`, dentro de mi carpeta.
 
 ```bash
 ssh -Y bioinfo1@genoma.med.uchile.cl

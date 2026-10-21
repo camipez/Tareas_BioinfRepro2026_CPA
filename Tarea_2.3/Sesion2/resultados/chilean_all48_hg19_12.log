@@ -1,0 +1,27 @@
+PLINK v1.90b7.2 64-bit (11 Dec 2023)
+Options in effect:
+  --bfile chilean_all48_hg19_11
+  --extract common_snps.txt
+  --make-bed
+  --out chilean_all48_hg19_12
+
+Hostname: genoma
+Working directory: /home/bioinfo1/castorga/Unidad2/Sesion2
+Start time: Wed Oct 14 00:46:18 2026
+
+Random number seed: 1791949578
+31640 MB RAM detected; reserving 15820 MB for main workspace.
+458044 variants loaded from .bim file.
+42 people (24 males, 18 females) loaded from .fam.
+42 phenotype values loaded from .fam.
+--extract: 314412 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 42 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is exactly 1.
+314412 variants and 42 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 42 are controls.
+--make-bed to chilean_all48_hg19_12.bed + chilean_all48_hg19_12.bim +
+chilean_all48_hg19_12.fam ... done.
+
+End time: Wed Oct 14 00:46:19 2026
