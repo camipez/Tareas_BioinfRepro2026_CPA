@@ -140,7 +140,7 @@ plink --bfile chilean_all48_hg19_5 --remove sex_discrepancy.txt --make-bed --out
 wc -l sex_discrepancy.txt
 ```
 
-`--check-sex` compara el sexo registrado con la clasificación basada en el coeficiente F del cromosoma X. En este procedimiento se usan los umbrales F<0.2 para la que se clasifique como  femenina y F>0.8 para la masculina; las discrepancias y los valores intermedios se señalan como PROBLEM. El script de R grafica los valores de `F`. El `grep` y el `awk` dejan en `sex_discrepancy.txt` solo el ID de familia y el ID de individuo de los marcados, y `--remove` los elimina del conjunto.
+`--check-sex` compara el sexo registrado con la clasificación basada en el coeficiente F del cromosoma X. En este procedimiento se usan los umbrales F<0.2 para que se clasifique como  femenino y F>0.8 para masculino; las discrepancias y los valores intermedios se señalan como PROBLEM. El script de R grafica los valores de `F`. El `grep` y el `awk` dejan en `sex_discrepancy.txt` solo el ID de familia y el ID de individuo de los marcados, y `--remove` los elimina del conjunto.
 
 #### Resultados
 
