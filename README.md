@@ -29,4 +29,4 @@ a `bin/` directory holding them.
 | [`Tarea_1.3/`](Tarea_1.3/) | Unit 1, Session 3 — Introduction to R. |
 | [`Tarea_2.1/`](Tarea_2.1/) | Unit 2, Session 4 — NGS data generation and alignment. |
 | [`Tarea_2.2/`](Tarea_2.2/) | Unit 2, Session 5 — Genotype data. |
-| [`Tarea_2.2/`](Tarea_2.3/) | Unit 2, Session 6 — Genetic analysis of populations. |
+| [`Tarea_2.3/`](Tarea_2.3/) | Unit 2, Session 6 — Genetic analysis of populations. |
