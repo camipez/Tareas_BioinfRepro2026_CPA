@@ -167,7 +167,7 @@ Británicos frente a toscanos con Mbuti dio f4 = −0,0000832 (Z = −2,32; p = 
 
 ### Conclusión
 
-El f4 de GBR y TSI con Mbuti es cercano a cero (Z = −2,32), así que GBR y TSI son casi simétricos respecto de Mbuti. Con Altai_Neanderthal, GBR comparte más alelos que Mbuti (f4 positivo) y menos que Papuan (f4 negativo). En el último f4 el valor negativo indica que Papuan comparte más alelos con Denisova que con Altai_Neanderthal, tomando a GBR como referencia.
+El f4 de GBR y TSI con Mbuti es cercano a cero (Z = −2,32), así que GBR y TSI son casi simétricos respecto de Mbuti. Con Altai Neanderthal, GBR comparte más alelos que Mbuti (f4 positivo) y menos que Papuan (f4 negativo). En el último f4 el valor negativo indica que Papuan comparte más alelos con Denisova que con Altai Neanderthal, tomando a GBR como referencia.
 
 ## A.6 qpWave
 
@@ -398,7 +398,7 @@ Se definieron los tres objetivos, las dos fuentes y los grupos externos, se calc
 
 ### Conclusión
 
-Los tres grupos de la estepa se pueden explicar como una mezcla de Iran y Sidelkino. Sidelkino aporta la mayor parte, entre 64 % y 80 %, y Iran_N el resto. En uno de los grupos Sidelkino solo también es compatible con los datos, así que ahí el aporte de Iran es menos claro.
+Los tres grupos de la estepa se pueden explicar como una mezcla de Iran y Sidelkino. Sidelkino aporta la mayor parte, entre 64 % y 80 %, y Iran el resto. En uno de los grupos Sidelkino solo también es compatible con los datos, así que ahí el aporte de Iran es menos claro.
 
 ---
 
