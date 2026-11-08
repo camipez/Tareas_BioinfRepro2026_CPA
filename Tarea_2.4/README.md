@@ -15,9 +15,9 @@ Aplicar las estadísticas f (f2, f3, f4/D) y los modelos qpWave y qpAdm del paqu
 
 1. Calcular los bloques f2 y reproducir los análisis del tutorial (f3 de mezcla, f3 de grupo externo, f4, qpWave y qpAdm).
 2. Evaluar si las poblaciones europeas actuales tienen la misma mezcla de tres vías entre Barcin, Yamnaya y Mesolítico de Luxemburgo (Proyecto 1).
-3. Probar si Sintashta, Alakul y Srubnaya se explican como mezcla de Iran y Sidelkino ( 2).
-4. Contrastar modelos de olas de poblamiento de las Américas y la afinidad con poblaciones australo-melanesias en cinco grupos nativos americanos ( 3).
-5. Evaluar si la población ibérica actual se explica como mezcla de Visigoth, Mozabite y YRI ( 4).
+3. Probar si Sintashta, Alakul y Srubnaya se explican como mezcla de Iran y Sidelkino (Proyecto 2).
+4. Contrastar modelos de olas de poblamiento de las Américas y la afinidad con poblaciones australo-melanesias en cinco grupos nativos americanos (Proyecto 3).
+5. Evaluar si la población ibérica actual se explica como mezcla de Visigoth, Mozabite y YRI (Proyecto 4).
 
 ---
 
@@ -261,9 +261,9 @@ Germany tiene un peso de Yamnaya de 0,771 en el modelo de tres fuentes, mayor qu
 
 ---
 
-# s
+#Proyectos
 
-##  1. ¿Tienen todas las poblaciones europeas actuales la misma mezcla de tres vías?
+##Proyecto  1. ¿Tienen todas las poblaciones europeas actuales la misma mezcla de tres vías?
 
 ### Enunciado
 
@@ -275,7 +275,7 @@ Se definieron los objetivos, las fuentes y los grupos externos, se calcularon lo
 
 ![Figura 23](figuras/figura_18.png)
 
-**Figura 23.**  1. Definición de poblaciones, bloques f2, f3 de grupo externo y f4 de asimetría.
+**Figura 23.**  Proyecto 1. Definición de poblaciones, bloques f2, f3 de grupo externo y f4 de asimetría.
 
 ![Figura 24](figuras/figura_19.png)
 
@@ -469,7 +469,7 @@ El ajuste del modelo A muestra que el modelo completo no se rechazó en ningún 
 
 **Figura 42.** Proyecto 3. Pesos de los modelos qpAdm A (`pesos_A`) y B (`pesos_B`) por grupo.
 
-**qpAdm, modelo B (Beringia y Spirit Cave).** Los pesos aparecen en la Figura 42. En Karitiana, Surui, PEL y Mixe uno de los dos pesos fue negativo, y solo en Pima ambos fueron positivos (Beringia 0,092 y Spirit Cave 0,908; Z = 3,92). El modelo completo solo fue factible en Pima, con pesos de 0,092 para Beringia y 0,908 para Spirit Cave (p = 0,856). En Karitiana, Surui, PEL y Mixe apareció algún peso negativo. Los modelos con Spirit Cave como única fuente no se rechazaron en Pima (p = 0,916), Mixe (p = 0,912) ni Karitiana (p = 0,072), y sí en Surui (p = 0,004) y PEL (p = 1,5 × 10⁻²⁴). Los modelos con Beringia como única fuente se rechazaron en los cinco grupos (Figura 43).
+**qpAdm, modelo B (Beringia y Spirit Cave).** Los pesos aparecen en la Figura 42. En Karitiana, Surui, PEL y Mixe uno de los dos pesos fue negativo, y solo en Pima ambos fueron positivos (Beringia 0,092 y Spirit Cave 0,908; Z = 3,92). El modelo completo solo fue factible en Pima, con pesos de 0,092 para Beringia y 0,908 para Spirit Cave (p = 0,856). Los modelos con Spirit Cave como única fuente no se rechazaron en Pima (p = 0,916), Mixe (p = 0,912) ni Karitiana (p = 0,072), y sí en Surui (p = 0,004) y PEL (p = 1,5 × 10⁻²⁴). Los modelos con Beringia como única fuente se rechazaron en los cinco grupos (Figura 43).
 
 ![Figura 43](figuras/ajustewayproyecto3.png)
 
@@ -484,6 +484,7 @@ El ajuste del modelo A muestra que el modelo completo no se rechazó en ningún 
 El ajuste del modelo de tres vías muestra que el modelo completo no se rechazó en ningún grupo (p entre 0,080 y 0,944), pero no fue factible en ninguno porque siempre hubo algún peso negativo. De los modelos de dos fuentes solo fueron factibles los de Pima, con Anzick y Spirit Cave (p = 0,814) y con Beringia y Spirit Cave (p = 0,841). El modelo con Spirit Cave como única fuente no se rechazó en Pima (p = 0,908) ni en Mixe (p = 0,905), quedó en el límite en Karitiana (p = 0,0535) y se rechazó en Surui (p = 0,0022) y PEL (p = 1,0 × 10⁻²⁴) (Tabla 3).
 
 **Tabla 3.** Proyecto 3. Ajuste (`popdrop`) del modelo qpAdm de tres vías por grupo (`ajuste_3way`).
+
 | Objetivo | pat | wt | dof | χ² | p | f4rank | Anzick | Beringia | Spirit | factible | mejor | dofdiff | chi2dif | p_anid |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Karitiana | 000 | 0 | 2 | 4,81 | 0,090 | 2 | 1,930 | −2,674 | 1,744 | FALSE | NA | NA | NA | NA |
@@ -536,7 +537,7 @@ Evaluar si la población ibérica actual (IBS) puede explicarse como mezcla de V
 
 ### Metodología
 
-Se definieron los ibéricos como objetivo, Visigoth, Mozabite y YRI como fuentes, y se calcularon los bloques f2 con `maxmem = 1000` para que no arrojara el error ''std::bad_alloc''. Después se obtuvo el f3 de grupo externo de los ibéricos con cada fuente, dos f4 de asimetría con Visigoth como `pop2`, qpWave y los modelos qpAdm de dos y tres fuentes, que se revisaron con `summary()` (Figura 45).El identificador NorthAfrican_Ancient.DG de las pistas no está en la metadata, por lo que se usó Mozabite como fuente norafricana.
+Se definieron los ibéricos como objetivo, Visigoth, Mozabite y YRI como fuentes, y se calcularon los bloques f2 con `maxmem = 1000` para que no arrojara el error `std::bad_alloc`. Después se obtuvo el f3 de grupo externo de los ibéricos con cada fuente, dos f4 de asimetría con Visigoth como `pop2`, qpWave y los modelos qpAdm de dos y tres fuentes, que se revisaron con `summary()` (Figura 45).El identificador NorthAfrican_Ancient.DG de las pistas no está en la metadata, por lo que se usó Mozabite como fuente norafricana.
 
 ![Figura 45](figuras/figura_29.png)
 
