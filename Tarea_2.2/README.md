@@ -1,7 +1,6 @@
 # Tarea 2.2 — Genética de poblaciones con software especializado
 
 **Curso** Bioinformática e investigación reproducible para análisis genómicos
-<<<<<<< Updated upstream
 **Unidad 2** Control de calidad de datos NGS 
 **Estudiante** Camila Astorga
 **Profesor** Ricardo Verdugo
