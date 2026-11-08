@@ -15,7 +15,7 @@ Aplicar las estadísticas f (f2, f3, f4/D) y los modelos qpWave y qpAdm del paqu
 
 1. Calcular los bloques f2 y reproducir los análisis del tutorial (f3 de mezcla, f3 de grupo externo, f4, qpWave y qpAdm).
 2. Evaluar si las poblaciones europeas actuales tienen la misma mezcla de tres vías entre Barcin, Yamnaya y Mesolítico de Luxemburgo (Proyecto 1).
-3. Probar si Sintashta, Alakul y Srubnaya se explican como mezcla de Iran_N y Sidelkino (Proyecto 2).
+3. Probar si Sintashta, Alakul y Srubnaya se explican como mezcla de Iran y Sidelkino (Proyecto 2).
 4. Contrastar modelos de olas de poblamiento de las Américas y la afinidad con poblaciones australo-melanesias en cinco grupos nativos americanos (Proyecto 3).
 5. Evaluar si la población ibérica actual se explica como mezcla de Visigoth, Mozabite y YRI (Proyecto 4).
 
@@ -358,7 +358,7 @@ Se definieron los objetivos, las fuentes y los grupos externos, se calcularon lo
 
 ### Conclusión
 
-Según qpWave, las poblaciones visibles necesitan tres corrientes de ancestría, pero no tienen la misma mezcla. El modelo de Barcin y Yamnaya solo no se rechaza en GBR, Basque y Orcadian. En el modelo de tres fuentes el peso de Mesolítico de Luxemburgoc es negativo en la mayoría de las poblaciones, y en Russian y FIN también el de Barcin, así que esos pesos no se interpretan como proporciones. Por lo tanto, las poblaciones europeas actuales no tienen la misma mezcla de tres vías.
+Las poblaciones europeas actuales no tienen todas la misma mezcla de tres vías. Solo algunas se explican bien con dos de las fuentes, y al usar las tres aparecen pesos negativos que no se pueden interpretar. Eso indica que las fuentes elegidas no describen bien a todas las poblaciones.
 
 ---
 
@@ -370,7 +370,7 @@ Evaluar si Sintashta, Alakul y Srubnaya pueden explicarse como mezcla de Iraní 
 
 ### Metodología
 
-Se definieron los tres objetivos, las dos fuentes y los grupos externos, se calcularon los bloques f2 del proyecto y se obtuvo el f3 de grupo externo entre cada objetivo y cada fuente. El f4 de asimetría se calculó como f4(objetivo, Sidelkino; Iran_N, Mbuti). Por último se corrieron qpWave y qpAdm para cada objetivo con `map_dfr()` (Figura 32).
+Se definieron los tres objetivos, las dos fuentes y los grupos externos, se calcularon los bloques f2 del proyecto y se obtuvo el f3 de grupo externo entre cada objetivo y cada fuente. El f4 de asimetría se calculó como f4(objetivo, Sidelkino; Iran, Mbuti). Por último se corrieron qpWave y qpAdm para cada objetivo con `map_dfr()` (Figura 32).
 
 ![Figura 32](figuras/figura_24.png)
 
@@ -378,7 +378,7 @@ Se definieron los tres objetivos, las dos fuentes y los grupos externos, se calc
 
 ### Resultados
 
-**f3 y f4.** En los tres grupos la deriva compartida con Sidelkino (0,0747 a 0,0757) fue mayor que con Iran (0,0674 a 0,0679). El f4(objetivo, Sidelkino; Iran_N, Mbuti) fue positivo y significativo, con 0,00194 (Z = 5,54) en Sintashta, 0,00213 (Z = 6,00) en Alakul y 0,00162 (Z = 4,61) en Srubnaya (Figura 33).
+**f3 y f4.** En los tres grupos la deriva compartida con Sidelkino (0,0747 a 0,0757) fue mayor que con Iran (0,0674 a 0,0679). El f4(objetivo, Sidelkino; Iran, Mbuti) fue positivo y significativo, con 0,00194 (Z = 5,54) en Sintashta, 0,00213 (Z = 6,00) en Alakul y 0,00162 (Z = 4,61) en Srubnaya (Figura 33).
 
 ![Figura 33](figuras/figura_25.png)
 
@@ -390,7 +390,7 @@ Se definieron los tres objetivos, las dos fuentes y los grupos externos, se calc
 
 **Figura 34.** Proyecto 2. Tabla `rankdrop` de qpWave para los tres grupos de la estepa.
 
-**qpAdm.** El modelo de dos fuentes no se rechazó en ningún grupo (p = 0,667, 0,479 y 0,599) y fue factible. Los pesos de Iran_N y Sidelkino fueron 0,307 y 0,693 en Sintashta, 0,358 y 0,642 en Alakul, y 0,197 y 0,803 en Srubnaya, con errores estándar de 0,067 a 0,079. Los modelos con Iran_N como única fuente se rechazaron en los tres grupos (p entre 10⁻¹⁷ y 10⁻²⁷). Los de Sidelkino como única fuente se rechazaron en Sintashta (p = 0,0061) y Alakul (p = 7,8 × 10⁻⁴), pero no en Srubnaya (p = 0,132) (Figura 35).
+**qpAdm.** El modelo de dos fuentes no se rechazó en ningún grupo (p = 0,667, 0,479 y 0,599) y fue factible. Los pesos de Iran y Sidelkino fueron 0,307 y 0,693 en Sintashta, 0,358 y 0,642 en Alakul, y 0,197 y 0,803 en Srubnaya, con errores estándar de 0,067 a 0,079. Los modelos con Iran como única fuente se rechazaron en los tres grupos (p entre 10⁻¹⁷ y 10⁻²⁷). Los de Sidelkino como única fuente se rechazaron en Sintashta (p = 0,0061) y Alakul (p = 7,8 × 10⁻⁴), pero no en Srubnaya (p = 0,132) (Figura 35).
 
 ![Figura 35](figuras/qpadm_proyecto2.png)
 
@@ -398,7 +398,7 @@ Se definieron los tres objetivos, las dos fuentes y los grupos externos, se calc
 
 ### Conclusión
 
-El modelo con Iran_N y Sidelkino no se rechaza en Sintashta, Alakul ni Srubnaya (p = 0,667, 0,479 y 0,599) y es factible. Sidelkino aporta entre 64 % y 80 % e Iran_N entre 20 % y 36 %. El modelo con solo Iran_N se rechaza en los tres grupos. El modelo con solo Sidelkino se rechaza en Sintashta y Alakul, pero no en Srubnaya (p = 0,132), así que en Srubnaya Iran_N no es claramente necesario.
+Los tres grupos de la estepa se pueden explicar como una mezcla de Iran y Sidelkino. Sidelkino aporta la mayor parte, entre 64 % y 80 %, y Iran_N el resto. En uno de los grupos Sidelkino solo también es compatible con los datos, así que ahí el aporte de Iran es menos claro.
 
 ---
 
@@ -524,7 +524,7 @@ El ajuste del modelo de tres vías muestra que el modelo completo no se rechazó
 
 ### Conclusión
 
-En los cinco grupos el f3 es más alto con Spirit Cave, luego con Anzick y luego con Beringia antigua, y los f4 ordenan las fuentes de la misma forma. En qpAdm el modelo de Anzick y Beringia no es factible por el peso negativo de Anzick, y con las tres fuentes los pesos no son estables. El modelo con solo Spirit Cave no se rechaza en Pima y Mixe y queda en el límite en Karitiana (p = 0,072), pero se rechaza en Surui y PEL, lo que coincide con qpWave, donde Surui y PEL necesitan tres corrientes. El f4 con Papuan es positivo en Pima, PEL y Mixe y no es significativo en Surui.
+Los cinco grupos están más cerca de Spirit Cave que de las otras dos fuentes. Con las tres fuentes juntas los pesos no son estables, y no se puede decir cuánto aporta cada una. Spirit Cave solo explica bien a dos de los grupos, y los otros necesitan más de una corriente.
 
 ---
 
@@ -568,7 +568,7 @@ Se definieron los ibéricos como objetivo, Visigoth, Mozabite y YRI como fuentes
 
 ### Conclusión
 
-El f3 de IBS es mayor con Visigoth (0,0679) que con Mozabite (0,0589) y YRI (0,0235), y el f4 con Mozabite es positivo y significativo. Sin embargo, qpWave rechaza los rangos 1 y 2, así que tres corrientes no bastan para explicar a IBS y sus fuentes. En el modelo de dos fuentes el peso de Mozabite es negativo (−0,2014) y en el de tres fuentes los errores estándar son mayores que los pesos, por lo que no se pueden estimar proporciones. Además, `NorthAfrican_Ancient.DG` del enunciado no está en la metadata y se usó Mozabite.
+La mezcla de Visigoth, Mozabite y YRI no explica bien a la población ibérica actual. Aunque está más cerca de Visigoth, el modelo no se ajusta y los pesos no se pueden interpretar. Con estas fuentes no se puede responder la pregunta del proyecto.
 
 ---
 
