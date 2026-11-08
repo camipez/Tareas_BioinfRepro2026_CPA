@@ -15,9 +15,9 @@ Aplicar las estadísticas f (f2, f3, f4/D) y los modelos qpWave y qpAdm del paqu
 
 1. Calcular los bloques f2 y reproducir los análisis del tutorial (f3 de mezcla, f3 de grupo externo, f4, qpWave y qpAdm).
 2. Evaluar si las poblaciones europeas actuales tienen la misma mezcla de tres vías entre Barcin, Yamnaya y Mesolítico de Luxemburgo (Proyecto 1).
-3. Probar si Sintashta, Alakul y Srubnaya se explican como mezcla de Iran y Sidelkino (Proyecto 2).
-4. Contrastar modelos de olas de poblamiento de las Américas y la afinidad con poblaciones australo-melanesias en cinco grupos nativos americanos (Proyecto 3).
-5. Evaluar si la población ibérica actual se explica como mezcla de Visigoth, Mozabite y YRI (Proyecto 4).
+3. Probar si Sintashta, Alakul y Srubnaya se explican como mezcla de Iran y Sidelkino ( 2).
+4. Contrastar modelos de olas de poblamiento de las Américas y la afinidad con poblaciones australo-melanesias en cinco grupos nativos americanos ( 3).
+5. Evaluar si la población ibérica actual se explica como mezcla de Visigoth, Mozabite y YRI ( 4).
 
 ---
 
@@ -261,9 +261,9 @@ Germany tiene un peso de Yamnaya de 0,771 en el modelo de tres fuentes, mayor qu
 
 ---
 
-# Proyectos
+# s
 
-## Proyecto 1. ¿Tienen todas las poblaciones europeas actuales la misma mezcla de tres vías?
+##  1. ¿Tienen todas las poblaciones europeas actuales la misma mezcla de tres vías?
 
 ### Enunciado
 
@@ -271,11 +271,11 @@ Evaluar si poblaciones europeas actuales (británicos, vascos, franceses, italia
 
 ### Metodología
 
-Se definieron los objetivos, las fuentes y los grupos externos, se calcularon los bloques f2 y se obtuvo el f3 de grupo externo entre cada objetivo y cada fuente. Luego se calcularon tres f4 de asimetría, uno por fuente, con los británicos como pop1 y Mbuti como pop4 (Figura 23). La segunda parte del script corre qpWave y qpAdm para cada población con map_dfr(), con modelos de dos fuentes (Barcin y Yamnaya) y de tres fuentes (Figura 24). Se hizo así porque qpwave() pide que right tenga más poblaciones que left menos uno. Con cinco poblaciones en right, un left de 14 da el error Mat::cols(): indices out of bounds, así que e se corrió una llamada por cada población objetivo (el objetivo y sus fuentes en left) con map_dfr(), que junta los resultados en una sola tabla..
+Se definieron los objetivos, las fuentes y los grupos externos, se calcularon los bloques f2 y se obtuvo el f3 de grupo externo entre cada objetivo y cada fuente. Luego se calcularon tres f4 de asimetría, uno por fuente, con los británicos como pop1 y Mbuti como pop4 (Figura 23). La segunda parte del script corre qpWave y qpAdm para cada población con map_dfr(), con modelos de dos fuentes (Barcin y Yamnaya) y de tres fuentes (Figura 24). Se hizo así porque qpwave() pide que right tenga más poblaciones que left menos uno. Con cinco poblaciones en right, un left de 14 da el error Mat::cols(): indices out of bounds, por lo que  se corrió una llamada por cada población objetivo (el objetivo y sus fuentes en left) con map_dfr(), que junta los resultados en una sola tabla.
 
 ![Figura 23](figuras/figura_18.png)
 
-**Figura 23.** Proyecto 1. Definición de poblaciones, bloques f2, f3 de grupo externo y f4 de asimetría.
+**Figura 23.**  1. Definición de poblaciones, bloques f2, f3 de grupo externo y f4 de asimetría.
 
 ![Figura 24](figuras/figura_19.png)
 
@@ -366,7 +366,7 @@ Las poblaciones europeas actuales no tienen todas la misma mezcla de tres vías.
 
 ### Enunciado
 
-Evaluar si Sintashta, Alakul y Srubnaya pueden explicarse como mezcla de Iraní y Sidelkino.
+Evaluar si Sintashta, Alakul y Srubnaya pueden explicarse como mezcla de Iran y Sidelkino.
 
 ### Metodología
 
@@ -536,7 +536,7 @@ Evaluar si la población ibérica actual (IBS) puede explicarse como mezcla de V
 
 ### Metodología
 
-Se definieron los ibéricos como objetivo, Visigoth, Mozabite y YRI como fuentes, y se calcularon los bloques f2 con `maxmem = 1000`. Después se obtuvo el f3 de grupo externo de los ibéricos con cada fuente, dos f4 de asimetría con Visigoth como `pop2`, qpWave y los modelos qpAdm de dos y tres fuentes, que se revisaron con `summary()` (Figura 45).
+Se definieron los ibéricos como objetivo, Visigoth, Mozabite y YRI como fuentes, y se calcularon los bloques f2 con `maxmem = 1000` para que no arrojara el error ''std::bad_alloc''. Después se obtuvo el f3 de grupo externo de los ibéricos con cada fuente, dos f4 de asimetría con Visigoth como `pop2`, qpWave y los modelos qpAdm de dos y tres fuentes, que se revisaron con `summary()` (Figura 45).El identificador NorthAfrican_Ancient.DG de las pistas no está en la metadata, por lo que se usó Mozabite como fuente norafricana.
 
 ![Figura 45](figuras/figura_29.png)
 
