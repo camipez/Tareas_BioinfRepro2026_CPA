@@ -261,9 +261,9 @@ Germany tiene un peso de Yamnaya de 0,771 en el modelo de tres fuentes, mayor qu
 
 ---
 
-#Proyectos
+# Proyectos
 
-##Proyecto  1. ¿Tienen todas las poblaciones europeas actuales la misma mezcla de tres vías?
+## Proyecto  1. ¿Tienen todas las poblaciones europeas actuales la misma mezcla de tres vías?
 
 ### Enunciado
 
