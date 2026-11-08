@@ -1,14 +1,7 @@
-# Tarea 2.4. Genética de poblaciones con ADMIXTOOLS
+# Tarea 2.4 — Análisis genético de poblaciones
 
-| | |
-|---|---|
-| **Curso** | Bioinformática para investigación reproducible y análisis genómicos (BioinfinvRepro) |
-**Unidad** | Genética de poblaciones, f-statistics y modelamiento de mestizaje |
-| **Estudiante** | Camila Astorga |
-| **Profesor** | Constanza de la Fuente |
-| **Institución** | Universidad de Chile |
-| **Fecha** | 8 de noviembre de 2026 |
-| **Repositorio** | https://github.com/camipez/Tareas_BioinfRepro2026_CPA
+**Curso:** Bioinformática e investigación reproducible para análisis genómicos  **Unidad 2:** Genética de poblaciones  **Estudiante:** Camila Astorga  **Profesora:** Constanza de la Fuente  **Institución:** Facultad de Ciencias Químicas y Farmacéuticas, Universidad de Chile  
+**Fecha:** 08-11-2026  **Repositorio:** <https://github.com/camipez/Tareas_BioinfRepro2026_CPA>
 
 ---
 
