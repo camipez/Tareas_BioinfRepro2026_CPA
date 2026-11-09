@@ -211,11 +211,11 @@ Se ejecutó `qpadm()` con las mismas poblaciones `left` y `right` de qpWave y co
 
 ![Figura 17](figuras/figura_8.png)
 
-**Figura 17.** Comandos para ver los pesos y el resultado del modelo poblacional.
+**Figura 17.** Comandos para ver los weights y el resultado del modelo poblacional.
 
 ### Resultados
 
-Para England se estimó 0,367 de Barcin (error estándar 0,044), 0,044 del Mesolítico (0,078) y 0,589 de Yamnaya (0,089) (Figura 18). El modelo de tres fuentes no se rechazó (p = 0,667) y el de dos fuentes con Barcin y Yamnaya tampoco (p = 0,760), con pesos de 0,368 y 0,632 (Figura 19).
+Para England se estimó 0,367 de Barcin (error estándar 0,044), 0,044 del Mesolítico (0,078) y 0,589 de Yamnaya (0,089) (Figura 18). El modelo de tres fuentes no se rechazó (p = 0,667) y el de dos fuentes con Barcin y Yamnaya tampoco (p = 0,760), con weights de 0,368 y 0,632 (Figura 19).
 
 ![Figura 18](figuras/proporciones_ascendencia.png)
 
@@ -227,7 +227,7 @@ Para England se estimó 0,367 de Barcin (error estándar 0,044), 0,044 del Mesol
 
 ### Conclusión
 
-El peso de Mesolítico de Luxemburgo en England (0,044) es menor que su error estándar (0,078). El modelo de tres fuentes (p = 0,667) y el de Barcin y Yamnaya (p = 0,760) no se rechazan, así que England se explica con Barcin (0,368) y Yamnaya (0,632) sin necesitar Mesolítico de Luxemburgo
+El weight de Mesolítico de Luxemburgo en England (0,044) es menor que su error estándar (0,078). El modelo de tres fuentes (p = 0,667) y el de Barcin y Yamnaya (p = 0,760) no se rechazan, así que England se explica con Barcin (0,368) y Yamnaya (0,632) sin necesitar Mesolítico de Luxemburgo
 
 ## A.8 Repetición de qpAdm con Germany
 
@@ -257,7 +257,7 @@ Los valores fueron 0,157 de Barcin (error estándar 0,072), 0,072 del Mesolític
 
 ### Conclusión
 
-Germany tiene un peso de Yamnaya de 0,771 en el modelo de tres fuentes, mayor que el de England (0,589). El modelo de Barcin y Yamnaya no se rechaza (p = 0,521), así que Germany también se explica sin Mesolitico de Luxmburg. El modelo sin Barcin, con Mesolítico de Luxemburgo y Yamnaya, se rechaza (p = 0,0363).
+Germany tiene un weight de Yamnaya de 0,771 en el modelo de tres fuentes, mayor que el de England (0,589). El modelo de Barcin y Yamnaya no se rechaza (p = 0,521), así que Germany también se explica sin Mesolitico de Luxmburg. El modelo sin Barcin, con Mesolítico de Luxemburgo y Yamnaya, se rechaza (p = 0,0363).
 
 ---
 
@@ -309,17 +309,17 @@ Se definieron los objetivos, las fuentes y los grupos externos, se calcularon lo
 
 **Figura 29.** Proyecto 1. Tabla `rankdrop` de qpWave por población (30 primeras filas).
 
-**qpAdm de dos vías.** El modelo con Barcin y Yamnaya no se rechazó en los vascos (p = 0,922), los orcadianos (p = 0,123) ni los británicos (p = 0,337, Tabla 1). Sí se rechazó en los franceses (p = 0,018), italianos del norte (p = 4,3 × 10⁻⁵), sardos italianos (p = 0,0047), sardos (p = 0,0037), ibéricos (p = 5,1 × 10⁻⁶) y toscanos (p = 1,0 × 10⁻⁶). En rusos y finlandeses además fue no factible, con pesos negativos de Barcin de −0,446 y −0,414 (Figura 30).
+**qpAdm de dos vías.** El modelo con Barcin y Yamnaya no se rechazó en los vascos (p = 0,922), los orcadianos (p = 0,123) ni los británicos (p = 0,337, Tabla 1). Sí se rechazó en los franceses (p = 0,018), italianos del norte (p = 4,3 × 10⁻⁵), sardos italianos (p = 0,0047), sardos (p = 0,0037), ibéricos (p = 5,1 × 10⁻⁶) y toscanos (p = 1,0 × 10⁻⁶). En rusos y finlandeses además fue no factible, con weights negativos de Barcin de −0,446 y −0,414 (Figura 30).
 
 ![Figura 30](figuras/ajuste_2wayproyecto1.png)
 
 **Figura 30.** Proyecto 1. Ajuste (`popdrop`) del modelo de dos vías, Barcin y Yamnaya, por población.
 
-**qpAdm de tres vías.** Entre las ocho poblaciones con peso mesolítico visible (de británicos a sardos), el peso fue negativo en siete y solo los vascos tuvieron un valor positivo (0,018). Los pesos de Barcin fueron negativos en los rusos (−0,349) y los finlandeses (−0,356), con pesos de Yamnaya de 1,82 y 1,72 (Figura 31). La tabla de ajuste muestra que el modelo completo no se rechaza en las cinco poblaciones transcritas (p entre 0,32 y 0,81), pero es no factible en británicos, franceses, italianos del norte y sardos italianos por el peso mesolítico negativo. Solo en los vascos es factible (Tabla 1).
+**qpAdm de tres vías.** Entre las ocho poblaciones con weight mesolítico visible (de británicos a sardos), el weight fue negativo en siete y solo los vascos tuvieron un valor positivo (0,018). Los weight de Barcin fueron negativos en los rusos (−0,349) y los finlandeses (−0,356), con weights de Yamnaya de 1,82 y 1,72 (Figura 31). La tabla de ajuste muestra que el modelo completo no se rechaza en las cinco poblaciones transcritas (p entre 0,32 y 0,81), pero es no factible en británicos, franceses, italianos del norte y sardos italianos por el weight mesolítico negativo. Solo en los vascos es factible (Tabla 1).
 
 ![Figura 31](figuras/pesos_3wayproyecto1.png)
 
-**Figura 31.** Proyecto 1. Pesos del modelo qpAdm de tres vías por población (26 primeras filas).
+**Figura 31.** Proyecto 1. Weights del modelo qpAdm de tres vías por población (26 primeras filas).
 
 **Tabla 1.** Proyecto 1. Ajuste (`popdrop`) del modelo qpAdm de tres vías, 30 de las 77 filas de `ajuste_3way` (británicos, vascos, franceses, italianos del norte y las dos primeras filas de sardos italianos). En `pat`, un 1 indica la fuente eliminada, en el orden Barcin, Yamnaya y Mesolítico, y `wt` es el número de fuentes eliminadas, por lo tanto no es significativa.
 
@@ -390,11 +390,11 @@ Se definieron los tres objetivos, las dos fuentes y los grupos externos, se calc
 
 **Figura 34.** Proyecto 2. Tabla `rankdrop` de qpWave para los tres grupos de la estepa.
 
-**qpAdm.** El modelo de dos fuentes no se rechazó en ningún grupo (p = 0,667, 0,479 y 0,599) y fue factible. Los pesos de Iran y Sidelkino fueron 0,307 y 0,693 en Sintashta, 0,358 y 0,642 en Alakul, y 0,197 y 0,803 en Srubnaya, con errores estándar de 0,067 a 0,079. Los modelos con Iran como única fuente se rechazaron en los tres grupos (p entre 10⁻¹⁷ y 10⁻²⁷). Los de Sidelkino como única fuente se rechazaron en Sintashta (p = 0,0061) y Alakul (p = 7,8 × 10⁻⁴), pero no en Srubnaya (p = 0,132) (Figura 35).
+**qpAdm.** El modelo de dos fuentes no se rechazó en ningún grupo (p = 0,667, 0,479 y 0,599) y fue factible. Los weights de Iran y Sidelkino fueron 0,307 y 0,693 en Sintashta, 0,358 y 0,642 en Alakul, y 0,197 y 0,803 en Srubnaya, con errores estándar de 0,067 a 0,079. Los modelos con Iran como única fuente se rechazaron en los tres grupos (p entre 10⁻¹⁷ y 10⁻²⁷). Los de Sidelkino como única fuente se rechazaron en Sintashta (p = 0,0061) y Alakul (p = 7,8 × 10⁻⁴), pero no en Srubnaya (p = 0,132) (Figura 35).
 
 ![Figura 35](figuras/qpadm_proyecto2.png)
 
-**Figura 35.** Proyecto 2. Pesos (`pesos_2`) y ajuste (`ajuste_2`) del modelo qpAdm de dos vías.
+**Figura 35.** Proyecto 2. Weights (`pesos_2`) y ajuste (`ajuste_2`) del modelo qpAdm de dos vías.
 
 ### Conclusión
 
@@ -442,9 +442,9 @@ Se definieron los cinco grupos objetivo, las tres fuentes antiguas (Anzick, Beri
 
 **Figura 40.** Proyecto 3. Tabla `rankdrop` de qpWave para los cinco grupos indígenas.
 
-**qpAdm, modelo A (Anzick y Beringia).** Los pesos de Anzick fueron negativos en los cinco grupos (entre −3,06 y −9,95) y los de Beringia mayores que 1 (entre 4,06 y 10,9), con errores estándar entre 6,0 y 27,7 y Z menores que 0,7 en valor absoluto (Tabla 2).
+**qpAdm, modelo A (Anzick y Beringia).** Los weights de Anzick fueron negativos en los cinco grupos (entre −3,06 y −9,95) y los de Beringia mayores que 1 (entre 4,06 y 10,9), con errores estándar entre 6,0 y 27,7 y Z menores que 0,7 en valor absoluto (Tabla 2).
 
-**Tabla 2.** Proyecto 3. Pesos del modelo qpAdm A (Anzick y Beringia antigua) por grupo (`pesos_A`).
+**Tabla 2.** Proyecto 3. Weights del modelo qpAdm A (Anzick y Beringia antigua) por grupo (`pesos_A`).
 
 | target | left | weight | se | Z |
 | --- | --- | --- | --- | --- |
@@ -459,7 +459,7 @@ Se definieron los cinco grupos objetivo, las tres fuentes antiguas (Anzick, Beri
 | Mixe | Anzick | −5,06 | 10,3 | −0,490 |
 | Mixe | Beringia antigua | 6,06 | 10,3 | 0,586 |
 
-El ajuste del modelo A muestra que el modelo completo no se rechazó en ningún grupo (p entre 0,144 y 0,174), pero no fue factible en ninguno por el peso negativo de Anzick. Los modelos con una sola fuente se rechazaron en los cinco grupos, tanto con Anzick (p entre 1,6 × 10⁻¹¹ y 7,9 × 10⁻⁵) como con Beringia antigua (p entre 3,1 × 10⁻⁸ y 0,0101) (Figura 41).
+El ajuste del modelo A muestra que el modelo completo no se rechazó en ningún grupo (p entre 0,144 y 0,174), pero no fue factible en ninguno por el weight negativo de Anzick. Los modelos con una sola fuente se rechazaron en los cinco grupos, tanto con Anzick (p entre 1,6 × 10⁻¹¹ y 7,9 × 10⁻⁵) como con Beringia antigua (p entre 3,1 × 10⁻⁸ y 0,0101) (Figura 41).
 
 ![Figura 41](figuras/ajusteA_proyecto3.png)
 
@@ -467,21 +467,21 @@ El ajuste del modelo A muestra que el modelo completo no se rechazó en ningún 
 
 ![Figura 42](figuras/pesosAB_proyecto3.png)
 
-**Figura 42.** Proyecto 3. Pesos de los modelos qpAdm A (`pesos_A`) y B (`pesos_B`) por grupo.
+**Figura 42.** Proyecto 3. Weights de los modelos qpAdm A (`pesos_A`) y B (`pesos_B`) por grupo.
 
-**qpAdm, modelo B (Beringia y Spirit Cave).** Los pesos aparecen en la Figura 42. En Karitiana, Surui, PEL y Mixe uno de los dos pesos fue negativo, y solo en Pima ambos fueron positivos (Beringia 0,092 y Spirit Cave 0,908; Z = 3,92). El modelo completo solo fue factible en Pima, con pesos de 0,092 para Beringia y 0,908 para Spirit Cave (p = 0,856). Los modelos con Spirit Cave como única fuente no se rechazaron en Pima (p = 0,916), Mixe (p = 0,912) ni Karitiana (p = 0,072), y sí en Surui (p = 0,004) y PEL (p = 1,5 × 10⁻²⁴). Los modelos con Beringia como única fuente se rechazaron en los cinco grupos (Figura 43).
+**qpAdm, modelo B (Beringia y Spirit Cave).** Los weights  aparecen en la Figura 42. En Karitiana, Surui, PEL y Mixe uno de los dos weights fueron negativos, y solo en Pima ambos fueron positivos (Beringia 0,092 y Spirit Cave 0,908; Z = 3,92). El modelo completo solo fue factible en Pima, con weights de 0,092 para Beringia y 0,908 para Spirit Cave (p = 0,856). Los modelos con Spirit Cave como única fuente no se rechazaron en Pima (p = 0,916), Mixe (p = 0,912) ni Karitiana (p = 0,072), y sí en Surui (p = 0,004) y PEL (p = 1,5 × 10⁻²⁴). Los modelos con Beringia como única fuente se rechazaron en los cinco grupos (Figura 43).
 
 ![Figura 43](figuras/ajustewayproyecto3.png)
 
 **Figura 43.** Proyecto 3. Ajuste (`popdrop`) del modelo qpAdm B, Beringia y Spirit Cave, por grupo.
 
-**qpAdm de tres vías.** Los errores estándar fueron grandes en Karitiana, Surui y PEL (por ejemplo −9,75 con error estándar 674 en Surui).” Solo en Pima (Spirit Cave 0,915; Z = 3,9) y Mixe (Spirit Cave 1,18; Z = 4,3) el peso de Spirit Cave fue significativo (Figura 44).
+**qpAdm de tres vías.** Los errores estándar fueron grandes en Karitiana, Surui y PEL (por ejemplo −9,75 con error estándar 674 en Surui).” Solo en Pima (Spirit Cave 0,915; Z = 3,9) y Mixe (Spirit Cave 1,18; Z = 4,3) el weight de Spirit Cave fue significativo (Figura 44).
 
 ![Figura 44](figuras/pesos3way_proyecto3.png)
 
-**Figura 44.** Proyecto 3. Pesos del modelo qpAdm de tres vías por grupo.
+**Figura 44.** Proyecto 3. Weights del modelo qpAdm de tres vías por grupo.
 
-El ajuste del modelo de tres vías muestra que el modelo completo no se rechazó en ningún grupo (p entre 0,080 y 0,944), pero no fue factible en ninguno porque siempre hubo algún peso negativo. De los modelos de dos fuentes solo fueron factibles los de Pima, con Anzick y Spirit Cave (p = 0,814) y con Beringia y Spirit Cave (p = 0,841). El modelo con Spirit Cave como única fuente no se rechazó en Pima (p = 0,908) ni en Mixe (p = 0,905), quedó en el límite en Karitiana (p = 0,0535) y se rechazó en Surui (p = 0,0022) y PEL (p = 1,0 × 10⁻²⁴) (Tabla 3).
+El ajuste del modelo de tres vías muestra que el modelo completo no se rechazó en ningún grupo (p entre 0,080 y 0,944), pero no fue factible en ninguno porque siempre hubo algún weight negativo. De los modelos de dos fuentes solo fueron factibles los de Pima, con Anzick y Spirit Cave (p = 0,814) y con Beringia y Spirit Cave (p = 0,841). El modelo con Spirit Cave como única fuente no se rechazó en Pima (p = 0,908) ni en Mixe (p = 0,905), quedó en el límite en Karitiana (p = 0,0535) y se rechazó en Surui (p = 0,0022) y PEL (p = 1,0 × 10⁻²⁴) (Tabla 3).
 
 **Tabla 3.** Proyecto 3. Ajuste (`popdrop`) del modelo qpAdm de tres vías por grupo (`ajuste_3way`).
 
@@ -525,7 +525,7 @@ El ajuste del modelo de tres vías muestra que el modelo completo no se rechazó
 
 ### Conclusión
 
-Los cinco grupos están más cerca de Spirit Cave que de las otras dos fuentes. Con las tres fuentes juntas los pesos no son estables, y no se puede decir cuánto aporta cada una. Spirit Cave solo explica bien a dos de los grupos, y los otros necesitan más de una corriente.
+Los cinco grupos están más cerca de Spirit Cave que de las otras dos fuentes. Con las tres fuentes juntas los weight no son estables, y no se puede decir cuánto aporta cada una. Spirit Cave solo explica bien a dos de los grupos, y los otros necesitan más de una corriente.
 
 ---
 
@@ -555,34 +555,29 @@ Se definieron los ibéricos como objetivo, Visigoth, Mozabite y YRI como fuentes
 
 **Figura 46.** Proyecto 4. f3 de grupo externo, f4 de asimetría y tabla `rankdrop` de qpWave para los ibéricos y sus tres fuentes.
 
-**qpAdm de dos vías.** El peso fue 1,2014 (error estándar 0,0266) para Visigoth y −0,2014 (0,0266) para Mozabite (Figura 47).
+**qpAdm de dos vías.** El weight fue 1,2014 (error estándar 0,0266) para Visigoth y −0,2014 (0,0266) para Mozabite (Figura 47).
 
 ![Figura 47](figuras/admix2way_proyecto4.png)
 
-**Figura 47.** Proyecto 4. Pesos del modelo qpAdm de dos vías (Visigoth y Mozabite) para los ibéricos.
+**Figura 47.** Proyecto 4. Weight del modelo qpAdm de dos vías (Visigoth y Mozabite) para los ibéricos.
 
-**qpAdm de tres vías.** Los pesos fueron −1,238 (error estándar 2,75) para Visigoth, 2,861 (3,45) para Mozabite y −0,623 (0,700) para YRI (Figura 48).
+**qpAdm de tres vías.** Los weight fueron −1,238 (error estándar 2,75) para Visigoth, 2,861 (3,45) para Mozabite y −0,623 (0,700) para YRI (Figura 48).
 
 ![Figura 48](figuras/admis3wayweights_proyecto4.png)
 
-**Figura 48.** Proyecto 4. Pesos del modelo qpAdm de tres vías para los ibéricos.
+**Figura 48.** Proyecto 4. weights del modelo qpAdm de tres vías para los ibéricos.
 
 ### Conclusión
 
-La mezcla de Visigoth, Mozabite y YRI no explica bien a la población ibérica actual. Aunque está más cerca de Visigoth, el modelo no se ajusta y los pesos no se pueden interpretar. Con estas fuentes no se puede responder la pregunta del proyecto.
+A partir de los resultados, la población ibérica actual no se explica como mezcla de Visigoth, Mozabite y YRI. Se observa que los ibéricos comparten más deriva con Visigoth que con Mozabite y YRI. Sin embargo, qpWave rechazó que tres corrientes de ancestría bastaran para explicar a los ibéricos y sus fuentes. Además, en qpAdm el weight de Visigoth fue mayor que 1 y el de Mozabite negativo, y en tres vías los errores estándar fueron muy grandes. Con estas fuentes no se logra modelar a la población ibérica actual
 
 ---
 
-# Discusión
-
-Los cuatro proyectos usaron el mismo flujo, con f3 y f4 para medir deriva compartida y asimetrías, qpWave para decidir cuántas corrientes se necesitan y qpAdm para estimar los pesos. El flujo funcionó mejor cuando las fuentes eran pocas y bien diferenciadas. En el Proyecto 2, Iran y Sidelkino explicaron a Sintashta, Alakul y Srubnaya con modelos no rechazados (p = 0,667, 0,479 y 0,599), pesos positivos y errores estándar pequeños, igual que Barcin y Yamnaya en England y Germany del tutorial.
-
-En los otros proyectos los pesos fueron difíciles de interpretar. En el Proyecto 1 el peso de Mesolítico de Luxemburgo fue negativo en la mayoría de las poblaciones, en el Proyecto 3 los errores estándar fueron mayores que los pesos y en el Proyecto 4 qpWave rechazó el modelo.
-
-En conjunto, los proyectos muestran que qpAdm entrega proporciones interpretables cuando el modelo no se rechaza y los pesos son positivos con errores pequeños, como en el Proyecto 2 y en el tutorial. En los demás casos los resultados se leen mejor con qpWave, f3 y f4, que indican cuántas corrientes se necesitan y qué fuentes están más cerca de cada población.
 
 # Conclusión general
-La actividad permitió aplicar paso a paso el análisis de genética de poblaciones con ADMIXTOOLS, desde el cálculo de los bloques f2 hasta los modelos de mezcla con qpAdm. Cada estadístico respondió una pregunta distinta y se apoyó en los anteriores, y los cuatro proyectos mostraron que los resultados cambian según las poblaciones que se eligen como fuentes y como grupos externos. Fue útil para aprender a plantear un análisis completo e interpretar su resultado.
+La actividad permitió aplicar paso a paso el análisis de genética de poblaciones con ADMIXTOOLS, desde el cálculo de los bloques f2 hasta los modelos de mezcla con qpAdm. Cada estadístico respondió una pregunta distinta y se apoyó en los anteriores, y los cuatro proyectos mostraron que los resultados cambian según las poblaciones que se eligen como fuentes y como grupos externos. Fue útil para aprender a plantear un análisis completo e interpretar su resultado. 
+A nivel personal, me pareció un tema muy interesante ya que permite responder con datos cómo se formó una población y de dónde viene su ancestría, lo que ayuda a entender la historia del poblamiento humano y la diversidad genética actual, aún así, la interpretación de resultados se me hizo difícil en algunos casos.
+
 
 ---
 
