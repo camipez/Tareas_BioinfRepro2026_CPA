@@ -151,7 +151,7 @@ Con `qpdstat()` se calculó primero f4(británicos, toscanos; Mbuti, Chimp). Des
 
 ### Resultados
 
-Británicos frente a toscanos con Mbuti dio f4 = −0,0000832 (Z = −2,32; p = 0,0205). Es un valor cercano a cero que no llega al umbral habitual de |Z| > 3 (Figura 11). Con el neandertal del Altái, la comparación de los británicos con toscanos (0,0000355; Z = 0,922) y con CHB (−0,000118; Z = −0,705) no se aparta de la simetría. Frente a Mbuti el f4 fue positivo (0,00116; Z = 5,27) y frente a Papuan negativo (−0,000807; Z = −3,40) (Figura 12). En la comparación entre neandertal y Denisova con Papuan y británicos, el f4 fue −0,00135 (Z = −6,25; p = 4,22 × 10⁻¹⁰) (Figura 13).
+Británicos frente a toscanos con Mbuti dio f4 = −0,0000832 (Z = −2,32; p = 0,0205). Es un valor cercano a cero (Figura 11). Con el neandertal del Altái, la comparación de los británicos con toscanos (0,0000355; Z = 0,922) y con CHB (−0,000118; Z = −0,705) no se aparta de la simetría. Frente a Mbuti el f4 fue positivo (0,00116; Z = 5,27) y frente a Papuan negativo (−0,000807; Z = −3,40) (Figura 12). En la comparación entre neandertal y Denisova con Papuan y británicos, el f4 fue −0,00135 (Z = −6,25; p = 4,22 × 10⁻¹⁰) (Figura 13).
 
 ![Figura 11](figuras/figura_12.png)
 
@@ -167,7 +167,7 @@ Británicos frente a toscanos con Mbuti dio f4 = −0,0000832 (Z = −2,32; p = 
 
 ### Conclusión
 
-El f4 de GBR y TSI con Mbuti es cercano a cero (Z = −2,32), así que GBR y TSI son casi simétricos respecto de Mbuti. Con Altai Neanderthal, GBR comparte más alelos que Mbuti (f4 positivo) y menos que Papuan (f4 negativo). En el último f4 el valor negativo indica que Papuan comparte más alelos con Denisova que con Altai Neanderthal, tomando a GBR como referencia.
+El f4 de GBR y TSI con Mbuti es cercano a cero (Z = −2,32). Con Altai Neanderthal, GBR comparte más alelos que Mbuti (f4 positivo) y menos que Papuan (f4 negativo). En el último f4 el valor negativo indica que Papuan comparte más alelos con Denisova que con Altai Neanderthal, tomando a GBR como referencia.
 
 ## A.6 qpWave
 
@@ -358,7 +358,7 @@ Se definieron los objetivos, las fuentes y los grupos externos, se calcularon lo
 
 ### Conclusión
 
-Las poblaciones europeas actuales no tienen todas la misma mezcla de tres vías. Solo algunas se explican bien con dos de las fuentes, y al usar las tres aparecen pesos negativos que no se pueden interpretar. Eso indica que las fuentes elegidas no describen bien a todas las poblaciones.
+Las poblaciones europeas actuales no tienen todas la misma mezcla de tres vías. Solo algunas se explican bien con dos de las fuentes, y las fuentes elegidas no describen bien a todas las poblaciones.
 
 ---
 
@@ -446,7 +446,7 @@ Se definieron los cinco grupos objetivo, las tres fuentes antiguas (Anzick, Beri
 
 **Tabla 2.** Proyecto 3. Pesos del modelo qpAdm A (Anzick y Beringia antigua) por grupo (`pesos_A`).
 
-| Objetivo | Fuente | Peso | Error estándar | Z |
+| target | left | weight | se | Z |
 | --- | --- | --- | --- | --- |
 | Karitiana | Anzick | −8,12 | 27,7 | −0,293 |
 | Karitiana | Beringia antigua | 9,12 | 27,7 | 0,329 |
@@ -475,7 +475,7 @@ El ajuste del modelo A muestra que el modelo completo no se rechazó en ningún 
 
 **Figura 43.** Proyecto 3. Ajuste (`popdrop`) del modelo qpAdm B, Beringia y Spirit Cave, por grupo.
 
-**qpAdm de tres vías.** Los pesos fueron inestables en los cinco grupos, con errores estándar grandes en Karitiana, Surui y PEL (por ejemplo −9,75 con error estándar 674 en Surui). Solo en Pima (Spirit Cave 0,915; Z = 3,9) y Mixe (Spirit Cave 1,18; Z = 4,3) el peso de Spirit Cave fue significativo (Figura 44).
+**qpAdm de tres vías.** Los errores estándar fueron grandes en Karitiana, Surui y PEL (por ejemplo −9,75 con error estándar 674 en Surui).” Solo en Pima (Spirit Cave 0,915; Z = 3,9) y Mixe (Spirit Cave 1,18; Z = 4,3) el peso de Spirit Cave fue significativo (Figura 44).
 
 ![Figura 44](figuras/pesos3way_proyecto3.png)
 
@@ -485,7 +485,7 @@ El ajuste del modelo de tres vías muestra que el modelo completo no se rechazó
 
 **Tabla 3.** Proyecto 3. Ajuste (`popdrop`) del modelo qpAdm de tres vías por grupo (`ajuste_3way`).
 
-| Objetivo | pat | wt | dof | χ² | p | f4rank | Anzick | Beringia | Spirit | factible | mejor | dofdiff | chi2dif | p_anid |
+| Objetivo | pat | wt | dof | χ² | p | f4rank | Anzick | Beringia | Spirit | factible | mejor | dofdiff | chisqdiff | p_nested |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Karitiana | 000 | 0 | 2 | 4,81 | 0,090 | 2 | 1,930 | −2,674 | 1,744 | FALSE | NA | NA | NA | NA |
 | Karitiana | 001 | 1 | 3 | 5,44 | 0,143 | 1 | −7,747 | 8,747 | NA | FALSE | TRUE | 0 | −1,97 | 1 |
