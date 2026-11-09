@@ -113,7 +113,7 @@ El mesolítico se definió como `popA`, las 13 poblaciones actuales como `popB` 
 
 ![Figura 6](figuras/figura_4.png)
 
-**Figura 6.** Definición de poblaciones y llamada a `f3()` para el f3 de grupo externo.
+**Figura 6.** Definición de poblaciones y  `f3()` para el f3 de grupo externo.
 
 ### Resultados
 
@@ -147,7 +147,7 @@ Con `qpdstat()` se calculó primero f4(británicos, toscanos; Mbuti, Chimp). Des
 
 ![Figura 10](figuras/figura_6.png)
 
-**Figura 10.** Código de las tres llamadas a `qpdstat()` del tutorial.
+**Figura 10.** Código `qpdstat()` del tutorial.
 
 ### Resultados
 
@@ -271,7 +271,7 @@ Evaluar si poblaciones europeas actuales (británicos, vascos, franceses, italia
 
 ### Metodología
 
-Se definieron los objetivos, las fuentes y los grupos externos, se calcularon los bloques f2 y se obtuvo el f3 de grupo externo entre cada objetivo y cada fuente. Luego se calcularon tres f4 de asimetría, uno por fuente, con los británicos como pop1 y Mbuti como pop4 (Figura 23). La segunda parte del script corre qpWave y qpAdm para cada población con map_dfr(), con modelos de dos fuentes (Barcin y Yamnaya) y de tres fuentes (Figura 24). Se hizo así porque qpwave() pide que right tenga más poblaciones que left menos uno. Con cinco poblaciones en right, un left de 14 da el error Mat::cols(): indices out of bounds, por lo que  se corrió una llamada por cada población objetivo (el objetivo y sus fuentes en left) con map_dfr(), que junta los resultados en una sola tabla.
+Se definieron los objetivos, las fuentes y los grupos externos, se calcularon los bloques f2 y se obtuvo el f3 de grupo externo entre cada objetivo y cada fuente. Luego se calcularon tres f4 de asimetría, uno por fuente, con los británicos como pop1 y Mbuti como pop4 (Figura 23). La segunda parte del script corre qpWave y qpAdm para cada población con map_dfr(), con modelos de dos fuentes (Barcin y Yamnaya) y de tres fuentes (Figura 24). Se hizo así porque qpwave() pide que right tenga más poblaciones que left menos uno. Con cinco poblaciones en right, un left de 14 da el error Mat::cols(): indices out of bounds, por lo que  se corrió por cada población objetivo (el objetivo y sus fuentes en left) con map_dfr(), que junta los resultados en una sola tabla.
 
 ![Figura 23](figuras/figura_18.png)
 
