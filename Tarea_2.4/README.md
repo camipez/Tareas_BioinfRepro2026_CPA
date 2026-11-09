@@ -315,7 +315,7 @@ Se definieron los objetivos, las fuentes y los grupos externos, se calcularon lo
 
 **Figura 30.** Proyecto 1. Ajuste (`popdrop`) del modelo de dos vías, Barcin y Yamnaya, por población.
 
-**qpAdm de tres vías.** Entre las ocho poblaciones con weight mesolítico visible (de británicos a sardos), el weight fue negativo en siete y solo los vascos tuvieron un valor positivo (0,018). Los weight de Barcin fueron negativos en los rusos (−0,349) y los finlandeses (−0,356), con weights de Yamnaya de 1,82 y 1,72 (Figura 31). La tabla de ajuste muestra que el modelo completo no se rechaza en las cinco poblaciones transcritas (p entre 0,32 y 0,81), pero es no factible en británicos, franceses, italianos del norte y sardos italianos por el weight mesolítico negativo. Solo en los vascos es factible (Tabla 1).
+**qpAdm de tres vías.** Entre las ocho poblaciones con weight mesolítico visible (de británicos a sardos), el weight fue negativo en siete y solo los vascos tuvieron un valor positivo (0,018). Los weights de Barcin fueron negativos en los rusos (−0,349) y los finlandeses (−0,356), con weights de Yamnaya de 1,82 y 1,72 (Figura 31). La tabla de ajuste muestra que el modelo completo no se rechaza en las cinco poblaciones transcritas (p entre 0,32 y 0,81), pero es no factible en británicos, franceses, italianos del norte y sardos italianos por el weight mesolítico negativo. Solo en los vascos es factible (Tabla 1).
 
 ![Figura 31](figuras/pesos_3wayproyecto1.png)
 
@@ -559,9 +559,9 @@ Se definieron los ibéricos como objetivo, Visigoth, Mozabite y YRI como fuentes
 
 ![Figura 47](figuras/admix2way_proyecto4.png)
 
-**Figura 47.** Proyecto 4. Weight del modelo qpAdm de dos vías (Visigoth y Mozabite) para los ibéricos.
+**Figura 47.** Proyecto 4. Weights del modelo qpAdm de dos vías (Visigoth y Mozabite) para los ibéricos.
 
-**qpAdm de tres vías.** Los weight fueron −1,238 (error estándar 2,75) para Visigoth, 2,861 (3,45) para Mozabite y −0,623 (0,700) para YRI (Figura 48).
+**qpAdm de tres vías.** Los weights fueron −1,238 (error estándar 2,75) para Visigoth, 2,861 (3,45) para Mozabite y −0,623 (0,700) para YRI (Figura 48).
 
 ![Figura 48](figuras/admis3wayweights_proyecto4.png)
 
@@ -576,7 +576,7 @@ A partir de los resultados, la población ibérica actual no se explica como mez
 
 # Conclusión general
 La actividad permitió aplicar paso a paso el análisis de genética de poblaciones con ADMIXTOOLS, desde el cálculo de los bloques f2 hasta los modelos de mezcla con qpAdm. Cada estadístico respondió una pregunta distinta y se apoyó en los anteriores, y los cuatro proyectos mostraron que los resultados cambian según las poblaciones que se eligen como fuentes y como grupos externos. Fue útil para aprender a plantear un análisis completo e interpretar su resultado. 
-A nivel personal, me pareció un tema muy interesante ya que permite responder con datos cómo se formó una población y de dónde viene su ancestría, lo que ayuda a entender la historia del poblamiento humano y la diversidad genética actual, aún así, la interpretación de resultados se me hizo difícil en algunos casos.
+A nivel personal, me pareció un tema muy interesante ya que permite responder con datos cómo se formó una población y de dónde viene su ancestría, lo que ayuda a entender la historia del poblamiento humano y la diversidad genética actual, aun así, la interpretación de resultados se me hizo difícil en algunos casos.
 
 
 ---
