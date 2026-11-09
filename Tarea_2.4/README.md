@@ -576,7 +576,7 @@ A partir de los resultados, la población ibérica actual no se explica como mez
 
 # Conclusión general
 La actividad permitió aplicar paso a paso el análisis de genética de poblaciones con ADMIXTOOLS, desde el cálculo de los bloques f2 hasta los modelos de mezcla con qpAdm. Cada estadístico respondió una pregunta distinta y se apoyó en los anteriores, y los cuatro proyectos mostraron que los resultados cambian según las poblaciones que se eligen como fuentes y como grupos externos. Fue útil para aprender a plantear un análisis completo e interpretar su resultado. 
-A nivel personal, me pareció un tema muy interesante ya que permite responder con datos cómo se formó una población y de dónde viene su ancestría, lo que ayuda a entender la historia del poblamiento humano y la diversidad genética actual, aun así, la interpretación de resultados se me hizo difícil en algunos casos.
+A nivel personal, me pareció un tema muy interesante ya que permite responder con datos cómo se formó una población y de dónde viene su ancestría, lo que ayuda a entender la historia del poblamiento humano y la diversidad genética actual.Aun así, la interpretación de resultados se me hizo difícil en algunos casos.
 
 
 ---
