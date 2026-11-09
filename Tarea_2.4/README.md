@@ -463,7 +463,7 @@ El ajuste del modelo A muestra que el modelo completo no se rechazó en ningún 
 
 ![Figura 41](figuras/ajusteA_proyecto3.png)
 
-**Figura 41.** Proyecto 3. Ajuste (`popdrop`) del modelo qpAdm A, Anzick y Beringia antigua, por grupo. En `pat`, 01 elimina Beringia y 10 elimina Anzick.
+**Figura 41.** Proyecto 3. Ajuste (`popdrop`) del modelo qpAdm A, Anzick y Beringia antigua, por grupo. 
 
 ![Figura 42](figuras/pesosAB_proyecto3.png)
 
