@@ -582,7 +582,7 @@ En los otros proyectos los pesos fueron difíciles de interpretar. En el Proyect
 En conjunto, los proyectos muestran que qpAdm entrega proporciones interpretables cuando el modelo no se rechaza y los pesos son positivos con errores pequeños, como en el Proyecto 2 y en el tutorial. En los demás casos los resultados se leen mejor con qpWave, f3 y f4, que indican cuántas corrientes se necesitan y qué fuentes están más cerca de cada población.
 
 # Conclusión general
-La actividad permitió aplicar paso a paso el análisis de genética de poblaciones con ADMIXTOOLS, desde el cálculo de los bloques f2 hasta los modelos de mezcla. Cada análisis respondió una pregunta distinta y se complementó con los demás, lo que mostró que estos métodos son útiles para estudiar la relación entre poblaciones. También quedó claro que los resultados deben leerse con cuidado, porque dependen de las fuentes y de las poblaciones de referencia que se elijan.
+La actividad permitió aplicar paso a paso el análisis de genética de poblaciones con ADMIXTOOLS, desde el cálculo de los bloques f2 hasta los modelos de mezcla con qpAdm. Cada estadístico respondió una pregunta distinta y se apoyó en los anteriores, y los cuatro proyectos mostraron que los resultados cambian según las poblaciones que se eligen como fuentes y como grupos externos. Fue útil para aprender a plantear un análisis completo e interpretar su resultado.
 
 ---
 
