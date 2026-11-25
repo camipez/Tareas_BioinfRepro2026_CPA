@@ -340,7 +340,7 @@ canonicos
 |---|---|---|
 | rs1049481 | CALR | 3' UTR (3_prime_UTR_variant) |
 | rs1049481 | RAD23A | Río arriba (upstream_gene_variant) |
-| rs3213409 | JAK3 | Codificante, sentido erróneo (missense_variant) |
+| rs3213409 | JAK3 | Codificante (missense_variant) |
 
 El filtrado por CLIN_SIG distinto de "benign" o CADD > 20 no retuvo ninguna variante (`S11_variantes_filtradas.csv` quedó con 0 filas), porque ambas variantes cumplen "benign" en ClinVar y ninguna supera CADD 20.
 
