@@ -26,8 +26,8 @@ Aplicar un flujo de filtrado de lecturas, alineamiento contra el genoma de refer
 
 | Ruta | Contenido |
 |---|---|
-| `figuras/` | Capturas de pantalla del proceso  |
-| `Archivos/` | Reporte de qualimap completo (`qualimapReport.html`, `images_qualimapReport/`, `raw_data_qualimapReport/`), `S11_sorted_RG.bam`, la tabla de anotación de VEP (`S11_FILTER_VARIANTS_2026-11-23-01-09_VEP.tsv`) y el resultado del filtrado en R (`S11_variantes_filtradas.csv`). |
+|[`figuras/`](figuras/)| Capturas de pantalla del proceso  |
+| [`Archivos/`](Archivos/) | Reporte de qualimap completo (`qualimapReport.html`, `images_qualimapReport/`, `raw_data_qualimapReport/`), `S11_sorted_RG.bam`, la tabla de anotación de VEP (`S11_FILTER_VARIANTS_2026-11-23-01-09_VEP.tsv`) y el resultado del filtrado en R (`S11_variantes_filtradas.csv`). |
 
 ---
 
